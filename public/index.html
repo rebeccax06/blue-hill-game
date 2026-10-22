@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#234c42" />
+    <meta
+      name="description"
+      content="Who gets the street? An interactive Blue Hill Avenue youth planning simulation."
+    />
+    <title>Blue Hill Avenue · Who Gets the Street?</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/" aria-label="Blue Hill Avenue home"
+        ><span class="brand-mark">↗</span
+        ><span>BLUE HILL AVENUE<small>A street. Many stories.</small></span></a
+      >
+      <div class="header-right">
+        <span class="duration">◷ 15–20 minute simulation</span
+        ><button class="quiet" id="journal">
+          Field notes <span id="note-count">0</span></button
+        ><button class="quiet" id="settings" aria-label="Game settings">
+          ⚙
+        </button>
+      </div>
+    </header>
+    <main id="app"></main>
+    <div id="toast" role="alert"></div>
+    <dialog id="modal">
+      <button class="close" aria-label="Close dialog">×</button>
+      <div id="modal-content"></div>
+    </dialog>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

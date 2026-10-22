@@ -1,0 +1,252 @@
+{
+  "people": [
+    {
+      "name": "Malik",
+      "role": "Youth Bus Rider",
+      "description": "A 17-year-old student who takes the Route 28 almost every day. He works a few evenings each week and gets frustrated when an unpredictable bus trip makes him late for school, work, or plans with friends.",
+      "intro": "I take the 28 pretty much everywhere. School, work, seeing friends. What gets me isn't just that the bus can be slow. It's that I never really know how slow. A trip that should be manageable can suddenly make me late. If we're rebuilding Blue Hill Avenue, I think bus riders should actually feel the difference.",
+      "guidance": "Malik strongly favors B. His responses should reflect bus reliability, lost time, youth independence, and whether compromises weaken the improvements transit riders were supposed to receive."
+    },
+    {
+      "name": "Denise",
+      "role": "Laundromat Manager",
+      "description": "Manages a neighborhood laundromat. Her customers arrive carrying bags, baskets, carts, and sometimes children. For her, access means being able to get heavy things from a vehicle to the door without a long walk.",
+      "intro": "My customers come through the door carrying their lives in bags and baskets. Some have several loads. Some have small kids with them. Some are older. So when someone tells me, \u2018There's still parking a block away,\u2019 that isn't always a small thing.",
+      "guidance": "Denise leans toward A or C. Her responses should distinguish close access from generic parking and recognize that loading or short-term spaces may sometimes solve the problem without preserving every parking space."
+    },
+    {
+      "name": "Marisol",
+      "role": "Caf\u00e9 Manager",
+      "description": "Runs a small caf\u00e9 with a loyal group of regular customers. Her busiest periods are short morning and lunch rushes. She cares less about preserving every parking space than making sure customers and suppliers can still stop quickly and predictably.",
+      "intro": "Most of my customers aren't coming to stay all afternoon. They're stopping before work, grabbing lunch, picking something up, or meeting somebody for twenty minutes. I don't need the whole street designed around my caf\u00e9. I need those quick trips to keep working. What makes me nervous is not knowing how customers will reach us while construction is happening or how their habits might change afterward.",
+      "guidance": "Marisol leans toward B or C. Her responses should reflect: concentrated morning and lunch customer demand; quick pickup; supplier deliveries; customers changing habits during construction; visibility and access; potential benefits from more people passing the business; willingness to accept street changes if the business can continue functioning."
+    },
+    {
+      "name": "Angela",
+      "role": "Home-Health Worker and Parent",
+      "description": "A home-health worker and parent. She drives between multiple clients, carries supplies, and combines work trips with school drop-off and family errands.",
+      "intro": "My car is part of how I do my job. In one day I might see three clients in different places, carry supplies, pick up my daughter, and stop somewhere on the way home. When people say, \u2018Just take transit,\u2019 they're imagining a different kind of day than mine.",
+      "guidance": "Angela strongly favors A, but could accept C. Her responses should reflect trip chaining, work responsibilities, family responsibilities, and the cumulative effect of additional driving time."
+    },
+    {
+      "name": "Gloria",
+      "role": "Longtime Resident",
+      "description": "A 74-year-old renter who has lived near Blue Hill Avenue for almost 40 years. She wants investment but worries that improvement can come with rising housing costs, changing businesses, and losing the ability to remain in the neighborhood she has known for decades.",
+      "intro": "I've been here almost forty years. I remember when people complained that this neighborhood wasn't getting enough investment. So yes, I want better buses, safer crossings, and better streets. But I'm a renter. I also watch rents going up and businesses changing. I don't want to wait decades for investment and then find out the neighborhood has become too expensive for people like me to stay.",
+      "guidance": "Gloria is cautious about major transformation and initially favors A. Her central concern is displacement, not construction. Her responses should focus on: rising rents; longtime renters; residents being able to remain; changes in neighborhood businesses; loss of social networks and familiar places; neighborhood identity; who ultimately benefits from public investment. Gloria should recognize that transportation improvements are not the only cause of displacement. Her concern is that major infrastructure investment may interact with existing housing and development pressures."
+    },
+    {
+      "name": "Raymond",
+      "role": "Longtime Resident and Government Skeptic",
+      "description": "A longtime resident who has seen transportation proposals announced, revised, delayed, or replaced over the years. His biggest question is not whether a design sounds good, but whether public agencies will actually deliver what they promise.",
+      "intro": "I've sat through planning meetings before. You hear big ideas, see drawings, hear timelines. Then something changes. Funding disappears. Leadership changes. The plan gets redesigned again. I'm not saying nothing should happen. I'm saying I don't automatically believe that what I'm shown today is what I'll see five years from now.",
+      "guidance": "Raymond is skeptical of all three options. His responses should focus on: trust; previous plans that did not happen as expected; changing promises; maintenance; accountability; public reporting; what happens when agencies fail to deliver; whether residents have any recourse afterward. His concern is implementation credibility, not opposition to planning itself."
+    },
+    {
+      "name": "Tiana",
+      "role": "Parent and Youth Access Perspective",
+      "description": "A parent of teenagers who travel independently to school, jobs, recreation, and friends. She wants them to have more freedom without depending on an adult to drive them everywhere.",
+      "intro": "My kids are old enough to start doing more without me. But whether I let them depends on the whole trip. Where are they waiting? How are they crossing? What happens after dark? Can they actually rely on the bus? Transportation is part of how much freedom young people get.",
+      "guidance": "Tiana leans toward B or C. Her responses should focus on youth independence, after-school activities, jobs, evening trips, safe crossings, lighting, and transit reliability."
+    },
+    {
+      "name": "Andre",
+      "role": "Delivery and App Driver",
+      "description": "A delivery and app driver who spends much of his day making very short stops along the corridor. He sees loading trucks, pickups, double-parking, customers, buses, and turning vehicles competing for the same space.",
+      "intro": "People see me stopped for five minutes and think I'm parking. I'm usually picking something up, dropping something off, or trying to figure out where I'm legally supposed to be. If there's nowhere to stop, the delivery doesn't disappear. Somebody ends up double-parked.",
+      "guidance": "Andre leans toward C. His responses should focus on short-term curb needs, deliveries, pickup, double-parking, turning conflicts, and time-based curb management."
+    }
+  ],
+  "experts": [
+    {
+      "name": "Rababe Saadaoui",
+      "role": "Traffic and Street Safety",
+      "description": "Traffic and Street Safety",
+      "intro": "I focus on how street design affects traffic operations and safety. I can help you think through congestion, intersections, crossings, turning movements, traffic redistribution, and the safety consequences of different street designs. What would you like to ask me?",
+      "guidance": "congestion; intersection operations; traffic redistribution; turning movements; pedestrian conflicts; street geometry; vehicle speeds; safety tradeoffs. Rababe does not advocate for A, B, or C."
+    },
+    {
+      "name": "Eric Morris",
+      "role": "Transit Operations",
+      "description": "Transit Operations",
+      "intro": "I focus on how transit actually performs once a street design is operating. I can help you think through bus reliability, travel times, dedicated bus lanes, bottlenecks, stations, intersections, and how design changes can strengthen or weaken transit performance. What would you like to ask me?",
+      "guidance": "bus travel time; reliability; dedicated bus infrastructure; bottlenecks; stations; intersections; what happens when transit-priority elements are compromised. Eric does not advocate for A, B, or C."
+    },
+    {
+      "name": "Dr. Chris Zegras",
+      "role": "Transportation Planning and Policy",
+      "description": "Transportation Planning and Policy",
+      "intro": "I look at transportation as part of a larger system. I can help you think through travel behavior, competing benefits and costs, equity, implementation, and how different transportation choices affect the corridor as a whole. What would you like to ask me?",
+      "guidance": "system-level transportation tradeoffs; travel behavior; equity; distributed versus concentrated impacts; implementation; how transportation choices interact with one another. Chris does not advocate for A, B, or C."
+    },
+    {
+      "name": "Maya Patel",
+      "role": "Curb and Access Management",
+      "description": "Curb and Access Management",
+      "intro": "I focus on what happens at the curb. I can help you think through parking, loading, deliveries, pickups, residential access, double-parking, and how one piece of curb space might serve different people at different times. What would you like to ask me?",
+      "guidance": "short-term versus long-term parking; deliveries; loading; pickup and drop-off; residential access; time-based curb management; enforcement; double-parking. Maya does not advocate for A, B, or C."
+    },
+    {
+      "name": "Daniel Kim",
+      "role": "Construction and Implementation",
+      "description": "Construction and Implementation",
+      "intro": "I focus on what happens between approving a plan and actually having a finished street. I can help you think through construction phasing, noise, detours, business and residential access, temporary parking and loading, communication, and ways disruption can be reduced. What would you like to ask me?",
+      "guidance": "construction duration; noise and dust; detours; construction phasing; storefront access; residential access; temporary loading; communication; implementation risks. Daniel does not advocate for A, B, or C."
+    },
+    {
+      "name": "Aisha Grant",
+      "role": "Housing Stability and Community Development",
+      "description": "Housing Stability and Community Development",
+      "intro": "I focus on what happens to residents and local businesses when neighborhoods receive major public and private investment. I can help you think through displacement, rising housing costs, development pressure, housing stability, small-business displacement, and strategies communities and governments can use to help existing residents remain and benefit from neighborhood improvements. What would you like to ask me?",
+      "guidance": "residential displacement; indirect displacement pressure; rising rents; property-value pressures; renter vulnerability; commercial displacement; how transit investment can interact with broader development pressures; anti-displacement strategies; affordable housing; tenant protections; community ownership; small-business stability; the limits of what a transportation project can address on its own. Aisha should make an important distinction: Improving transit does not automatically cause displacement, and withholding investment from historically underserved neighborhoods is not an anti-displacement strategy. The relevant question is whether transportation investment is accompanied by policies that help existing residents and businesses remain and share in the benefits. Aisha does not advocate for A, B, or C."
+    }
+  ],
+  "amendments": [
+    {
+      "id": 1,
+      "name": "Targeted loading zones",
+      "tradeoff": "Helps deliveries but uses scarce curb space",
+      "effect": "Business-access problems are reduced. Retain the scarce-curb-space tradeoff."
+    },
+    {
+      "id": 2,
+      "name": "Short-term customer parking",
+      "tradeoff": "Helps quick-stop businesses but limits other curb uses",
+      "effect": "Business-access problems are reduced. Other curb uses remain constrained."
+    },
+    {
+      "id": 3,
+      "name": "Time-based curb management",
+      "tradeoff": "Serves different users at different times but requires enforcement",
+      "effect": "Some blocks function more effectively, although enforcement remains important."
+    },
+    {
+      "id": 4,
+      "name": "Additional vehicle capacity at selected locations",
+      "tradeoff": "Reduces some traffic concerns but reduces space for other improvements",
+      "effect": "Congestion is lower in selected locations, but less space is available for other improvements."
+    },
+    {
+      "id": 5,
+      "name": "Stronger bus priority at major bottlenecks",
+      "tradeoff": "Improves transit but creates greater constraints elsewhere",
+      "effect": "Transit reliability improves further. Greater constraints elsewhere remain; under A, overall congested-period delay is not eliminated."
+    },
+    {
+      "id": 6,
+      "name": "Additional pedestrian and crossing improvements",
+      "tradeoff": "Improves safety but may affect turning, parking, or roadway space",
+      "effect": "Crossings become noticeably safer and easier. Preserve the possible effects on turning, parking, or roadway space."
+    },
+    {
+      "id": 7,
+      "name": "Youth-access and lighting package",
+      "tradeoff": "Improves independent youth mobility and evening safety",
+      "effect": "Young people report greater independence reaching school, work, recreation, friends, and transit."
+    },
+    {
+      "id": 8,
+      "name": "Construction phasing and nighttime-work limits",
+      "tradeoff": "Reduces intensity of disruption but may extend construction",
+      "effect": "Noise and access problems are less intense, although construction may last longer."
+    },
+    {
+      "id": 9,
+      "name": "Business-support package",
+      "tradeoff": "Helps businesses during construction but does not eliminate long-term access concerns",
+      "effect": "More businesses maintain visibility and customer access during construction. Long-term access concerns are not eliminated."
+    },
+    {
+      "id": 10,
+      "name": "Neighborhood-character protections",
+      "tradeoff": "Preserves important local features but may constrain parts of the redesign",
+      "effect": "More familiar neighborhood features remain after construction. Some redesign possibilities are constrained."
+    },
+    {
+      "id": 11,
+      "name": "Community-stability and anti-displacement package",
+      "tradeoff": "Connects transportation investment with housing stability, community ownership, tenant support, and small-business retention, but many displacement pressures require actions beyond the transportation project",
+      "effect": "Transportation improvements are accompanied by stronger housing-stability and small-business-retention efforts. Development pressure does not disappear, but more existing residents and businesses have tools intended to help them remain and benefit from the investment."
+    },
+    {
+      "id": 12,
+      "name": "Accountability and monitoring plan",
+      "tradeoff": "Creates public reporting and a process for reviewing whether promises were fulfilled",
+      "effect": "The City publicly reports on whether promised outcomes occurred and returns to address some problem locations."
+    },
+    {
+      "id": 13,
+      "name": "Pilot selected elements first",
+      "tradeoff": "Allows adjustment before full implementation but extends uncertainty",
+      "effect": "Parts of the final design change based on what is learned during the initial phase. Preserve the longer uncertainty before full implementation; do not invent an entirely different final scenario."
+    }
+  ],
+  "options": [
+    {
+      "id": "A",
+      "title": "Improve the Avenue Without a Major Redesign",
+      "body": "Improve crossings, sidewalks, bus stops, lighting, trees, signals, and intersection safety. Most traffic lanes, parking, and familiar access remain, with less construction. The tradeoff: buses continue operating largely under existing traffic conditions, and some congestion, reliability, and other transportation problems remain."
+    },
+    {
+      "id": "B",
+      "title": "Transit-First Transformation",
+      "body": "Create dedicated bus lanes near the middle of the street and give more space to transit, walking, biking, trees, and public space. This offers the strongest opportunity for faster, more reliable bus trips. The tradeoff: less space remains for some traffic, parking, and loading; some drivers may experience longer trips or different traffic patterns; and construction is extensive."
+    },
+    {
+      "id": "C",
+      "title": "Transit Priority With Greater Local Access",
+      "body": "Make a major redesign with dedicated bus lanes near the center and walking, biking, and streetscape improvements while retaining more space for traffic, parking, loading, and local access. The tradeoff: retaining that access limits the transit and other improvements possible compared with B. Competition for space remains."
+    }
+  ],
+  "priorities": [
+    "Bus speed and reliability",
+    "Pedestrian safety",
+    "Traffic and congestion",
+    "Parking",
+    "Business access",
+    "Biking",
+    "Trees and public space",
+    "Neighborhood character",
+    "Displacement and ability to remain in the neighborhood",
+    "Construction impacts",
+    "Youth independence",
+    "Community concerns",
+    "Trust in government and implementation"
+  ],
+  "opening": "Blue Hill Avenue: Who Gets the Street?\nYou are a youth planning fellow helping the City of Boston think about the future of Blue Hill Avenue, a major transportation corridor connecting Mattapan, Dorchester, and Roxbury.\nPeople depend on this avenue to take the bus, drive, walk, bike, run businesses, make deliveries, and reach home. Buses get delayed in traffic. Crossings can be difficult. Businesses need customer and delivery access. Residents want investment but may also worry about construction, neighborhood change, and being able to afford to stay.\nBoston and the MBTA have been working on a major redesign. Blue Hill Avenue has limited space for buses, cars, parking and loading, walking, biking, crossings, trees, public space, and access to homes and businesses. Giving more room to one use can leave less for another. The three options differ in how much they reorganize that space. Who gets the street?\nIn this 15\u201320 minute simulation, you\u2019ll choose an initial approach, meet three affected people, and consult up to three experts. Then you\u2019ll face public pressure, reflect, and make a recommendation. We\u2019ll return five years later to see what it means. The conversations, pressure events, and future outcomes are simulated. There is no single correct choice, and keeping your original view is just as valid as changing it.\nA \u2014 Improve the Avenue Without a Major Redesign. Improve crossings, sidewalks, bus stops, lighting, trees, signals, and intersection safety. Most traffic lanes, parking, and familiar access remain, with less construction. The tradeoff: buses continue operating largely under existing traffic conditions, and some congestion, reliability, and other transportation problems remain.\nB \u2014 Transit-First Transformation. Create dedicated bus lanes near the middle of the street and give more space to transit, walking, biking, trees, and public space. This offers the strongest opportunity for faster, more reliable bus trips. The tradeoff: less space remains for some traffic, parking, and loading; some drivers may experience longer trips or different traffic patterns; and construction is extensive.\nC \u2014 Transit Priority With Greater Local Access. Make a major redesign with dedicated bus lanes near the center and walking, biking, and streetscape improvements while retaining more space for traffic, parking, loading, and local access. The tradeoff: retaining that access limits the transit and other improvements possible compared with B. Competition for space remains.\nIf you had to decide right now, what should Boston build: A, B, or C?",
+  "events": {
+    "A": {
+      "story": "Riders Organize A coalition of bus riders, students, transit advocates, and neighborhood organizations announces a demonstration outside the next Blue Hill Avenue public meeting. Their message is: \u201cDON'T SPEND MILLIONS TO LEAVE US STUCK IN TRAFFIC.\u201d Photos from the demonstration begin circulating locally. A City Council member calls for a hearing on whether the proposed approach actually addresses bus reliability and asks the project team to explain why a major corridor investment would stop short of dedicated transit priority. The planning team has been told that the preferred design must be submitted in 10 days. The player cannot postpone the decision.\n",
+      "choices": [
+        "Stay with A \u2014 The benefits of a larger redesign still do not justify its costs and disruption.",
+        "Add targeted bus priority while keeping the basic A approach \u2014 Use stronger transit priority at the worst bottlenecks without fully redesigning the corridor.",
+        "Strengthen the safety package \u2014 Make pedestrian, crossing, and intersection improvements substantially more ambitious while preserving the basic street configuration.",
+        "Move toward B or C \u2014 The protest raises a legitimate concern that A may not address the central transportation problem."
+      ]
+    },
+    "B": {
+      "story": "\u201cImprove Blue Hill Without Pushing Us Out\u201d A coalition of longtime residents, tenant organizations, local advocates, and neighborhood groups organizes a protest. Their message is: \u201cIMPROVE BLUE HILL \u2014 DON'T REPLACE US.\u201d The protest is not primarily about traffic lanes or parking. The central issue is displacement. Residents say they have waited years for better transportation and public investment, but they worry that a major transformation could accelerate existing development pressure without enough protection for longtime renters, homeowners, and small businesses. One speaker says: \u201cWe want the investment. We also want to still be here when the investment is finished.\u201d A City Council member announces an emergency hearing on neighborhood stability around the Blue Hill Avenue investment. The project team is asked to explain whether the transportation proposal will be accompanied by any housing-stability, small-business, or anti-displacement strategy. The final design recommendation is due in one week.\n",
+      "choices": [
+        "Stay with B \u2014 The transportation project should address transportation. Broader housing pressures should not prevent the corridor from receiving better transit.",
+        "Keep B and add community-stability commitments \u2014 Maintain the transit-first transformation while coordinating it with housing, small-business, and anti-displacement measures.",
+        "Move toward C \u2014 Reduce the scale of the physical transformation while retaining substantial transit improvements.",
+        "Phase the transformation \u2014 Implement major changes in stages and evaluate transportation and neighborhood impacts before completing the full redesign."
+      ]
+    },
+    "C": {
+      "story": "\u201cWhat Are You Actually Building?\u201d The project has changed several times in response to public feedback. Now a coalition of residents organizes outside a City Council hearing. Their signs read: \u201cSHOW US THE REAL PLAN.\u201d Their primary concern is trust. Some supported earlier versions. Others opposed them. But they share one frustration: they no longer know which promises will survive into the final design. At the hearing, a City Council member asks the project team to clearly identify: which improvements are guaranteed; which remain negotiable; who is responsible for delivering them; and how the public will know whether promises were kept. Meanwhile, the design team warns that continuing to revise the project could cause another major delay. The project reaches its design freeze in seven days. After that, major changes become much harder.\n",
+      "choices": [
+        "Stay with C exactly as proposed \u2014 Enough consultation has occurred. The project needs to move forward.",
+        "Keep C but add an accountability and monitoring commitment \u2014 Clearly define commitments and require public reporting after implementation.",
+        "Strengthen transit priority \u2014 Use the deadline to restore transit elements weakened through earlier compromises.",
+        "Preserve more local access \u2014 Respond to continued concerns with additional parking, loading, or traffic accommodations.",
+        "Move to A or B \u2014 The compromise may no longer provide a clear enough direction."
+      ]
+    }
+  },
+  "endings": {
+    "A": "Improve the Avenue Without a Major Redesign Blue Hill Avenue now has better crossings, sidewalks, lighting, bus stops, trees, and signals. Businesses and residents retain largely familiar access and parking patterns. Construction was less extensive. But buses still experience substantial delay during congested periods, and several transportation problems remain. Supporters say the City improved everyday conditions without unnecessarily transforming the neighborhood. Critics say the City invested while leaving the biggest transportation problems unresolved. Housing costs and development pressures continue to change in the surrounding neighborhoods regardless of the more limited transportation intervention, reminding planners that displacement pressures do not originate from a single project.",
+    "B": "Transit-First Transformation Blue Hill Avenue looks and operates substantially differently. Bus trips are more reliable. Walking and cycling conditions have improved. More street space is devoted to transit and people outside cars. But some commercial areas continue struggling with curb demand. Some drivers experience longer trips. Construction was difficult for some residents and businesses. The improved corridor also receives greater development attention. Some longtime residents welcome improvements they had waited years to see. Others remain concerned about rent increases, commercial change, and whether existing residents will be able to remain and benefit from the neighborhood's improvements. Supporters argue that underserved neighborhoods should not be denied major transportation investment because displacement is possible. Critics argue that investment without community-stability measures can leave vulnerable residents exposed to broader market pressures.",
+    "C": "Transit Priority With Greater Local Access Center-running transit is now a major part of Blue Hill Avenue. Bus service is more reliable. Pedestrian and streetscape conditions have improved. Businesses, institutions, and drivers retain more access than under B. But compromises remain visible. At some locations, buses, cars, deliveries, parking, cyclists, and pedestrians still compete for limited space. Transit supporters say stronger priority could have achieved more. Some businesses and drivers still think the project changed too much. Neighborhood investment and housing pressures continue to evolve alongside the transportation improvements. Supporters describe the result as a workable balance. Critics on both sides argue that compromise did not eliminate conflict."
+  }
+}
