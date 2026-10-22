@@ -1242,6 +1242,10 @@ dialog::backdrop {
   width: 100%;
   height: auto;
 }
+.reveal-before {
+  position: relative;
+  clip-path: inset(0 0 0 var(--reveal));
+}
 .reveal-after {
   position: absolute;
   inset: 0;
@@ -1324,4 +1328,25 @@ dialog::backdrop {
   justify-content: space-between;
   font-size: 9px;
   color: var(--muted);
+}
+.markdown table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+.markdown th,
+.markdown td {
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  text-align: left;
+}
+.markdown th {
+  background: #e7ecdf;
+  font-weight: 600;
+}
+.markdown tbody tr:nth-child(even) {
+  background: #f0f2e8;
 }
