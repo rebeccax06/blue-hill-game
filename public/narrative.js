@@ -27,3 +27,14 @@ export function endingNarrative(value) {
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
+
+// Follow-up invitations belong to the form, never to a character's reply.
+export function dialogueNarrative(value) {
+  return String(value ?? "")
+    .replace(
+      /(?:^|\n)[\t >*_#-]*You may ask\b[^.!?\n]*\bfollow[ -]up\b[^.!?\n]*[.!?]?[*_]*[\t ]*/gim,
+      "",
+    )
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}

@@ -1,0 +1,5 @@
+node_modules/
+info/
+public/vendor/
+public/explorer/
+package-lock.json

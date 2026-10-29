@@ -14,10 +14,10 @@
   <body>
     <header>
       <a class="brand" href="/" aria-label="Blue Hill Avenue home"
-        ><span class="brand-mark">↗</span
-        ><span>BLUE HILL AVENUE<small>A street. Many stories.</small></span></a
+        ><span class="brand-mark">↗</span><span>BLUE HILL AVENUE</span></a
       >
       <div class="header-right">
+        <button class="quiet" id="explore-avenue">Explore the avenue</button>
         <span class="duration">◷ 15–20 minute simulation</span
         ><button class="quiet" id="journal">
           Field notes <span id="note-count">0</span></button
@@ -32,6 +32,9 @@
       <button class="close" aria-label="Close dialog">×</button>
       <div id="modal-content"></div>
     </dialog>
+    <script type="importmap">
+      { "imports": { "three": "/vendor/three/three.module.js" } }
+    </script>
     <script type="module" src="/app.js"></script>
   </body>
 </html>

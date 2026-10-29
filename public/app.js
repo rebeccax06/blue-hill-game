@@ -1,4 +1,10 @@
-import {endingNarrative,endingTransition} from "./narrative.js";
+import { createVoiceControls } from "./voice.js";
+import { createSectionExplorer } from "./explorer.js";
+import {
+  dialogueNarrative,
+  endingNarrative,
+  endingTransition,
+} from "./narrative.js";
 import { beforeAfterStreet, createStreetReveal } from "./reveal.js";
 import { renderMarkdown } from "./markdown.js";
 import { portrait, street, streetDesigns } from "./art.js";
@@ -23,7 +29,6 @@ try {
   S = fresh();
 }
 let preview = S.final?.option || S.initial || "B",
-  view = "perspective",
   busy = false,
   selected = null,
   selectedPriorities = [],
@@ -33,7 +38,23 @@ let preview = S.final?.option || S.initial || "B",
   rating = null;
 const $ = (s) => document.querySelector(s),
   app = $("#app");
+const voiceControls = createVoiceControls({ app, toast });
+const view = "perspective";
 const reveal = createStreetReveal();
+let explorerOpen = false;
+const sectionExplorer = createSectionExplorer({
+  onDone: () => {
+    explorerOpen = false;
+    if (S.stage === "welcome") go("opening");
+    else render();
+  },
+});
+$("#explore-avenue").onclick = () => {
+  if (busy) return;
+  rememberDraft();
+  explorerOpen = true;
+  render();
+};
 const esc = (t) =>
   String(t ?? "").replace(
     /[&<>"']/g,
@@ -139,17 +160,93 @@ function visual() {
   const isOutcome = S.frozen && ["ending", "feedback"].includes(S.stage);
   const shown = isOutcome ? S.final.option : preview;
   const design = streetDesigns[shown];
-  return `<aside class="visual"><div class="visual-top"><span class="eyebrow">The avenue, reimagined</span><div class="view-toggle" aria-label="Street view">${[
-    ["perspective", "Perspective"],
-    ["plan", "Top view"],
-  ]
-    .map(
-      ([id, label]) =>
-        `<button data-view="${id}" class="${view === id ? "active" : ""}" aria-pressed="${view === id}">${label}</button>`,
-    )
-    .join(
-      "",
-    )}</div></div><div class="street-card">${isOutcome ? beforeAfterStreet(S.final, view, reveal.progress) : `<div class="scene"><span class="scene-label">MATTAPAN / DORCHESTER / ROXBURY</span>${street(preview, S.final?.option === preview ? S.final.amendments : [], view)}</div>`}<div class="street-caption"><div><strong>${isOutcome ? "Your final design · " : "Option "}${shown} · ${esc(design.title)}</strong><br><span>${esc(design.focus)}</span></div>${isOutcome ? "" : `<div class="option-tabs" aria-label="Preview street options">${["A", "B", "C"].map((x) => `<button data-preview="${x}" class="${preview === x ? "active" : ""}" aria-pressed="${preview === x}">${x}</button>`).join("")}</div>`}</div>${allocationStrip(shown)}</div><ul class="street-differences">${design.details.map((t) => `<li>${esc(t)}</li>`).join("")}</ul><div class="lane-info" id="lane-info" aria-live="polite">Select a part of the street or the colored strip to explore its use.</div><div class="legend"><span><i style="background:#b8755f"></i>Bus priority</span><span><i style="background:#78a890"></i>Biking</span><span><i style="background:#b4bec5"></i>Parking & loading</span><span><i style="background:#737e7b"></i>Traffic</span><span><i style="background:#dfd2b9"></i>Walking & public space</span></div><p class="micro">Illustrative space allocation, not measured widths or a proposed engineering plan. Previewing an option does not change your decision.</p><span class="status ${status.ai ? "live" : ""}">${status.ai ? "DeepSeek dialogue connected" : "Offline preview · prerecorded character perspectives"}</span></aside>`;
+  const amendments = S.final?.option === preview ? S.final.amendments : [];
+  const scene = isOutcome
+    ? beforeAfterStreet(S.final, view, reveal.progress)
+    : /* HTML */ ` <div class="scene">
+        <span class="scene-label">MATTAPAN / DORCHESTER / ROXBURY</span>
+        ${street(preview, amendments, view)}
+      </div>`;
+  const previewTabs = isOutcome
+    ? ""
+    : /* HTML */ ` <div class="option-tabs" aria-label="Preview street options">
+        ${["A", "B", "C"]
+          .map(
+            (option) => /* HTML */ `
+              <button
+                data-preview="${option}"
+                class="${preview === option ? "active" : ""}"
+                aria-pressed="${preview === option}"
+              >
+                ${option}
+              </button>
+            `,
+          )
+          .join("")}
+      </div>`;
+  const details = design.details
+    .map((text) => /* HTML */ `<li>${esc(text)}</li>`)
+    .join("");
+  const connectionLabel = status.ai
+    ? "Claude dialogue connected"
+    : "Offline preview · prerecorded character perspectives";
+
+  return /* HTML */ ` <aside class="visual">
+    <div class="visual-top">
+      <span class="eyebrow">Street options</span>
+    </div>
+    <div class="street-card">
+      ${scene}
+      <div class="street-caption">
+        <div>
+          <strong
+            >${isOutcome ? "Your final design · " : "Option "}${shown} ·
+            ${esc(design.title)}</strong
+          ><br />
+          <span>${esc(design.focus)}</span>
+        </div>
+        ${previewTabs}
+      </div>
+      ${allocationStrip(shown)}
+    </div>
+    <ul class="street-differences">
+      ${details}
+    </ul>
+    <p class="street-info-hint">
+      ⓘ Click a street lane or colored strip for details.
+    </p>
+    <div
+      class="lane-popover"
+      id="lane-info"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="lane-info-title"
+    >
+      <div class="lane-popover-heading">
+        <strong id="lane-info-title"></strong>
+        <button
+          type="button"
+          class="lane-popover-close"
+          aria-label="Close street information"
+        >
+          ×
+        </button>
+      </div>
+      <p id="lane-info-text"></p>
+    </div>
+    <div class="legend">
+      <span><i style="background:#b8755f"></i>Bus priority</span>
+      <span><i style="background:#78a890"></i>Biking</span>
+      <span><i style="background:#b4bec5"></i>Parking & loading</span>
+      <span><i style="background:#737e7b"></i>Traffic</span>
+      <span><i style="background:#dfd2b9"></i>Walking & public space</span>
+    </div>
+    <p class="micro">
+      Illustrative space allocation, not measured widths or a proposed
+      engineering plan. Previewing an option does not change your decision.
+    </p>
+    <span class="status ${status.ai ? "live" : ""}">${connectionLabel}</span>
+  </aside>`;
 }
 function options(choice = selected) {
   return C.options
@@ -168,13 +265,13 @@ function amendments() {
   return `<p class="micro">Choose zero, one, or two. All amendments are available with every base option. Shared street space limits what can be achieved together.</p><div class="amendments">${C.amendments.map((a) => `<label class="amendment"><input type="checkbox" data-amendment="${a.id}" ${draftFinal.amendments.includes(a.id) ? "checked" : ""}><span><strong>${a.id}. ${esc(a.name)}</strong><small>${esc(a.tradeoff)}</small></span></label>`).join("")}</div>`;
 }
 function welcome() {
-  return `<section class="welcome"><div><span class="eyebrow orange">A youth planning simulation</span><h1>Blue Hill Avenue</h1><p class="intro-copy">Who gets the street? Step into a youth planning fellow’s shoes and help shape the future of Blue Hill Avenue.</p><div class="button-row">${button("Begin the game <span>↗</span>", "begin")}</div><p class="promise">15–20 minutes. Three approaches. No single right answer.</p></div><div class="scene"><span class="scene-label">BLUE HILL AVENUE · BOSTON, MA</span>${street("B")}<span class="scene-badge">A street is more than a way through.</span></div></section><section class="welcome-bottom"><article><span class="num">01</span><div><h3>Imagine the possibilities</h3><p>Explore three approaches to the same limited street space.</p></div></article><article><span class="num">02</span><div><h3>Meet the people</h3><p>Ask your own questions. Hear what a redesign means for everyday life.</p></div></article><article><span class="num">03</span><div><h3>Live with the tradeoffs</h3><p>Make a recommendation. Return five years later to see its consequences.</p></div></article></section>${footer()}`;
+  return `<section class="welcome"><div><span class="eyebrow orange">A youth planning simulation</span><h1>Blue Hill Avenue</h1><p class="intro-copy">Who gets the street? Step into a youth planning fellow’s shoes and help shape the future of Blue Hill Avenue.</p><div class="button-row">${button("Explore the avenue <span>↗</span>", "begin")}</div><p class="promise">15–20 minutes</p></div><div class="scene"><span class="scene-label">BLUE HILL AVENUE · BOSTON, MA</span>${street("B")}</div></section><section class="welcome-bottom"><article><span class="num">01</span><div><h3>Compare three options</h3><p>Explore three approaches to the same limited street space.</p></div></article><article><span class="num">02</span><div><h3>Talk with residents</h3><p>Ask your own questions. Hear what a redesign means for everyday life.</p></div></article><article><span class="num">03</span><div><h3>Review the outcome</h3><p>Make a recommendation. Return five years later to see its consequences.</p></div></article></section>${footer()}`;
 }
 function menu(type) {
   const isExpert = type === "experts",
     list = C[type],
     done = S[type];
-  return `<span class="eyebrow">${isExpert ? "Specialized information" : "The people behind the plan"}</span><h2 tabindex="-1">${isExpert ? "Get another perspective." : "Every trip has a story."}</h2><p>${isExpert ? "The people you met told you what this decision could mean for their lives. Now you can ask for specialized information. You may consult up to three experts. Experts will not tell you which option to choose." : "You have made your first choice. But a design that makes sense on a map may feel very different to someone who has to live with it. Eight people want to talk with you. You only have time to meet three. Who do you want to hear from?"}</p><p class="counter">${done.length} of 3 ${isExpert ? "optional consultations" : "resident interviews"} completed · Choose ${isExpert ? "an expert or move on" : "one person to meet next"}.</p><div class="people-grid">${list
+  return `<span class="eyebrow">${isExpert ? "Specialized information" : "The people behind the plan"}</span><h2 tabindex="-1">${isExpert ? "Consult experts" : "Choose residents to interview"}</h2><p>${isExpert ? "The people you met told you what this decision could mean for their lives. Now you can ask for specialized information. You may consult up to three experts. Experts will not tell you which option to choose." : "You have made your first choice. But a design that makes sense on a map may feel very different to someone who has to live with it. Eight people want to talk with you. You only have time to meet three. Who do you want to hear from?"}</p><p class="counter">${done.length} of 3 ${isExpert ? "optional consultations" : "resident interviews"} completed · Choose ${isExpert ? "an expert or move on" : "one person to meet next"}.</p><div class="people-grid">${list
     .filter((p) => !done.some((d) => d.name === p.name))
     .map(
       (p) =>
@@ -194,7 +291,7 @@ function interview() {
       : S.people.length === 3
         ? "Move on to experts"
         : "Meet the next person";
-  return `<div class="person-head">${portrait(index, true)}<div><span class="eyebrow">A simulated conversation</span><h2 tabindex="-1">${esc(p.name)}</h2><span class="role">${esc(p.role)}</span></div></div><div class="dialogue"><div class="bubble quote">“${esc(p.intro)}”</div>${S.conversation.map((m) => `<div class="bubble ${m.role === "you" ? "you" : ""}"><small>${m.role === "you" ? "You" : esc(p.name)}</small><div class="${m.role === "you" ? "" : "markdown"}">${m.role === "you" ? esc(m.text) : renderMarkdown(m.text)}</div></div>`).join("")}${busy ? '<div class="busy" role="status">Listening and composing a response…</div>' : ""}${!rec ? input(`What would you like to ask ${p.name}?`, "ask", `Ask ${p.name.split(" ")[0]} about what matters to you…`) : !rec.followup ? `<p class="micro">You may ask ${esc(p.name)} one brief follow-up, or ${S.active.type === "experts" ? "choose another expert or move on" : S.people.length === 3 ? "move on to experts" : "move on to your next person"}.</p>${input("One brief follow-up (optional)", "followup", "What would you like to clarify?")}<div class="button-row">${button(next + " →", "next-person", busy, "secondary")}</div>` : `<div class="button-row">${button(next + " →", "next-person", busy)}</div>`}</div>`;
+  return `<div class="person-head">${portrait(index, true)}<div><span class="eyebrow">A simulated conversation</span><h2 tabindex="-1">${esc(p.name)}</h2><span class="role">${esc(p.role)}</span></div></div><div class="dialogue"><div class="bubble quote">“${esc(p.intro)}”</div>${S.conversation.map((m) => `<div class="bubble ${m.role === "you" ? "you" : ""}"><small>${m.role === "you" ? "You" : esc(p.name)}</small><div class="${m.role === "you" ? "" : "markdown"}">${m.role === "you" ? esc(m.text) : renderMarkdown(dialogueNarrative(m.text))}</div></div>`).join("")}${busy ? '<div class="busy" role="status">Listening and composing a response…</div>' : ""}${!rec ? input(`What would you like to ask ${p.name}?`, "ask", `Ask ${p.name.split(" ")[0]} about what matters to you…`) : !rec.followup ? `<p class="micro">You may ask ${esc(p.name)} one brief follow-up, or ${S.active.type === "experts" ? "choose another expert or move on" : S.people.length === 3 ? "move on to experts" : "move on to your next person"}.</p>${input("One brief follow-up (optional)", "followup", "What would you like to clarify?")}<div class="button-row">${button(next + " →", "next-person", busy, "secondary")}</div>` : `<div class="button-row">${button(next + " →", "next-person", busy)}</div>`}</div>`;
 }
 function panel() {
   switch (S.stage) {
@@ -207,7 +304,7 @@ function panel() {
           "",
         )}</div><p>If you had to decide right now, what should Boston build: A, B, or C?</p>${options()}<div class="button-row">${button("Make my first choice →", "initial", !selected)}</div>`;
     case "priorities":
-      return `<span class="eyebrow">Start with what matters to you</span><h2 tabindex="-1">What matters most<br>in your decision?</h2><p>Choose two. These are your starting priorities; your perspective may evolve as you listen.</p><div class="chip-grid">${C.priorities.map((p, i) => `<button class="chip ${selectedPriorities.includes(i) ? "selected" : ""}" data-priority="${i}" aria-pressed="${selectedPriorities.includes(i)}">${esc(p)}</button>`).join("")}</div><p class="counter">${selectedPriorities.length} of 2 selected</p><div class="button-row">${button("Meet the neighbors →", "priorities", selectedPriorities.length !== 2)}</div>`;
+      return `<h2 tabindex="-1">What matters most<br>in your decision?</h2><p>Choose two. These are your starting priorities; your perspective may evolve as you listen.</p><div class="chip-grid">${C.priorities.map((p, i) => `<button class="chip ${selectedPriorities.includes(i) ? "selected" : ""}" data-priority="${i}" aria-pressed="${selectedPriorities.includes(i)}">${esc(p)}</button>`).join("")}</div><p class="counter">${selectedPriorities.length} of 2 selected</p><div class="button-row">${button("Meet the neighbors →", "priorities", selectedPriorities.length !== 2)}</div>`;
     case "people":
       return menu("people");
     case "experts":
@@ -216,12 +313,12 @@ function panel() {
       return interview();
     case "pressure": {
       const event = C.events[S.initial];
-      return `<span class="eyebrow orange">Public pressure · A simulated event</span><h2 tabindex="-1">The street has something to say.</h2><div class="event">${esc(event.story)}</div><p>What do you do? This response is provisional; you will choose your final recommendation later.</p>${event.choices.map((c, i) => `<button class="option-card ${pressureChoice === i ? "selected" : ""}" data-pressure="${i}" aria-pressed="${pressureChoice === i}"><span class="letter">${i + 1}</span><span><p>${esc(c)}</p></span></button>`).join("")}${input("Choose a response above, or write your own. What is your reason?", "pressure", "Explain your response, or write a different reaction…", pressureChoice !== null ? '<p class="micro">Your selected response is recorded with your explanation.</p>' : "")}`;
+      return `<span class="eyebrow orange">Public pressure · A simulated event</span><h2 tabindex="-1">Respond to public pressure</h2><div class="event">${esc(event.story)}</div><p>What do you do? This response is provisional; you will choose your final recommendation later.</p>${event.choices.map((c, i) => `<button class="option-card ${pressureChoice === i ? "selected" : ""}" data-pressure="${i}" aria-pressed="${pressureChoice === i}"><span class="letter">${i + 1}</span><span><p>${esc(c)}</p></span></button>`).join("")}${input("Choose a response above, or write your own. What is your reason?", "pressure", "Explain your response, or write a different reaction…", pressureChoice !== null ? '<p class="micro">Your selected response is recorded with your explanation.</p>' : "")}`;
     }
     case "pressureReason":
       return `<span class="eyebrow orange">Your response under pressure</span><h2 tabindex="-1">What’s behind your response?</h2><div class="bubble you">${esc(S.pressure.response)}</div>${input("Why did you choose that response?", "pressure-reason", "A brief explanation, “unsure,” or “pass” is fine.")}`;
     case "synthesis":
-      return `<span class="eyebrow">Take a moment</span><h2 tabindex="-1">What have you heard?</h2>${S.synthesis ? `<div class="text-block markdown">${renderMarkdown(S.synthesis)}</div>${input("What do you think now? After everything you’ve heard, what feels most important to you now? Did anything reinforce, complicate, or change how you think about your original choice?", "reflection")}` : retryPanel("synthesis", "Bring together the perspectives you actually heard.")}`;
+      return `<h2 tabindex="-1">What have you heard?</h2>${S.synthesis ? `<div class="text-block markdown">${renderMarkdown(S.synthesis)}</div>${input("What do you think now? After everything you’ve heard, what feels most important to you now? Did anything reinforce, complicate, or change how you think about your original choice?", "reflection")}` : retryPanel("synthesis", "Bring together the perspectives you actually heard.")}`;
     case "final":
       return `<span class="eyebrow">Your recommendation</span><h2 tabindex="-1">Now, what should<br>Boston build?</h2><p>Your original choice was ${S.initial} — ${esc(C.options.find((o) => o.id === S.initial).title)}.</p>${!draftFinal ? `${options()}<div class="button-row">${button("Keep my original choice", "keep", false, "secondary")}${button("Keep my choice, but amend it", "amend", false, "secondary")}</div><div class="button-row">${button("Change my position →", "change", !selected || selected === S.initial)}</div><p class="micro">To change your position, select a different option above. You can then add up to two amendments.</p>` : `<div class="package"><strong>Option ${draftFinal.option} · ${esc(C.options.find((o) => o.id === draftFinal.option).title)}</strong>${draftFinal.option === S.initial ? "Keeping your original base option" : "Changing your base option"}</div><p class="micro">Select a base option below if you want to change it.</p>${options(draftFinal.option)}${amendments()}<p class="counter">${draftFinal.amendments.length} of 2 amendments selected</p><div class="button-row">${button("Confirm recommendation →", "confirm-package")}${button("Back", "back-final", false, "secondary")}</div>`}`;
     case "benefits":
@@ -229,7 +326,7 @@ function panel() {
     case "mitigation":
       return `<span class="eyebrow">Before the city moves forward</span><h2 tabindex="-1">Make your commitments clear.</h2>${packageSummary()}${S.mitigationReview ? `<div class="text-block markdown">${renderMarkdown(S.mitigationReview)}</div><p>Do you want to include any changes from your reflections? Review and confirm your whole package; nothing is added automatically.</p><div class="button-row">${button("Revise recommendation", "revise", busy, "secondary")}${button("Keep this package · see five years later →", "implement", busy)}</div>` : retryPanel("mitigation", "Review possible changes raised in your reflections before implementing.")}`;
     case "ending":
-      return `<span class="eyebrow orange">Five years later</span><h2 tabindex="-1">A different avenue.<br>The same question.</h2>${packageSummary()}<p class="quote">${endingTransition}</p>${S.ending ? `<div class="text-block markdown">${renderMarkdown(endingNarrative(S.ending))}</div>${input(S.reasonPending ? "What is your reason? You can also pass." : feedbackQuestions[0], "feedback", "Would you make the same choice? Tell us why, or pass.")}` : retryPanel("ending", "Returning to the avenue…")}`;
+      return `<span class="eyebrow orange">Five years later</span><h2 tabindex="-1">Your street, five years later</h2>${packageSummary()}<p class="quote">${endingTransition}</p>${S.ending ? `<div class="text-block markdown">${renderMarkdown(endingNarrative(S.ending))}</div>${input(S.reasonPending ? "What is your reason? You can also pass." : feedbackQuestions[0], "feedback", "Would you make the same choice? Tell us why, or pass.")}` : retryPanel("ending", "Returning to the avenue…")}`;
     case "feedback":
       return `<span class="eyebrow">A moment to look back · ${S.feedback.length + 1} of 4</span><h2 tabindex="-1">${S.feedback.length === 1 ? "How was the experience?" : S.feedback.length === 2 ? "What would you change?" : "Who else belongs here?"}</h2>${S.feedback.length === 1 ? `<p>${esc(feedbackQuestions[1])}</p><form data-submit="rating"><div class="rating">${Array.from({ length: 10 }, (_, i) => `<button type="button" data-rating="${i + 1}" class="${rating === i + 1 ? "selected" : ""}">${i + 1}</button>`).join("")}</div><div class="button-row"><button class="primary" ${rating ? "" : "disabled"}>Record rating →</button>${button("Pass", "pass-rating", false, "secondary")}</div></form>` : input(feedbackQuestions[S.feedback.length], "feedback", "Your thoughts, “none,” or “pass”…")}`;
     default:
@@ -240,12 +337,18 @@ function retryPanel(kind, label) {
   return `<p>${esc(label)}</p>${busy ? '<div class="busy" role="status">Composing a response…</div>' : button("Continue →", `generate-${kind}`)}`;
 }
 function render() {
-  if (S.stage === "welcome") {
+  voiceControls.sync();
+  sectionExplorer.unmount();
+  if (explorerOpen) {
+    app.innerHTML = '<div id="section-explorer-root"></div>';
+    sectionExplorer.mount($("#section-explorer-root"));
+  } else if (S.stage === "welcome") {
     app.innerHTML = welcome();
   } else if (S.stage === "complete") {
-    app.innerHTML = `${stepper()}<section class="complete"><span class="eyebrow">Your time on the avenue</span><h1>Thanks for playing<br>the game!</h1><p>Your choices and field notes are saved on this device.</p>${packageSummary()}<div class="button-row" style="justify-content:center">${button("Read my field notes", "notes", false, "secondary")}${button("Play again ↗", "restart")}</div></section>${footer()}`;
+    app.innerHTML = `${stepper()}<section class="complete"><h1>Thanks for playing<br>the game!</h1><p>Your choices and field notes are saved on this device.</p>${packageSummary()}<div class="button-row" style="justify-content:center">${button("Read my field notes", "notes", false, "secondary")}${button("Play again ↗", "restart")}</div></section>${footer()}`;
   } else
     app.innerHTML = `${stepper()}<div class="workspace">${visual()}<section class="panel" aria-label="Current game step">${panel()}</section></div>${footer()}`;
+  voiceControls.mount();
   bind();
   reveal.sync();
   $("#note-count").textContent = S.notes.length;
@@ -257,14 +360,6 @@ function bind() {
   app
     .querySelectorAll("[data-action]")
     .forEach((el) => (el.onclick = () => action(el.dataset.action)));
-  app.querySelectorAll("[data-view]").forEach(
-    (el) =>
-      (el.onclick = () => {
-        rememberDraft();
-        view = el.dataset.view;
-        render();
-      }),
-  );
   app.querySelectorAll("[data-preview]").forEach(
     (el) =>
       (el.onclick = () => {
@@ -274,7 +369,9 @@ function bind() {
       }),
   );
   app.querySelectorAll("[data-lane]").forEach((el) => {
-    const show = () => {
+    el.setAttribute("aria-haspopup", "dialog");
+    el.setAttribute("aria-controls", "lane-info");
+    const show = (event) => {
       const info = {
         Bus: "Dedicated bus space separates buses from general traffic. Intersections and bottlenecks still affect reliability.",
         Bike: "Bike space supports cycling. Its extent competes with other uses of this limited street.",
@@ -296,8 +393,33 @@ function bind() {
               : name === "Bus"
                 ? " Both B and C include center-running bus priority; retaining more access in C limits the improvements possible."
                 : "";
-        target.textContent =
-          (info[name] || "") + (preview === "A" ? "" : comparison);
+        const labels = {
+          Bus: "Bus priority",
+          Bike: "Biking",
+          Traffic: "General traffic",
+          "Traffic + bus": "Shared traffic and buses",
+          Walk: "Walking & public space",
+          Curb: "Parking & loading",
+        };
+        target.querySelector("#lane-info-title").textContent =
+          labels[name] || name;
+        const option = ["ending", "feedback"].includes(S.stage)
+          ? S.final.option
+          : preview;
+        target.querySelector("#lane-info-text").textContent =
+          (info[name] || "") + (option === "A" ? "" : comparison);
+        target.showPopover();
+        const bounds = el.getBoundingClientRect();
+        const width = target.getBoundingClientRect().width;
+        const height = target.getBoundingClientRect().height;
+        const x = event?.clientX || bounds.left + bounds.width / 2;
+        const y = event?.clientY || bounds.top + bounds.height / 2;
+        target.style.left = `${Math.max(12, Math.min(x - width / 2, window.innerWidth - width - 12))}px`;
+        target.style.top = `${Math.max(12, Math.min(y + 16, window.innerHeight - height - 12))}px`;
+        target.querySelector("button").onclick = () => {
+          target.hidePopover();
+          el.focus({ preventScroll: true });
+        };
       }
     };
     el.onclick = show;
@@ -427,7 +549,10 @@ async function action(a) {
     return;
   }
   if (busy) return;
-  if (a === "begin") return go("opening");
+  if (a === "begin") {
+    explorerOpen = true;
+    return render();
+  }
   if (a === "initial" && selected) {
     S.initial = selected;
     note(
@@ -662,7 +787,7 @@ function openNotes() {
 $("#journal").onclick = openNotes;
 $("#settings").onclick = () => {
   modal(
-    `<span class="eyebrow">Game settings</span><h2>Take your time.</h2><p>Your progress saves automatically in this browser. You can close the tab and come back to the current question.</p><p>${status.ai ? "DeepSeek dialogue is connected. Questions and game context are sent to DeepSeek to generate responses." : "You are in offline preview mode. Characters share prerecorded perspectives rather than generated answers. To enable live AI, configure DEEPSEEK_API_KEY in the server’s .env file and restart it."}</p><p class="micro">All characters and outcomes are simulated. No answers are submitted to Boston or the MBTA.</p><div class="button-row">${button("Start a new game", "reset", false, "secondary")}</div>`,
+    `<span class="eyebrow">Game settings</span><h2>Game settings</h2><p>Your progress saves automatically in this browser. You can close the tab and come back to the current question.</p><p>${status.ai ? "Claude dialogue is connected. Questions and game context are sent to Claude to generate responses." : "You are in offline preview mode. Characters share prerecorded perspectives rather than generated answers. To enable live AI, configure CLAUDE_API_KEY in the server’s .env file and restart it."}</p><p class="micro">All characters and outcomes are simulated. No answers are submitted to Boston or the MBTA.</p><div class="button-row">${button("Start a new game", "reset", false, "secondary")}</div>`,
   );
   $('#modal [data-action="reset"]').onclick = restart;
 };

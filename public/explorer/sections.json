@@ -1,0 +1,1692 @@
+{
+  "title": "Blue Hill Avenue, block by block",
+  "proposalDate": "September 2026",
+  "sources": {
+    "blocks": {
+      "title": "Blue Hill Ave Block-by-Block",
+      "date": "September 4, 2026",
+      "url": "/explorer/2026-09-04-Block-By-Block-SLIDES.pdf"
+    },
+    "renderings": {
+      "title": "Investing in Blue Hill Ave — Renderings",
+      "date": "September 3, 2026",
+      "url": "/explorer/Blue-Hill-Ave-Renderings-9_3_26.pdf"
+    }
+  },
+  "sections": [
+    {
+      "id": "section-01",
+      "number": 1,
+      "title": "River St to Babson St (S)",
+      "description": "This section is between the Neponset River and the Mattapan Community Health Center through Mattapan Square",
+      "page": 1,
+      "drawing": "/explorer/assets/section-01-original.webp",
+      "slide": "/explorer/assets/section-01-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two travel lanes in each direction. High traffic volumes here coming to or from the Neponset Bridge during rush hours"
+        },
+        {
+          "label": "Parking",
+          "text": "No change to the number of parking spots. Keeping angled parking throughout Mattapan Square as exists today"
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The left turn into the Health Center parking lot is restricted, with access provided via Babson St."
+        },
+        {
+          "label": "Walking & crossings",
+          "text": "Improved crossings and connections between Cummins Highway and the Neponset River Trail are provided at the River St/Blue Hill Avenue intersection."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms are located near Fairway St, replacing two bus stop pairs at Fairway St and at Babson St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 5 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [
+        "rendering-02",
+        "rendering-03"
+      ],
+      "plan": {
+        "original": "/explorer/assets/section-01-original.webp",
+        "clear": "/explorer/assets/section-01-clear.webp",
+        "width": 1997,
+        "height": 834,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-01-layer-bus.png",
+            "pixels": 31858
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-01-layer-green.png",
+            "pixels": 7216
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-01-layer-yellow.png",
+            "pixels": 5369
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-01-layer-blue.png",
+            "pixels": 2854
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-01-layer-red.png",
+            "pixels": 5529
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-02",
+      "number": 2,
+      "title": "Babson St (S) to Woodhaven St",
+      "description": "This section is roughly between the bridge near Simco’s and the Mattapan Community Health Center",
+      "page": 2,
+      "drawing": "/explorer/assets/section-02-original.webp",
+      "slide": "/explorer/assets/section-02-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two travel lanes in each direction and additional left turn lanes. Most traffic is coming to or from the Neponset Bridge during rush hours."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 19 parking spaces from moving bus stops away from the curb. There is parking on both sides of the street, as well as median parking near the Carter Post and St. Angela Merici Church."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The left-turn/U-turn at the Jubilee Church driveway will be restricted, with left-turns and U-turns rerouted to the signalized left/U-turn lane at Babson St. There are new signalized crosswalks at Babson St (S) and Woodhaven St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "There are no bicycle accommodations between the bridge and Mattapan Square, but safe side-street connections to the Neponset Greenway and Cummins Highway will be planned. The sidewalk-level bike path on the west side starts at Woodhaven St and continues north towards Franklin Park."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station is located near the bridge over the Fairmount Line (near Simco’s). This replaces the bus stops at Woodhaven St and Jubilee Church."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 7 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-02-original.webp",
+        "clear": "/explorer/assets/section-02-clear.webp",
+        "width": 1681,
+        "height": 845,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-02-layer-bus.png",
+            "pixels": 36528
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-02-layer-green.png",
+            "pixels": 8896
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-02-layer-yellow.png",
+            "pixels": 5109
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-02-layer-blue.png",
+            "pixels": 20571
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-02-layer-red.png",
+            "pixels": 2023
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-03",
+      "number": 3,
+      "title": "Woodhaven St to Babson St (N)",
+      "description": "This section is between the bridge at Simco’s and the Mattapan Branch of the Boston Public Library",
+      "page": 3,
+      "drawing": "/explorer/assets/section-03-original.webp",
+      "slide": "/explorer/assets/section-03-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two travel lanes in both directions."
+        },
+        {
+          "label": "Parking",
+          "text": "There is an overall net increase of 10 parking spaces in this section. Between Walk Hill St and Hiawatha Rd, 3 spaces are removed."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The left-turn and through movement onto Babson St (N) will be restricted, with access provided by a new signalized left/U-turn lane at Norfolk St. There is an additional signalized crosswalk at Norfolk St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "The sidewalk-level bike path on the west side starts at Woodhaven St and continues north towards Franklin Park. The intersection at Norfolk St will be designed to connect bicyclists to the Norfolk St bike lanes and to Babson St."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms are located near the Mattapan Branch Library and Walk Hill St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 25 new trees are proposed for this section. The larger landscaped area at the intersection of Culbert St and Woodhaven St is still being designed."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-03-original.webp",
+        "clear": "/explorer/assets/section-03-clear.webp",
+        "width": 1907,
+        "height": 789,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-03-layer-bus.png",
+            "pixels": 38252
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-03-layer-green.png",
+            "pixels": 16450
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-03-layer-yellow.png",
+            "pixels": 2115
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-03-layer-blue.png",
+            "pixels": 16514
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-03-layer-red.png",
+            "pixels": 1178
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-04",
+      "number": 4,
+      "title": "Babson St (N) to Wellington Hill St",
+      "description": "This section is between the Mattapan Branch of the Boston Public Library and Blue Mountain Jamaican Restaurant",
+      "page": 4,
+      "drawing": "/explorer/assets/section-04-original.webp",
+      "slide": "/explorer/assets/section-04-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two travel lanes northbound. In the southbound direction, there is one travel lane between Wellington Hill St and Walk Hill St,, which helps maintain area parking."
+        },
+        {
+          "label": "Parking",
+          "text": "1 parking space is removed on the west side of Blue Hill Ave. between Hazelton Street and Walk Hill Street. This is to create space for the travel lanes."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The left-turn and through movement onto Babson St will be closed, with access provided by a new signalized left/U-turn lane at Norfolk St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section and connects to Walk Hill St."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms are located near the Mattapan Branch Library and Walk Hill St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 11 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-04-original.webp",
+        "clear": "/explorer/assets/section-04-clear.webp",
+        "width": 1802,
+        "height": 867,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-04-layer-bus.png",
+            "pixels": 32586
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-04-layer-green.png",
+            "pixels": 11576
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-04-layer-yellow.png",
+            "pixels": 5585
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-04-layer-blue.png",
+            "pixels": 13960
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-04-layer-red.png",
+            "pixels": 783
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-05",
+      "number": 5,
+      "title": "Wellington Hill St to Hosmer St",
+      "description": "This section is between Blue Mountain Jamaican Restaurant and Morning Star Baptist Church",
+      "page": 5,
+      "drawing": "/explorer/assets/section-05-original.webp",
+      "slide": "/explorer/assets/section-05-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There is one travel lane southbound, making room for parking and a median. On the northbound side, there is one travel lane at all times plus another lane that is for general travel during rush hour and parking other times of the day."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 2 parking spaces, with rush hour parking restrictions on the east side."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The U-turn at Clarkwood St will be restricted, with access provided by a left-turn/U-turn lane at Wellington Hill St. There are new signalized crosswalks at Wellington Hill St and Clarkwood St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms are located at the Clarkwood St intersection, replacing the two bus stop pairs at Wellington Hill St and Woolson St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 8 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [
+        "rendering-04",
+        "rendering-05",
+        "rendering-06"
+      ],
+      "plan": {
+        "original": "/explorer/assets/section-05-original.webp",
+        "clear": "/explorer/assets/section-05-clear.webp",
+        "width": 1412,
+        "height": 795,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-05-layer-bus.png",
+            "pixels": 26344
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-05-layer-green.png",
+            "pixels": 7412
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-05-layer-yellow.png",
+            "pixels": 5657
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-05-layer-blue.png",
+            "pixels": 16899
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-05-layer-red.png",
+            "pixels": 1978
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-06",
+      "number": 6,
+      "title": "Hosmer St to Morton St",
+      "description": "This section is between Morning Star Baptist Church and Morton St",
+      "page": 6,
+      "drawing": "/explorer/assets/section-06-original.webp",
+      "slide": "/explorer/assets/section-06-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two travel lanes northbound between Landor Road and Morton St. Between Hosmer St and Landor Road northbound, there is one travel lane plus another lane that is for general travel during rush hour and parking other times of the day. There is one travel lane southbound to make room for parking."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 3 spaces on the west side and a net decrease of 3 spaces on the east side. A median between Deering Rd and Hosmer St allows for Sunday church parking."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The median will be closed at Goodale Rd, with access provided by the left-turn/U-turn lanes at Morton St and Wellington Hill St. There is a new signalized crosswalk at Goodale Rd."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms in this section are located at Morton St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 10 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [
+        "rendering-04",
+        "rendering-05",
+        "rendering-06"
+      ],
+      "plan": {
+        "original": "/explorer/assets/section-06-original.webp",
+        "clear": "/explorer/assets/section-06-clear.webp",
+        "width": 1573,
+        "height": 729,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-06-layer-bus.png",
+            "pixels": 38498
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-06-layer-green.png",
+            "pixels": 10563
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-06-layer-yellow.png",
+            "pixels": 5292
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-06-layer-blue.png",
+            "pixels": 16971
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-06-layer-red.png",
+            "pixels": 3822
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-07",
+      "number": 7,
+      "title": "Morton St to Johnston Rd",
+      "description": "This section is between Morton Street and the start of the tree-planted center median",
+      "page": 7,
+      "drawing": "/explorer/assets/section-07-original.webp",
+      "slide": "/explorer/assets/section-07-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two travel lanes in each direction between Morton St and Ansel Rd, narrowing to one lane in each direction at Ansel Road."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 7 parking spaces. This includes a net decrease of 1 space on the west side and a net increase of 8 spaces on the east side. Angled parking is maintained next to Boston Police Department District B-3."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "Left turns will be restricted at the Ansel Rd/Wilcock St and Johnston Rd/Balsam St intersections, with northbound left turns also restricted at Baird St. Access will be provided via Lucerne St, Morton St, Harvard St, and Woodrow Ave. There is a new signalized crosswalk at Ansel Rd."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms in this section are located between Ansel Rd and Balsam St, replacing the bus stops at Woodrow Ave, Johnston Rd, and Arbutus St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 12 new trees are proposed for this section, with 5 trees to be removed from medians that will be demolished."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-07-original.webp",
+        "clear": "/explorer/assets/section-07-clear.webp",
+        "width": 1635,
+        "height": 843,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-07-layer-bus.png",
+            "pixels": 25332
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-07-layer-green.png",
+            "pixels": 11356
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-07-layer-yellow.png",
+            "pixels": 4851
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-07-layer-blue.png",
+            "pixels": 16645
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-07-layer-red.png",
+            "pixels": 1961
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-08",
+      "number": 8,
+      "title": "Johnston Rd to Brookview St",
+      "description": "This section is roughly from the start of the tree-planted center median to the Fernandez Liquors across from Polonia Auto Sales",
+      "page": 8,
+      "drawing": "/explorer/assets/section-08-original.webp",
+      "slide": "/explorer/assets/section-08-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There is one travel lane in both directions. This helps preserve the tree-planted center median."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 9 parking spaces. This includes a net increase of 1 parking space on the west side and a net increase of 8 spaces on the east side."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "Left turns are restricted at Balsam St and Johnston Rd, with access provided via Lucerne St, Woodrow Ave, Morton St, and Harvard St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms in this section are located between Ansel Rd and Balsam St, replacing the bus stops at Woodrow Ave, Johnston Rd, and Arbutus St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 5 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-08-original.webp",
+        "clear": "/explorer/assets/section-08-clear.webp",
+        "width": 1228,
+        "height": 726,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-08-layer-bus.png",
+            "pixels": 25794
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-08-layer-green.png",
+            "pixels": 9509
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-08-layer-yellow.png",
+            "pixels": 4786
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-08-layer-blue.png",
+            "pixels": 11674
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-08-layer-red.png",
+            "pixels": 906
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-09",
+      "number": 9,
+      "title": "Brookview St to Westview St",
+      "description": "This section is roughly from Polonia Auto Sales to Boston Fire Department Engine 52",
+      "page": 9,
+      "drawing": "/explorer/assets/section-09-original.webp",
+      "slide": "/explorer/assets/section-09-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There is only one travel lane in each direction. This helps preserve the tree-planted center median."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 17 spaces. This includes a net increase of 5 spaces on the west side and a net increase of 12 spaces on the east side, which is created by moving the bus stops away from the curb."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The median split by Callender St will be closed, making Callender St a right-turn only onto Blue Hill Ave. There will be a new signalized crosswalk at Callender St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "This section is served by bus station platforms between Ansel Rd/Wilcock St and Johnston Rd/Balsam St and bus platforms near the Westview St intersection, together replacing the bus stops at Callender St and Greenock St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 12 new trees are proposed for this section, and the existing tree-planted center median will be retained."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-09-original.webp",
+        "clear": "/explorer/assets/section-09-clear.webp",
+        "width": 1226,
+        "height": 678,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-09-layer-bus.png",
+            "pixels": 27577
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-09-layer-green.png",
+            "pixels": 13434
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-09-layer-yellow.png",
+            "pixels": 673
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-09-layer-blue.png",
+            "pixels": 9631
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-09-layer-red.png",
+            "pixels": 3307
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-10",
+      "number": 10,
+      "title": "Westview St to Paxton St",
+      "description": "This section is one block along Harambee Park",
+      "page": 10,
+      "drawing": "/explorer/assets/section-10-original.webp",
+      "slide": "/explorer/assets/section-10-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two lanes approaching Westview St from both directions, with one through lane and one left-turn/U-turn lane."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net decrease of 6 parking spaces. This includes approximately 8 parking spaces removed on the east side along the Sportsmen’s Tennis and Enrichment Center. On the west side, 2 parking spaces are added by moving the bus stop away from the curb."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "There is a new signalized crosswalk at Paxton St to provide additional pedestrian access to the bus platforms."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms in this section are located at Westview St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 10 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-10-original.webp",
+        "clear": "/explorer/assets/section-10-clear.webp",
+        "width": 827,
+        "height": 772,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-10-layer-bus.png",
+            "pixels": 15710
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-10-layer-green.png",
+            "pixels": 6577
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-10-layer-yellow.png",
+            "pixels": 5832
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-10-layer-blue.png",
+            "pixels": 2708
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-10-layer-red.png",
+            "pixels": 4733
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-11",
+      "number": 11,
+      "title": "Paxton St to Harvard St",
+      "description": "This section is between Sportsmen’s Tennis and Enrichment Center and Happy Supermarket, along Harambee Park",
+      "page": 11,
+      "drawing": "/explorer/assets/section-11-original.webp",
+      "slide": "/explorer/assets/section-11-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes in each direction."
+        },
+        {
+          "label": "Parking",
+          "text": "Parking is removed along Harambee Park, but 27 parking spaces on the west side of the street are retained, with new parking spaces created by moving the bus stop away from the curb in front of Harvard Street Neighborhood Health."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "Cars approaching from Harvard Street to the west will turn right onto Blue Hill Ave and then use a signalized U-turn before Paxton Street. This simplifies the traffic signal at the Harvard-Talbot intersection, which means cars will spend less time waiting at the traffic light. A new signalized crosswalk is added at Paxton St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms that serve this section are near Paxton St at the Westview St. intersection."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 24 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-11-original.webp",
+        "clear": "/explorer/assets/section-11-clear.webp",
+        "width": 1515,
+        "height": 722,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-11-layer-bus.png",
+            "pixels": 40210
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-11-layer-green.png",
+            "pixels": 12760
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-11-layer-yellow.png",
+            "pixels": 272
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-11-layer-blue.png",
+            "pixels": 9615
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-11-layer-red.png",
+            "pixels": 9373
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-12",
+      "number": 12,
+      "title": "Harvard St to Vesta Rd",
+      "description": "This section is along Happy Supermarket",
+      "page": 12,
+      "drawing": "/explorer/assets/section-12-original.webp",
+      "slide": "/explorer/assets/section-12-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes in each direction."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 5 parking spaces in this section. This is due to moving bus stops away from the curb and creating a dedicated “carriageway” parking lane in front of Happy Supermarket to reduce double-parking and maintain traffic flow."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "Southbound cars turning left onto Harvard St or Talbot Ave will proceed straight through the intersection, and then make a signalized U-turn before Paxton Street. This simplifies the traffic signal at the Harvard-Talbot intersection, which means cars will spend less time waiting at the traffic light."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave through this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms serving this section are located north and south of the Vesta Rd intersection, replacing stops near Maaz’s Chicken and near Angell St."
+        },
+        {
+          "label": "Trees",
+          "text": "At least 15 new trees are proposed for this section."
+        }
+      ],
+      "renderings": [
+        "rendering-07",
+        "rendering-08"
+      ],
+      "plan": {
+        "original": "/explorer/assets/section-12-original.webp",
+        "clear": "/explorer/assets/section-12-clear.webp",
+        "width": 1078,
+        "height": 609,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-12-layer-bus.png",
+            "pixels": 21745
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-12-layer-green.png",
+            "pixels": 12987
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-12-layer-yellow.png",
+            "pixels": 2794
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-12-layer-blue.png",
+            "pixels": 6714
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-12-layer-red.png",
+            "pixels": 3297
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-13",
+      "number": 13,
+      "title": "Vesta Rd to American Legion Hwy",
+      "description": "This section runs from the northern end of the tree-planted center median to Franklin Park",
+      "page": 13,
+      "drawing": "/explorer/assets/section-13-original.webp",
+      "slide": "/explorer/assets/section-13-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes in each direction, with an additional northbound left-turn/U-turn lane at American Legion Highway."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net decrease of 18 spaces to make room for travel lanes and the northbound bus platform."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "New signalized crosswalks are added at Calder St and Vesta Rd to provide access to the bus platforms."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "A sidewalk-level bike path runs on the west side of Blue Hill Ave and ends in this section, connecting to the American Legion Highway bike lanes."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station that serves this section is at Vesta Road."
+        },
+        {
+          "label": "Trees",
+          "text": "All existing trees are maintained, and 11 new trees are proposed."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-13-original.webp",
+        "clear": "/explorer/assets/section-13-clear.webp",
+        "width": 966,
+        "height": 585,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-13-layer-bus.png",
+            "pixels": 21559
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-13-layer-green.png",
+            "pixels": 6526
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-13-layer-yellow.png",
+            "pixels": 2611
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-13-layer-blue.png",
+            "pixels": 3628
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-13-layer-red.png",
+            "pixels": 5759
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-14",
+      "number": 14,
+      "title": "American Legion Hwy to Charlotte St",
+      "description": "This section runs alongside Franklin Park, north of American Legion Highway",
+      "page": 14,
+      "drawing": "/explorer/assets/section-14-original.webp",
+      "slide": "/explorer/assets/section-14-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes in each direction. A southbound right turn lane onto American Legion Highway is also maintained."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 2 parking spaces on the west side of the street."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "The left turn onto Wales St is restricted, with access provided by a signalized turn lane at Esmond St. There are new signalized crosswalks on the southern side of American Legion Highway and Esmond St."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "Along Franklin Park in this section, bicyclists and pedestrians share a wide shared-use, sidewalk-level path, with connections to the American Legion Highway bike lanes."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms serving this section are on either side of the Calder St/Vesta Rd intersection."
+        },
+        {
+          "label": "Trees",
+          "text": "All existing trees are maintained, and 5 new trees are proposed."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-14-original.webp",
+        "clear": "/explorer/assets/section-14-clear.webp",
+        "width": 1435,
+        "height": 749,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-14-layer-bus.png",
+            "pixels": 26516
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-14-layer-green.png",
+            "pixels": 5716
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-14-layer-yellow.png",
+            "pixels": 261
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-14-layer-blue.png",
+            "pixels": 7633
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-14-layer-red.png",
+            "pixels": 1335
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-15",
+      "number": 15,
+      "title": "Charlotte St to Glenway St",
+      "description": "This section runs alongside Franklin Park near the entrance to the William J. Devine Golf Course and the former Endicott School",
+      "page": 15,
+      "drawing": "/explorer/assets/section-15-original.webp",
+      "slide": "/explorer/assets/section-15-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes in each direction, with an additional right-turn lane approaching Glenway St."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 14 new parking spots."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "No new turning restrictions are proposed in this section."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "Along Franklin Park in this section, bicyclists and pedestrians share a wide shared-use, sidewalk-level path, with connections to the American Legion Highway bike lanes."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms serving this section are located between the Columbia and Glenway/Franklin park intersections."
+        },
+        {
+          "label": "Trees",
+          "text": "Thirteen new trees on the East side of the street are proposed for this section."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-15-original.webp",
+        "clear": "/explorer/assets/section-15-clear.webp",
+        "width": 948,
+        "height": 674,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-15-layer-bus.png",
+            "pixels": 18039
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-15-layer-green.png",
+            "pixels": 7406
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-15-layer-yellow.png",
+            "pixels": 0
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-15-layer-blue.png",
+            "pixels": 3230
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-15-layer-red.png",
+            "pixels": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-16",
+      "number": 16,
+      "title": "Glenway St to Columbia Rd",
+      "description": "This section runs alongside Franklin Park from the entrance to the William J. Devine Golf Course to the zoo entrance, near Harvard Street Neighborhood Health Center",
+      "page": 16,
+      "drawing": "/explorer/assets/section-16-original.webp",
+      "slide": "/explorer/assets/section-16-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are two travel lanes in each direction to support high traffic volumes. Left-turn/U-turn lanes are also provided at both intersections to accommodate turning restrictions elsewhere on the corridor."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 7 parking spots. Existing parking is maintained on the east side of the street, with 8 new parking spaces created where the bus stop has moved away from the curb, and 1 parking spot is removed for a safer crossing at Columbia Rd. Parking between Glenway St and Ellington St is restricted during rush hour."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "No new movement restrictions are proposed in this section."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "Along Franklin Park in this section, bicyclists will be accommodated by connections through Franklin Park."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms in this section are located between the Columbia and Glenway/Franklin park intersections."
+        },
+        {
+          "label": "Trees",
+          "text": "All existing trees are maintained, and 4 new trees are proposed."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-16-original.webp",
+        "clear": "/explorer/assets/section-16-clear.webp",
+        "width": 1016,
+        "height": 613,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-16-layer-bus.png",
+            "pixels": 14204
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-16-layer-green.png",
+            "pixels": 4228
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-16-layer-yellow.png",
+            "pixels": 6803
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-16-layer-blue.png",
+            "pixels": 4270
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-16-layer-red.png",
+            "pixels": 305
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-17",
+      "number": 17,
+      "title": "Columbia Rd to Seaver St",
+      "description": "This section runs alongside the northern part of Franklin Park",
+      "page": 17,
+      "drawing": "/explorer/assets/section-17-original.webp",
+      "slide": "/explorer/assets/section-17-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes southbound and 3 travel lands northbound."
+        },
+        {
+          "label": "Parking",
+          "text": "1 parking space is removed at the Columbia Road intersection to shorten the crossing distance and increase pedestrian safety."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "No new movement restrictions are proposed in this section. The Seaver St to Blue Hill Ave slip lane is closed to improve safety and shorten pedestrian crossing distances."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "Along Franklin Park in this section, bicyclists and pedestrians share a wide shared-use sidewalk-level path."
+        },
+        {
+          "label": "Bus stops",
+          "text": "The bus station platforms serving this section are located between the Columbia Rd and Glenway St intersections."
+        },
+        {
+          "label": "Trees",
+          "text": "All existing trees will be maintained, and ten new trees are proposed."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-17-original.webp",
+        "clear": "/explorer/assets/section-17-clear.webp",
+        "width": 1181,
+        "height": 693,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-17-layer-bus.png",
+            "pixels": 18292
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-17-layer-green.png",
+            "pixels": 3786
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-17-layer-yellow.png",
+            "pixels": 728
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-17-layer-blue.png",
+            "pixels": 7360
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-17-layer-red.png",
+            "pixels": 409
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-18",
+      "number": 18,
+      "title": "Seaver St to Supple Rd/Wayne St",
+      "description": "This section runs along where the tree-planted center median begins north of Franklin Park..",
+      "page": 18,
+      "drawing": "/explorer/assets/section-18-original.webp",
+      "slide": "/explorer/assets/section-18-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes southbound. There is 1 northbound lane."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 10 parking spots. Parking is maintained on both sides of the street in this section, and parking spots are added where bus stops have been moved away from the curb."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "Left turns will be restricted at the Nazing St/Pasadena Rd and Wayne St/Supple Rd intersections, with access provided via Seaver St, Elm Hill Ave, and by Nazing St being made one-way eastbound. These changes reduce traffic signal delay along Blue Hill Avenue and ease congestion."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "There are no bike lanes in this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "This section is served by bus station platforms at Castlegate Rd and Supple Rd/Wayne St, replacing the bus stops at Seaver St."
+        },
+        {
+          "label": "Trees",
+          "text": "In this section, 9 trees are proposed to be added and 2 trees are proposed to be removed, for a net increase of 7 trees."
+        }
+      ],
+      "renderings": [],
+      "plan": {
+        "original": "/explorer/assets/section-18-original.webp",
+        "clear": "/explorer/assets/section-18-clear.webp",
+        "width": 971,
+        "height": 663,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-18-layer-bus.png",
+            "pixels": 15503
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-18-layer-green.png",
+            "pixels": 6845
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-18-layer-yellow.png",
+            "pixels": 2796
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-18-layer-blue.png",
+            "pixels": 6961
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-18-layer-red.png",
+            "pixels": 357
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-19",
+      "number": 19,
+      "title": "Supple Rd/Wayne St to Washington St",
+      "description": "This section runs alongside Mother Caroline Academy and St. Katharine Drexel Catholic Church.",
+      "page": 19,
+      "drawing": "/explorer/assets/section-19-original.webp",
+      "slide": "/explorer/assets/section-19-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There is 1 travel lane in both directions, which helps preserve the tree-planted center median. There is an additional flexible lane southbound to accommodate pick-up/drop-off near Mother Caroline Academy."
+        },
+        {
+          "label": "Parking",
+          "text": "There is a net increase of 7 parking spaces. 2 parking spaces are removed to create safer, shorter crossings and 9 parking spaces are added where bus stops have been moved away from the curb. There are rush hour parking restrictions on the east side between Castlegate Rd and Washington St."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "Cars leaving Castlegate Road must turn right. Access to Seaver St or Blue Hill Ave from Castlegate Rd is provided via Washington St, Normandy St, or Elm Hill Ave."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "There are no bike lanes in this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "This section is served by bus station platforms at Castlegate Rd and Supple Rd/Wayne St, replacing the bus stops at Wayne St and Castlegate Rd."
+        },
+        {
+          "label": "Trees",
+          "text": "In this section, 10 trees are proposed to be added and 2 trees are proposed to be removed, for a net increase of 8 trees. The existing tree-planted median will be retained."
+        }
+      ],
+      "renderings": [
+        "rendering-09",
+        "rendering-10"
+      ],
+      "plan": {
+        "original": "/explorer/assets/section-19-original.webp",
+        "clear": "/explorer/assets/section-19-clear.webp",
+        "width": 1060,
+        "height": 775,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-19-layer-bus.png",
+            "pixels": 17814
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-19-layer-green.png",
+            "pixels": 6061
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-19-layer-yellow.png",
+            "pixels": 3022
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-19-layer-blue.png",
+            "pixels": 10397
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-19-layer-red.png",
+            "pixels": 1890
+          }
+        ]
+      }
+    },
+    {
+      "id": "section-20",
+      "number": 20,
+      "title": "Washington St to Warren St",
+      "description": "This section runs from Muhammad’s Mosque past the Grove Hall Mecca, ending at the intersection with Warren St.",
+      "page": 20,
+      "drawing": "/explorer/assets/section-20-original.webp",
+      "slide": "/explorer/assets/section-20-slide.webp",
+      "topics": [
+        {
+          "label": "Traffic",
+          "text": "There are 2 travel lanes are provided in both directions."
+        },
+        {
+          "label": "Parking",
+          "text": "All existing parking is maintained."
+        },
+        {
+          "label": "Turns & crossings",
+          "text": "There are no changes to turning movements in this section."
+        },
+        {
+          "label": "Walking & biking",
+          "text": "There are no bike lanes in this section."
+        },
+        {
+          "label": "Bus stops",
+          "text": "This section is served by bus station platforms at Castlegate Rd and Supple Rd/Wayne St."
+        },
+        {
+          "label": "Trees",
+          "text": "All existing trees in this section are maintained, and 2 new trees are proposed."
+        }
+      ],
+      "renderings": [
+        "rendering-09",
+        "rendering-10"
+      ],
+      "plan": {
+        "original": "/explorer/assets/section-20-original.webp",
+        "clear": "/explorer/assets/section-20-clear.webp",
+        "width": 794,
+        "height": 731,
+        "layers": [
+          {
+            "id": "bus",
+            "label": "Bus lanes",
+            "color": "#bc776d",
+            "image": "/explorer/assets/section-20-layer-bus.png",
+            "pixels": 8918
+          },
+          {
+            "id": "green",
+            "label": "Bike space, trees & added parking",
+            "color": "#4d936d",
+            "image": "/explorer/assets/section-20-layer-green.png",
+            "pixels": 796
+          },
+          {
+            "id": "yellow",
+            "label": "Platforms & daylighting",
+            "color": "#d7b829",
+            "image": "/explorer/assets/section-20-layer-yellow.png",
+            "pixels": 1307
+          },
+          {
+            "id": "blue",
+            "label": "Parking retained",
+            "color": "#4b6db5",
+            "image": "/explorer/assets/section-20-layer-blue.png",
+            "pixels": 6226
+          },
+          {
+            "id": "red",
+            "label": "Parking removed",
+            "color": "#d76254",
+            "image": "/explorer/assets/section-20-layer-red.png",
+            "pixels": 926
+          }
+        ]
+      }
+    }
+  ],
+  "renderings": [
+    {
+      "id": "rendering-02",
+      "title": "Mattapan Square (existing)",
+      "location": "Mattapan Square",
+      "page": 2,
+      "condition": "Existing",
+      "image": "/explorer/assets/rendering-02.webp"
+    },
+    {
+      "id": "rendering-03",
+      "title": "Mattapan Square (proposed)",
+      "location": "Mattapan Square",
+      "page": 3,
+      "condition": "Proposed",
+      "image": "/explorer/assets/rendering-03.webp"
+    },
+    {
+      "id": "rendering-04",
+      "title": "Morning Star Baptist Church (existing)",
+      "location": "Morning Star Baptist Church",
+      "page": 4,
+      "condition": "Existing",
+      "image": "/explorer/assets/rendering-04.webp"
+    },
+    {
+      "id": "rendering-05",
+      "title": "Morning Star Baptist Church (proposed)",
+      "location": "Morning Star Baptist Church",
+      "page": 5,
+      "condition": "Proposed",
+      "image": "/explorer/assets/rendering-05.webp"
+    },
+    {
+      "id": "rendering-06",
+      "title": "Morning Star Baptist Church (proposed Sunday)",
+      "location": "Morning Star Baptist Church",
+      "page": 6,
+      "condition": "Proposed Sunday",
+      "image": "/explorer/assets/rendering-06.webp"
+    },
+    {
+      "id": "rendering-07",
+      "title": "Happy Supermarket (existing)",
+      "location": "Happy Supermarket",
+      "page": 7,
+      "condition": "Existing",
+      "image": "/explorer/assets/rendering-07.webp"
+    },
+    {
+      "id": "rendering-08",
+      "title": "Happy Supermarket (proposed)",
+      "location": "Happy Supermarket",
+      "page": 8,
+      "condition": "Proposed",
+      "image": "/explorer/assets/rendering-08.webp"
+    },
+    {
+      "id": "rendering-09",
+      "title": "Grove Hall (existing)",
+      "location": "Grove Hall",
+      "page": 9,
+      "condition": "Existing",
+      "image": "/explorer/assets/rendering-09.webp"
+    },
+    {
+      "id": "rendering-10",
+      "title": "Grove Hall (proposed)",
+      "location": "Grove Hall",
+      "page": 10,
+      "condition": "Proposed",
+      "image": "/explorer/assets/rendering-10.webp"
+    }
+  ]
+}
