@@ -131,6 +131,8 @@ export async function handler(req, res) {
       if (
         req.headers.origin &&
         ![
+          process.env.PUBLIC_ORIGIN,
+          process.env.RENDER_EXTERNAL_URL,
           "http://localhost:" +
             (server.address()?.port || Number(process.env.PORT) || 3000),
           "http://127.0.0.1:" +
@@ -211,7 +213,7 @@ export async function handler(req, res) {
 export function listenAvailable(
   target,
   port = 3000,
-  { attempts = 20, log = console.log } = {},
+  { attempts = 20, log = console.log, host = "127.0.0.1" } = {},
 ) {
   return new Promise((resolve, reject) => {
     let retries = 0;
@@ -232,7 +234,7 @@ export function listenAvailable(
         log(`Port ${port} is in use; trying ${port + 1}…`);
         retries++;
         port++;
-        target.listen(port, "127.0.0.1");
+        target.listen(port, host);
       } else {
         cleanup();
         reject(error);
@@ -240,7 +242,7 @@ export function listenAvailable(
     };
     target.on("error", onError);
     target.once("listening", onListening);
-    target.listen(port, "127.0.0.1");
+    target.listen(port, host);
   });
 }
 const server = http.createServer(handler);
@@ -249,11 +251,14 @@ if (
   path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 ) {
   try {
+    const host =
+      process.env.HOST || (process.env.RENDER ? "0.0.0.0" : "127.0.0.1");
     const port = await listenAvailable(
       server,
       Number(process.env.PORT) || 3000,
+      { host, attempts: process.env.PORT ? 1 : 20 },
     );
-    console.log(`Blue Hill Avenue: http://localhost:${port}`);
+    console.log(`Blue Hill Avenue: http://${host}:${port}`);
   } catch (error) {
     console.error(
       error.code === "EPERM"

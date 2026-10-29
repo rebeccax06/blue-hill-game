@@ -3,14 +3,15 @@ import assert from "node:assert/strict";
 import { EventEmitter } from "node:events";
 import { listenAvailable } from "../server.mjs";
 class FakeServer extends EventEmitter {
-  constructor(errors) {
+  constructor(errors, host = "127.0.0.1") {
     super();
     this.errors = [...errors];
+    this.host = host;
     this.ports = [];
   }
   listen(port, host) {
     this.ports.push(port);
-    assert.equal(host, "127.0.0.1");
+    assert.equal(host, this.host);
     const code = this.errors.shift();
     queueMicrotask(() =>
       code
@@ -39,4 +40,13 @@ test("other errors and exhausted retries fail without continuing", async () => {
     { code: "EADDRINUSE" },
   );
   assert.deepEqual(occupied.ports, [3000, 3001]);
+});
+
+test("hosting binds the assigned port on the public interface", async () => {
+  const server = new FakeServer([], "0.0.0.0");
+  assert.equal(
+    await listenAvailable(server, 10000, { host: "0.0.0.0", attempts: 1 }),
+    10000,
+  );
+  assert.deepEqual(server.ports, [10000]);
 });
