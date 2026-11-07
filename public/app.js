@@ -1,9 +1,12 @@
+import { mountBlockPlay, blockFeatures } from "./block-play.js";
+import { relatedComments } from "./discussion.js";
 import { createVoiceControls } from "./voice.js";
 import { createSectionExplorer } from "./explorer.js";
 import {
   dialogueNarrative,
   endingNarrative,
   endingTransition,
+  mitigationNarrative,
 } from "./narrative.js";
 import { beforeAfterStreet, createStreetReveal } from "./reveal.js";
 import { renderMarkdown } from "./markdown.js";
@@ -17,6 +20,8 @@ import {
   validPackage,
 } from "./engine.js";
 const C = await fetch("/content.json").then((r) => r.json());
+const discussion = await fetch("/comment-index.json").then((r) => r.json());
+const blocks = await fetch("/explorer/sections.json").then((r) => r.json());
 let status = await fetch("/api/status")
   .then((r) => r.json())
   .catch(() => ({ ai: false }));
@@ -28,6 +33,7 @@ try {
 } catch {
   S = fresh();
 }
+S.block ||= blocks.sections[11];
 let preview = S.final?.option || S.initial || "B",
   busy = false,
   selected = null,
@@ -42,8 +48,14 @@ const voiceControls = createVoiceControls({ app, toast });
 const view = "perspective";
 const reveal = createStreetReveal();
 let explorerOpen = false;
+let disposeBlockPlay = () => {};
 const sectionExplorer = createSectionExplorer({
-  onDone: () => {
+  initialSection: S.block?.number || 12,
+  onDone: (block) => {
+    if (block && !S.frozen && !S.final) {
+      S.block = block;
+      save();
+    }
     explorerOpen = false;
     if (S.stage === "welcome") go("opening");
     else render();
@@ -156,7 +168,20 @@ function allocationStrip(option) {
     };
   return `<div class="allocation"><span class="eyebrow">How the same street space is shared</span><div class="space-strip" aria-label="Illustrative street space allocation for Option ${option}">${design.lanes.map(([name, width]) => `<span class="space-block space-${name.split(" ")[0].toLowerCase()}" style="flex:${width}" title="${names[name]}" data-lane="${name}" tabindex="0" role="button" aria-label="${names[name]}: show explanation">${symbols[name]}</span>`).join("")}</div><div class="allocation-note">${esc(design.tradeoff)}</div></div>`;
 }
+function blockContext() {
+  const block = S.frozen ? S.final?.block : S.block;
+  if (!block)
+    return `<p>Choose a block to ground your recommendation.</p>${button("Choose a block", "choose-block", busy, "secondary")}`;
+  return `<section class="block-context"><span class="eyebrow">Your focus · Block ${block.number}</span><h3>${esc(block.title)}</h3><img src="${esc(block.plan?.clear || block.drawing)}" alt="Proposal plan for ${esc(block.title)}"><details><summary>What the actual proposal changes here</summary><ul>${block.topics.map((t) => `<li><strong>${esc(t.label)}:</strong> ${esc(t.text)}</li>`).join("")}</ul><a href="${esc(block.slide)}" target="_blank" rel="noopener">Original slide image ↗</a></details>${button(S.frozen || S.final ? "Inspect this block" : "Inspect or change block", "choose-block", busy, "secondary")}<p class="micro">The drawing shows the September 2026 proposal. The policy choices below are simulated approaches for this block.</p></section>`;
+}
 function visual() {
+  const block = S.frozen ? S.final?.block : S.block;
+  if (S.frozen && ["ending", "feedback"].includes(S.stage)) {
+    return `<aside class="visual outcome-visual" aria-label="Your street five years later"><span class="eyebrow">Your street · Five years later</span><h3>${esc(block?.title || "Blue Hill Avenue")}</h3><div class="street-card">${beforeAfterStreet(S.final, view, reveal.progress)}</div><p class="micro">Illustration of your final policy approach and commitments. Exact block geometry is shown in the proposal drawing.</p>${block ? `<details><summary>Compare with the actual proposal</summary><img class="outcome-proposal" src="${esc(block.plan?.clear || block.drawing)}" alt="Actual proposal for ${esc(block.title)}"><a href="${esc(block.slide)}" target="_blank" rel="noopener">Open original slide ↗</a></details>` : ""}</aside>`;
+  }
+  if (block?.number === 12)
+    return `<aside class="visual visual-block"><div id="block-play-root"></div><div class="block-policy"><span class="eyebrow">${S.frozen ? "Your final policy approach" : "Simulated policy approach"}</span><strong>${esc(C.options.find((o) => o.id === (draftFinal?.option || selected || S.final?.option || S.initial || preview))?.title)}</strong><span>${(draftFinal?.amendments || S.final?.amendments || []).length} commitments selected</span></div>${button(S.frozen || S.final ? "Inspect avenue" : "Change focus block", "choose-block", busy, "secondary")}</aside>`;
+
   const isOutcome = S.frozen && ["ending", "feedback"].includes(S.stage);
   const shown = isOutcome ? S.final.option : preview;
   const design = streetDesigns[shown];
@@ -192,6 +217,7 @@ function visual() {
     : "Offline preview · prerecorded character perspectives";
 
   return /* HTML */ ` <aside class="visual">
+    ${blockContext()}
     <div class="visual-top">
       <span class="eyebrow">Street options</span>
     </div>
@@ -258,14 +284,31 @@ function options(choice = selected) {
 }
 function packageSummary() {
   return S.final
-    ? `<div class="package"><span class="eyebrow">Your recommendation</span><strong>${S.final.option} · ${esc(C.options.find((o) => o.id === S.final.option).title)}</strong>${S.final.amendments.length ? S.final.amendments.map((id) => esc(C.amendments.find((a) => a.id === id).name)).join(" + ") : "Without amendments"}</div>`
+    ? `<div class="package"><span class="eyebrow">Your recommendation${S.final.block ? ` · Block ${S.final.block.number}: ${esc(S.final.block.title)}` : ""}</span><strong>${S.final.option} · ${esc(C.options.find((o) => o.id === S.final.option).title)}</strong>${S.final.amendments.length ? S.final.amendments.map((id) => esc(C.amendments.find((a) => a.id === id).name)).join(" + ") : "Without amendments"}</div>`
     : "";
 }
 function amendments() {
-  return `<p class="micro">Choose zero, one, or two. All amendments are available with every base option. Shared street space limits what can be achieved together.</p><div class="amendments">${C.amendments.map((a) => `<label class="amendment"><input type="checkbox" data-amendment="${a.id}" ${draftFinal.amendments.includes(a.id) ? "checked" : ""}><span><strong>${a.id}. ${esc(a.name)}</strong><small>${esc(a.tradeoff)}</small></span></label>`).join("")}</div>`;
+  const list = `<p class="micro">Choose zero, one, or two. All amendments are available with every base option. Shared street space limits what can be achieved together.</p><div class="amendments">${C.amendments.map((a) => `<label class="amendment"><input type="checkbox" data-amendment="${a.id}" ${draftFinal.amendments.includes(a.id) ? "checked" : ""}><span><strong>${a.id}. ${esc(a.name)}</strong><small>${esc(a.tradeoff)}</small></span></label>`).join("")}</div>`;
+  return S.block?.number === 12
+    ? `<p class="micro">Select a feature on your block to choose related commitments.</p><details><summary>Browse all 13 commitments</summary>${list}</details>`
+    : list;
 }
 function welcome() {
   return `<section class="welcome"><div><span class="eyebrow orange">A youth planning simulation</span><h1>Blue Hill Avenue</h1><p class="intro-copy">Who gets the street? Step into a youth planning fellow’s shoes and help shape the future of Blue Hill Avenue.</p><div class="button-row">${button("Explore the avenue <span>↗</span>", "begin")}</div><p class="promise">15–20 minutes</p></div><div class="scene"><span class="scene-label">BLUE HILL AVENUE · BOSTON, MA</span>${street("B")}</div></section><section class="welcome-bottom"><article><span class="num">01</span><div><h3>Compare three options</h3><p>Explore three approaches to the same limited street space.</p></div></article><article><span class="num">02</span><div><h3>Talk with residents</h3><p>Ask your own questions. Hear what a redesign means for everyday life.</p></div></article><article><span class="num">03</span><div><h3>Review the outcome</h3><p>Make a recommendation. Return five years later to see its consequences.</p></div></article></section>${footer()}`;
+}
+function sourceDiscussion(person) {
+  const matches = relatedComments(discussion, person, "", 5);
+  return `<details class="source-discussion"><summary>Community discussion behind this perspective (${matches.length} related comments)</summary><p class="micro">${esc(discussion.method)}</p><label>Search all comments <input type="search" data-comment-search="${esc(person)}" placeholder="Try rent, bus, parking…"></label><div data-comment-results>${commentCards(matches)}</div></details>`;
+}
+function commentCards(comments) {
+  return comments.length
+    ? comments
+        .map(
+          (c) =>
+            `<article class="source-comment"><small>Workbook row ${c.row} · ID ${esc(c.sourceId)} · ${esc(c.thread)}${c.replyTo ? ` · reply to ${esc(c.replyTo)}` : ""}</small><p>${esc(c.text)}</p><small>${esc(c.author)} · ${esc(c.date)} · Suggested topics: ${esc(c.topics.join(", "))}</small></article>`,
+        )
+        .join("")
+    : "<p>No matching comments.</p>";
 }
 function menu(type) {
   const isExpert = type === "experts",
@@ -275,7 +318,7 @@ function menu(type) {
     .filter((p) => !done.some((d) => d.name === p.name))
     .map(
       (p) =>
-        `<button class="person-card" data-person="${esc(p.name)}" data-type="${type}">${portrait([...C.people, ...C.experts].findIndex((x) => x.name === p.name))}<h3>${esc(p.name)}</h3><span class="role">${esc(p.role)}</span><p>${esc(p.description)}</p></button>`,
+        `<button class="person-card" data-person="${esc(p.name)}" data-type="${type}">${portrait([...C.people, ...C.experts].findIndex((x) => x.name === p.name))}<h3>${esc(p.name)}</h3><span class="role">${esc(p.role)}</span><p>${esc(p.description)}</p><small>${esc((discussion.peopleTopics[p.name] || []).join(" · "))}</small></button>`,
     )
     .join(
       "",
@@ -291,7 +334,7 @@ function interview() {
       : S.people.length === 3
         ? "Move on to experts"
         : "Meet the next person";
-  return `<div class="person-head">${portrait(index, true)}<div><span class="eyebrow">A simulated conversation</span><h2 tabindex="-1">${esc(p.name)}</h2><span class="role">${esc(p.role)}</span></div></div><div class="dialogue"><div class="bubble quote">“${esc(p.intro)}”</div>${S.conversation.map((m) => `<div class="bubble ${m.role === "you" ? "you" : ""}"><small>${m.role === "you" ? "You" : esc(p.name)}</small><div class="${m.role === "you" ? "" : "markdown"}">${m.role === "you" ? esc(m.text) : renderMarkdown(dialogueNarrative(m.text))}</div></div>`).join("")}${busy ? '<div class="busy" role="status">Listening and composing a response…</div>' : ""}${!rec ? input(`What would you like to ask ${p.name}?`, "ask", `Ask ${p.name.split(" ")[0]} about what matters to you…`) : !rec.followup ? `<p class="micro">You may ask ${esc(p.name)} one brief follow-up, or ${S.active.type === "experts" ? "choose another expert or move on" : S.people.length === 3 ? "move on to experts" : "move on to your next person"}.</p>${input("One brief follow-up (optional)", "followup", "What would you like to clarify?")}<div class="button-row">${button(next + " →", "next-person", busy, "secondary")}</div>` : `<div class="button-row">${button(next + " →", "next-person", busy)}</div>`}</div>`;
+  return `${!rec ? `<div class="button-row">${button(S.active.type === "experts" ? "← Choose another expert" : "← Choose another resident", "back-to-people", busy, "secondary")}</div>` : ""}<div class="person-head">${portrait(index, true)}<div><span class="eyebrow">A simulated conversation</span><h2 tabindex="-1">${esc(p.name)}</h2><span class="role">${esc(p.role)}</span></div></div>${sourceDiscussion(p.name)}<div class="dialogue"><div class="bubble quote">“${esc(p.intro)}”</div>${S.conversation.map((m) => `<div class="bubble ${m.role === "you" ? "you" : ""}"><small>${m.role === "you" ? "You" : esc(p.name)}</small><div class="${m.role === "you" ? "" : "markdown"}">${m.role === "you" ? esc(m.text) : renderMarkdown(dialogueNarrative(m.text))}</div></div>`).join("")}${busy ? '<div class="busy" role="status">Listening and composing a response…</div>' : ""}${!rec ? input(`What would you like to ask ${p.name}?`, "ask", `Ask ${p.name.split(" ")[0]} about what matters to you…`) : !rec.followup ? `<p class="micro">You may ask ${esc(p.name)} one brief follow-up, or ${S.active.type === "experts" ? "choose another expert or move on" : S.people.length === 3 ? "move on to experts" : "move on to your next person"}.</p>${input("One brief follow-up (optional)", "followup", "What would you like to clarify?")}<div class="button-row">${button(next + " →", "next-person", busy, "secondary")}</div>` : `<div class="button-row">${button(next + " →", "next-person", busy)}</div>`}</div>`;
 }
 function panel() {
   switch (S.stage) {
@@ -324,7 +367,7 @@ function panel() {
     case "benefits":
       return `<span class="eyebrow">Consider the consequences · ${S.benefits.length + 1} of 3</span><h2 tabindex="-1">Who benefits?<br>Who carries the costs?</h2>${packageSummary()}${input(benefitQuestions[S.benefits.length], "benefit", "Your thoughts, “unsure,” or “pass”…")}<div class="button-row">${button("Revise recommendation", "revise", busy, "secondary")}</div>`;
     case "mitigation":
-      return `<span class="eyebrow">Before the city moves forward</span><h2 tabindex="-1">Make your commitments clear.</h2>${packageSummary()}${S.mitigationReview ? `<div class="text-block markdown">${renderMarkdown(S.mitigationReview)}</div><p>Do you want to include any changes from your reflections? Review and confirm your whole package; nothing is added automatically.</p><div class="button-row">${button("Revise recommendation", "revise", busy, "secondary")}${button("Keep this package · see five years later →", "implement", busy)}</div>` : retryPanel("mitigation", "Review possible changes raised in your reflections before implementing.")}`;
+      return `<span class="eyebrow">Before the city moves forward</span><h2 tabindex="-1">Make your commitments clear.</h2>${packageSummary()}${S.mitigationReview ? `<div class="text-block markdown">${renderMarkdown(mitigationNarrative(S.mitigationReview))}</div><p>Do you want to include any changes from your reflections? Review and confirm your whole package; nothing is added automatically.</p><div class="button-row">${button("Revise recommendation", "revise", busy, "secondary")}${button("Keep this package · see five years later →", "implement", busy)}</div>` : retryPanel("mitigation", "Review possible changes raised in your reflections before implementing.")}`;
     case "ending":
       return `<span class="eyebrow orange">Five years later</span><h2 tabindex="-1">Your street, five years later</h2>${packageSummary()}<p class="quote">${endingTransition}</p>${S.ending ? `<div class="text-block markdown">${renderMarkdown(endingNarrative(S.ending))}</div>${input(S.reasonPending ? "What is your reason? You can also pass." : feedbackQuestions[0], "feedback", "Would you make the same choice? Tell us why, or pass.")}` : retryPanel("ending", "Returning to the avenue…")}`;
     case "feedback":
@@ -336,7 +379,24 @@ function panel() {
 function retryPanel(kind, label) {
   return `<p>${esc(label)}</p>${busy ? '<div class="busy" role="status">Composing a response…</div>' : button("Continue →", `generate-${kind}`)}`;
 }
+function taskWorkspace() {
+  const focused = [
+    "priorities",
+    "experts",
+    "interview",
+    "pressure",
+    "pressureReason",
+    "benefits",
+    "mitigation",
+  ].includes(S.stage);
+  const task = `<section class="panel" aria-label="Current game step">${panel()}</section>`;
+  return focused
+    ? `<div class="task-workspace" data-task-stage="${S.stage}">${task}<details class="task-map"><summary>View your block & proposal</summary>${visual()}</details></div>`
+    : `<div class="workspace" data-task-stage="${S.stage}">${visual()}${task}</div>`;
+}
 function render() {
+  disposeBlockPlay();
+  disposeBlockPlay = () => {};
   voiceControls.sync();
   sectionExplorer.unmount();
   if (explorerOpen) {
@@ -346,10 +406,57 @@ function render() {
     app.innerHTML = welcome();
   } else if (S.stage === "complete") {
     app.innerHTML = `${stepper()}<section class="complete"><h1>Thanks for playing<br>the game!</h1><p>Your choices and field notes are saved on this device.</p>${packageSummary()}<div class="button-row" style="justify-content:center">${button("Read my field notes", "notes", false, "secondary")}${button("Play again ↗", "restart")}</div></section>${footer()}`;
-  } else
-    app.innerHTML = `${stepper()}<div class="workspace">${visual()}<section class="panel" aria-label="Current game step">${panel()}</section></div>${footer()}`;
+  } else app.innerHTML = `${stepper()}${taskWorkspace()}${footer()}`;
   voiceControls.mount();
   bind();
+  const blockRoot = $("#block-play-root");
+  if (blockRoot)
+    disposeBlockPlay = mountBlockPlay(blockRoot, {
+      block: S.frozen ? S.final.block : S.block,
+      content: C,
+      state: S,
+      selectedAmendments: draftFinal?.amendments || S.final?.amendments || [],
+      focus: S.featureFocus,
+      onDetailsChange(open) {
+        if (S.proposalDetailsOpen !== open) {
+          S.proposalDetailsOpen = open;
+          save();
+        }
+      },
+      onFocus(id) {
+        if (S.featureFocus !== id) {
+          S.featureFocus = id;
+          save();
+        }
+      },
+      onAsk(name, feature) {
+        if (busy) return;
+        if (S.stage === "people") {
+          S.active = { name, type: "people" };
+          S.conversation = [];
+          S.stage = "interview";
+        }
+        draft = feature.question;
+        save();
+        render();
+        $("#answer")?.focus();
+        $("#answer")?.scrollIntoView({ block: "center", behavior: "smooth" });
+      },
+      onAmend(id) {
+        if (busy || S.frozen || S.stage !== "final") return;
+        rememberDraft();
+        draftFinal ||= {
+          option: selected || S.final?.option || S.initial,
+          amendments: [...(S.final?.amendments || [])],
+        };
+        try {
+          draftFinal.amendments = addAmendment(draftFinal.amendments, id);
+        } catch (error) {
+          toast(error.message);
+        }
+        render();
+      },
+    });
   reveal.sync();
   $("#note-count").textContent = S.notes.length;
 }
@@ -457,6 +564,9 @@ function bind() {
     (el) =>
       (el.onclick = () => {
         S.active = { name: el.dataset.person, type: el.dataset.type };
+        S.featureFocus =
+          blockFeatures.find((f) => f.people.includes(S.active.name))?.id ||
+          S.featureFocus;
         S.conversation = [];
         go("interview");
       }),
@@ -501,6 +611,22 @@ function bind() {
         );
       }),
   );
+  app.querySelectorAll("[data-comment-search]").forEach((el) => {
+    el.oninput = () => {
+      const query = el.value.trim().toLowerCase();
+      const matches = query
+        ? discussion.comments
+            .filter((c) =>
+              `${c.text} ${c.topics.join(" ")} ${c.author} ${c.thread}`
+                .toLowerCase()
+                .includes(query),
+            )
+            .slice(0, 30)
+        : relatedComments(discussion, el.dataset.commentSearch);
+      el.closest("details").querySelector("[data-comment-results]").innerHTML =
+        commentCards(matches);
+    };
+  });
   $("#answer")?.addEventListener("input", (e) => {
     draft = e.target.value;
   });
@@ -549,11 +675,20 @@ async function action(a) {
     return;
   }
   if (busy) return;
+  if (a === "choose-block") {
+    rememberDraft();
+    explorerOpen = true;
+    return render();
+  }
   if (a === "begin") {
     explorerOpen = true;
     return render();
   }
   if (a === "initial" && selected) {
+    note(
+      "Your focus block",
+      `Block ${S.block.number}: ${S.block.title} — ${S.block.topics.map((t) => `${t.label}: ${t.text}`).join(" ")}`,
+    );
     S.initial = selected;
     note(
       "Your first choice",
@@ -569,6 +704,14 @@ async function action(a) {
     );
     return go("people");
   }
+  if (a === "back-to-people") {
+    if (!S.active || S[S.active.type].some((x) => x.name === S.active.name))
+      return;
+    const type = S.active.type;
+    S.active = null;
+    S.conversation = [];
+    return go(type);
+  }
   if (a === "next-person") {
     const type = S.active.type,
       record = S[type].find((x) => x.name === S.active.name);
@@ -581,7 +724,12 @@ async function action(a) {
   }
   if (a === "stop-experts") return go("pressure");
   if (a === "keep") {
-    S.final = { option: S.initial, amendments: [], confirmed: true };
+    S.final = {
+      option: S.initial,
+      amendments: [],
+      block: S.block,
+      confirmed: true,
+    };
     return finishPackage();
   }
   if (a === "amend") {
@@ -595,7 +743,11 @@ async function action(a) {
     return;
   }
   if (a === "confirm-package" && validPackage(draftFinal)) {
-    S.final = { ...structuredClone(draftFinal), confirmed: true };
+    S.final = {
+      ...structuredClone(draftFinal),
+      block: S.block,
+      confirmed: true,
+    };
     draftFinal = null;
     return finishPackage();
   }

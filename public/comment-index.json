@@ -1,0 +1,3850 @@
+{
+  "source": "Reddit comments BHA.xlsx",
+  "method": "Keyword suggestions using the supplied codebook; topic matches are not verified coding or a representative survey. Characters are fictional and are not Reddit authors.",
+  "codebook": [
+    {
+      "code": "Displacement",
+      "definition": "Concern that transportation or streetscape investment could increase rents, property values, or development pressure and push out existing residents or businesses."
+    },
+    {
+      "code": "Affordability",
+      "definition": "Discussion of housing costs, rent stabilization, subsidized housing, or other measures to help residents remain in the neighborhood."
+    },
+    {
+      "code": "Gentrification",
+      "definition": "Broader concern that investment could change the social, economic, or cultural character of the neighborhood."
+    },
+    {
+      "code": "Urgency",
+      "definition": "Argument that current transportation problems need to be addressed now rather than waiting for a larger or longer-term solution."
+    },
+    {
+      "code": "Delay",
+      "definition": "Concern that continued debate, opposition, or additional study could postpone improvements or cause the project/funding to be lost."
+    },
+    {
+      "code": "Future planning",
+      "definition": "Discussion of designing for long-term needs, future residents, or a larger future transit investment."
+    },
+    {
+      "code": "Bus",
+      "definition": "Discussion of the proposed bus improvements, bus lanes, bus reliability, or whether bus investment is sufficient."
+    },
+    {
+      "code": "Rail",
+      "definition": "Support for or discussion of subway, light rail, trolley, or other rail alternatives."
+    },
+    {
+      "code": "Bus vs. rail",
+      "definition": "Direct comparison between improving bus service now and pursuing rail investment."
+    },
+    {
+      "code": "Engagement",
+      "definition": "Discussion of public meetings, outreach, consultation, or whether residents had meaningful opportunities to shape the project."
+    },
+    {
+      "code": "Trust",
+      "definition": "Skepticism or confidence in the City, MBTA, planning process, or whether decisions have already been made."
+    },
+    {
+      "code": "Representation",
+      "definition": "Questions about who speaks for the community and whether meeting attendees, surveys, online comments, or particular groups represent neighborhood opinion."
+    },
+    {
+      "code": "Equity",
+      "definition": "Discussion of whether Blue Hill Avenue or its residents have received fair transportation investment and who benefits or bears costs."
+    },
+    {
+      "code": "Race",
+      "definition": "Explicit discussion of race, racial inequality, or the experiences of Black residents."
+    },
+    {
+      "code": "Neighborhood identity",
+      "definition": "Discussion of Mattapan/Blue Hill Avenue’s cultural identity, history, or the role of longtime residents in shaping its future."
+    },
+    {
+      "code": "Safety",
+      "definition": "Concerns about pedestrian safety, crossings, vehicle speeds, crashes, or access to transit stops."
+    },
+    {
+      "code": "Parking",
+      "definition": "Discussion of parking loss, availability, loading, or impacts on residents and businesses."
+    },
+    {
+      "code": "Traffic",
+      "definition": "Discussion of congestion, vehicle movement, travel lanes, or effects on drivers."
+    },
+    {
+      "code": "Bikes",
+      "definition": "Discussion of bike lanes, cycling safety, or micromobility infrastructure."
+    },
+    {
+      "code": "Accessibility",
+      "definition": "Discussion of how easily older adults, people with disabilities, or others can cross the street or use transit facilities."
+    },
+    {
+      "code": "Reliability",
+      "definition": "Discussion of buses being late, slow, inconsistent, or the need for faster and more dependable service."
+    },
+    {
+      "code": "Access",
+      "definition": "Discussion of people's ability to reach jobs, schools, services, businesses, or transit."
+    },
+    {
+      "code": "Media framing",
+      "definition": "Claims that news coverage or advocacy coverage presents the project or opposition in a particular or misleading way."
+    },
+    {
+      "code": "Evidence",
+      "definition": "Discussion of surveys, data, public opinion, ridership, or demands for evidence supporting claims."
+    },
+    {
+      "code": "Polarization",
+      "definition": "Hostile or dismissive framing of supporters/opponents, including arguments about NIMBYism, outsiders, or people talking past one another."
+    },
+    {
+      "code": "Responsibility",
+      "definition": "Discussion of what the City, MBTA, state, or other agencies are responsible for addressing."
+    },
+    {
+      "code": "Funding",
+      "definition": "Discussion of project money, whether funding could be lost, or what resources are available."
+    }
+  ],
+  "peopleTopics": {
+    "Malik": [
+      "Bus",
+      "Reliability",
+      "Access"
+    ],
+    "Denise": [
+      "Parking",
+      "Accessibility"
+    ],
+    "Marisol": [
+      "Parking",
+      "Access",
+      "Funding"
+    ],
+    "Angela": [
+      "Traffic",
+      "Parking",
+      "Access"
+    ],
+    "Gloria": [
+      "Displacement",
+      "Affordability",
+      "Gentrification",
+      "Neighborhood identity"
+    ],
+    "Raymond": [
+      "Trust",
+      "Engagement",
+      "Responsibility",
+      "Evidence"
+    ],
+    "Tiana": [
+      "Safety",
+      "Bus",
+      "Access"
+    ],
+    "Andre": [
+      "Parking",
+      "Traffic"
+    ],
+    "Rababe Saadaoui": [
+      "Traffic",
+      "Safety"
+    ],
+    "Eric Morris": [
+      "Bus",
+      "Reliability",
+      "Trust"
+    ],
+    "Dr. Chris Zegras": [
+      "Equity"
+    ],
+    "Maya Patel": [
+      "Parking",
+      "Representation",
+      "Future planning",
+      "Access"
+    ],
+    "Daniel Kim": [
+      "Parking",
+      "Representation",
+      "Access"
+    ],
+    "Aisha Grant": [
+      "Bus",
+      "Displacement",
+      "Affordability",
+      "Representation",
+      "Equity",
+      "Neighborhood identity",
+      "Access"
+    ]
+  },
+  "comments": [
+    {
+      "id": "reddit-2",
+      "sourceId": "1",
+      "row": 2,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "A somewhat difficult pill to swallow is that infrastructure is more about tomorrow than today. Creating a reality with the center bus lane helps people in the future. It's not as good as rail or a subway but those are decades away if they happened at all. Current residents will complain no matter what",
+      "author": "El_Gato_Gordo",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Urgency",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-3",
+      "sourceId": "2",
+      "row": 3,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "And the future doesn’t have a voice to advocate for it",
+      "author": "mapinis",
+      "date": "2026-09-29",
+      "note": "reply to id 1",
+      "replyTo": "1",
+      "topics": [
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-4",
+      "sourceId": "3",
+      "row": 4,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "What a world where people don’t want something because it will make their neighborhood too desirable.",
+      "author": "ChickenAndTelephone",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-5",
+      "sourceId": "4",
+      "row": 5,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I have been to more neighborhood meetings than I care to recall, where people actively advocated against improvements/amenities. They fall into two groups:\n\n“it will raise my property values so I’ll pay more in taxes. The neighborhood is fine the way it is. I’m old & on a fixed income and don’t want to pay more taxes.”\n\n“if this neighborhood gets nicer my landlord will raise my rent.”\n\nCrab bucket mentality.",
+      "author": "itsonlyastrongbuzz",
+      "date": "2026-09-29",
+      "note": "reply to id 3",
+      "replyTo": "3",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Gentrification",
+        "Engagement",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-6",
+      "sourceId": "5",
+      "row": 6,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "How is it crab bucket mentality when number 2 is a very real, and likely, result.",
+      "author": "WeAlwaysFindAWay",
+      "date": "2026-09-29",
+      "note": "reply to 4",
+      "replyTo": "4",
+      "topics": []
+    },
+    {
+      "id": "reddit-7",
+      "sourceId": "6",
+      "row": 7,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Landlords will raise rent regardless. We can install a bus lane or playground without thinking of that as a factor",
+      "author": "Coders32",
+      "date": "2026-09-29",
+      "note": "reply to  5",
+      "replyTo": "5",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-8",
+      "sourceId": "7",
+      "row": 8,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Yeah but I mean that's easy to say when you aren't the person who starts getting priced out of their home.",
+      "author": "WeAlwaysFindAWay",
+      "date": "2026-09-29",
+      "note": "reply to 6",
+      "replyTo": "6",
+      "topics": [
+        "Displacement"
+      ]
+    },
+    {
+      "id": "reddit-9",
+      "sourceId": "8",
+      "row": 9,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Rent was an occasional struggle for the first 6 years in Boston, it’s not like I could relate and it’s weird to assume I couldn’t in this economy",
+      "author": "Coders32",
+      "date": "2026-09-29",
+      "note": "reply to 7",
+      "replyTo": "7",
+      "topics": [
+        "Reliability",
+        "Displacement",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-10",
+      "sourceId": "9",
+      "row": 10,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Is it actually the likely result? What is the evidence for this claim?",
+      "author": "Zizoud",
+      "date": "2026-09-29",
+      "note": "reply to 5",
+      "replyTo": "5",
+      "topics": [
+        "Evidence"
+      ]
+    },
+    {
+      "id": "reddit-11",
+      "sourceId": "10",
+      "row": 11,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "It doesn’t matter, people just will downvote you even though barely anyone here is from Mattapan, lol.",
+      "author": "evkiddo",
+      "date": "2026-09-29",
+      "note": "reply to 5",
+      "replyTo": "5",
+      "topics": [
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-12",
+      "sourceId": "11",
+      "row": 12,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Imagine looking back in ten years and THIS is the reason the project never happened. We deserve failure at that point.",
+      "author": "Flat_Try747",
+      "date": "2026-09-29",
+      "note": "reply to 3",
+      "replyTo": "3",
+      "topics": []
+    },
+    {
+      "id": "reddit-13",
+      "sourceId": "12",
+      "row": 13,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I mean I don't blame them for not wanting to get priced out of the already lesser desierable parts of the city.",
+      "author": "WeAlwaysFindAWay",
+      "date": "2026-09-29",
+      "note": "reply to 3",
+      "replyTo": "3",
+      "topics": [
+        "Displacement",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-14",
+      "sourceId": "13",
+      "row": 14,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "The problem is people who live in this area can’t have it both ways. Infrastructure improvements increase the quality of life in that neighborhood which increases demand, property values and rents. People will be priced out.",
+      "author": "ggtffhhhjhg",
+      "date": "2026-09-29",
+      "note": "reply to 12",
+      "replyTo": "12",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Gentrification",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-15",
+      "sourceId": "14",
+      "row": 15,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "That's the thing. We hear there's not enough investment in certain neighborhoods then actively fight investment because apparently it will make the neighborhood too desirable! So which do you want, investment in the neighborhood or to not become more desirable because you can't realistically have both..\n\nReally what they need is the infrastructure investment and simultaneously BUILD. MORE. HOUSUNG. Increase supply and demand at the same time and people can more easily stay while new people can come in. Both can be true if you raise supply AND demand. But of course the neighborhood will also fight more housing because cars or we don't want \"luxury\" housing or some other excuse.",
+      "author": "Middle_Bench4739",
+      "date": "2026-09-29",
+      "note": "reply to 12",
+      "replyTo": "12",
+      "topics": [
+        "Traffic",
+        "Displacement",
+        "Affordability",
+        "Equity",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-16",
+      "sourceId": "15",
+      "row": 16,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I think this is correct. But I would say some sort of rent stabilization or subsidize housing for current residents is as important as building. Infrastructure improvements need to happen, but they effectively harm current residence who will be forced to pay higher rents or move. All these infrastructure improvements are great, but just for high income earners. Drains the life out of the city.",
+      "author": "catholicFunk",
+      "date": "2026-09-29",
+      "note": "reply to 14",
+      "replyTo": "14",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Trust",
+        "Representation"
+      ]
+    },
+    {
+      "id": "reddit-17",
+      "sourceId": "16",
+      "row": 17,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "It’s a difficult policy problem, because in many cases the only way to build new housing is to demolish a (much smaller) number of less expensive units which are either occupied or could become occupied by lower-income tenants. Some places require that a unit be unoccupied for a certain number of years before it can be demolished, others require that existing tenets be offered a unit in the new building at their current rent. Each of these solutions is imperfect, and any regulation adds paperwork and costs. We need to strike a balance between protecting existing tenants and promoting new construction. Different people have different ideas about what the ideal balance looks like. And, of course and unfortunately, there are a lot of NIMBYs who don’t care at all about poor people but are delighted to use them in arguments against any kind of new development, without stopping to ask what it is they actually want or need.",
+      "author": "WorldlinessDry5583",
+      "date": "2026-09-29",
+      "note": "reply to 15",
+      "replyTo": "15",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Funding",
+        "Polarization"
+      ]
+    },
+    {
+      "id": "reddit-18",
+      "sourceId": "17",
+      "row": 18,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Sure, I agree. It’s a complicated thing. But that doesn’t change my feeling that protecting everyday working residents needs to come first and foremost.\nSelfish short sided people will always be there but I believe that is the role of government, to regulate these things",
+      "author": "catholicFunk",
+      "date": "2026-09-29",
+      "note": "reply to 16",
+      "replyTo": "16",
+      "topics": [
+        "Reliability",
+        "Representation"
+      ]
+    },
+    {
+      "id": "reddit-19",
+      "sourceId": "18",
+      "row": 19,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "You can point out the newly constructed apartments, fine stores and restaurants all you want, but gentrification is not a good deal for the people who are forced to move out because they can't afford it.\n\nThe Globe recently ran a story about how tough Boston has become for young musicians to live here and line up gigs. Even though we have tons of college kids here, including Berklee which churns out graduates with performance and music production skills. I suspect that gentrification has a lot to do with it. The kids struggle to make the rent and pay for practice space, and nowadays there are fewer small venues looking to book musicians without established reputations; they don't make enough money to cover the lease.",
+      "author": "emotionalfescue",
+      "date": "2026-09-29",
+      "note": "reply to 3",
+      "replyTo": "3",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Gentrification",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-20",
+      "sourceId": "19",
+      "row": 20,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "In that case let’s stop spending any money to improve infrastructure anywhere in the city. It makes housing too expensive",
+      "author": "tgabs",
+      "date": "2026-09-29",
+      "note": "reply to 18",
+      "replyTo": "18",
+      "topics": [
+        "Affordability",
+        "Trust",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-21",
+      "sourceId": "20",
+      "row": 21,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "A much better question would be, how do we invest in neighborhoods in ways that are responsive to the concerns and priorities of long-term residents, and in a way that also helps those long-term residents stay in those neighborhoods and not be priced out.",
+      "author": "Careless-College-374",
+      "date": "2026-09-29",
+      "note": "reply to 19",
+      "replyTo": "19",
+      "topics": [
+        "Displacement",
+        "Representation",
+        "Neighborhood identity",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-22",
+      "sourceId": "21",
+      "row": 22,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "This is not a high school debate. These are people’s lives we’re talking about. Many of them have lived in their neighborhoods for 15, 20 years or more and have built their lifestyles there. Getting pushed out would be devastating to some of them.\n\nGentrification brings many nice things. But it’s not all good. Moreover, the benefits and drawbacks are largely doled out to different groups of people. I wish that would at least be acknowledged in this sub. You can still be pro-development without saying that anyone who disagrees is stupid or unreasonable.",
+      "author": "emotionalfescue",
+      "date": "2026-09-29",
+      "note": "reply to 20",
+      "replyTo": "20",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Gentrification",
+        "Neighborhood identity",
+        "Access",
+        "Polarization"
+      ]
+    },
+    {
+      "id": "reddit-23",
+      "sourceId": "22",
+      "row": 23,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "This sort of thing seems like a good candidate for price controls, especially rent controls. Pair a major infrastructure improvement with limits on rent increases for existing units. New housing wouldn't be bound by the price control so it could still be profitable to build.",
+      "author": "Qwertycube10",
+      "date": "2026-09-29",
+      "note": "reply to 21",
+      "replyTo": "21",
+      "topics": [
+        "Displacement",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-24",
+      "sourceId": "23",
+      "row": 24,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "What a world where ignorant readers are so easily deceived by the sham media outlet of a non-profit.\n\nCompare this story to the WBUR Story or keep being either manipulated to be ignorant or a manipulator to keep others ignorant or both.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 3",
+      "replyTo": "3",
+      "topics": [
+        "Reliability",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-25",
+      "sourceId": "24",
+      "row": 25,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "think we can all agree that being an aggressive dick about it is the best way to convince people to listen to what you have to say",
+      "author": "ChickenAndTelephone",
+      "date": "2026-09-29",
+      "note": "reply to 23",
+      "replyTo": "23",
+      "topics": []
+    },
+    {
+      "id": "reddit-26",
+      "sourceId": "25",
+      "row": 26,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Aggressive in the sense of \"Assertive, bold, and energetic\"? Yes.\n\nAggressive in the sense of \"Inclined to behave in an actively hostile fashion.\" No.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 24",
+      "replyTo": "24",
+      "topics": []
+    },
+    {
+      "id": "reddit-27",
+      "sourceId": "26",
+      "row": 27,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Very valid info. But also calm down, just drop the info and move on. This type of behavior is how you get people to not even bother clicking and just shifting their attention to something else.",
+      "author": "iantayls",
+      "date": "2026-09-29",
+      "note": "reply to 23",
+      "replyTo": "23",
+      "topics": []
+    },
+    {
+      "id": "reddit-28",
+      "sourceId": "27",
+      "row": 28,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I am calm. I'm also touching grass.\n\nThere are actual, living people in non-profits who don't want to misrepresent reality. Some of them read and post at reddit and might even change their ways in the future. Being a sham or contributing to shams has grown less appealing to many people in recent years. Even someone like Christian MilNeil might be convinced to change his ways and show an ounce of integrity about reporting on a protest and meeting in the future.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 26",
+      "replyTo": "26",
+      "topics": [
+        "Engagement",
+        "Representation",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-29",
+      "sourceId": "28",
+      "row": 29,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "You say you're calm, but you're fighting ghosts. I never said anything against those non-profits nor the value of the information you provided. I also never told you to touch grass.\n\nDo you want to feel smarter than the people you're giving this information, or do you want to convince them. You honestly can't have both.",
+      "author": "iantayls",
+      "date": "2026-09-29",
+      "note": "reply to 27",
+      "replyTo": "27",
+      "topics": []
+    },
+    {
+      "id": "reddit-30",
+      "sourceId": "29",
+      "row": 30,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I want neither.\n\nProviding information for its own sake is a worthwhile goal.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "repy to 28",
+      "replyTo": null,
+      "topics": []
+    },
+    {
+      "id": "reddit-31",
+      "sourceId": "30",
+      "row": 31,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "If it's so worthwhile on its own, then why add the extra fluff?",
+      "author": "iantayls",
+      "date": "2026-09-29",
+      "note": "reply to 29",
+      "replyTo": "29",
+      "topics": []
+    },
+    {
+      "id": "reddit-32",
+      "sourceId": "31",
+      "row": 32,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "What \"extra fluff\" is that? I provide information for its own sake as a worthwhile goal. Then when I achieve the goal, I celebrate because I'm a person, and that's what people do. If my celebration is extra fluff to you then ignore it.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 30",
+      "replyTo": "30",
+      "topics": []
+    },
+    {
+      "id": "reddit-33",
+      "sourceId": "32",
+      "row": 33,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Come on now, don't be purposefully obtuse with me, please.\n\nWhat a world where ignorant readers are so easily deceived by the sham media outlet of a non-profit.\n\nkeep being either manipulated to be ignorant or a to keep others ignorant or both.\n\nNone of this was necessary, and if dropping a link is worthy of celebration, and this is what you call \"celebration\" then idk what to say man. Good luck.",
+      "author": "iantayls",
+      "date": "2026-09-29",
+      "note": "reply to 31",
+      "replyTo": "31",
+      "topics": [
+        "Reliability",
+        "Urgency",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-34",
+      "sourceId": "33",
+      "row": 34,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "My view is that the statement:\n\nWhat a world where people don’t want something because it will make their neighborhood too desirable.\n\ncontains a bigoted and horrific implication about Dorchester that is understandable given the information in the StreetsblogMASS version of events and nonsensical given the information in the WBUR version of events.\n\nIgnorance, bigotry, and horrific implications should be combated with knowledge about reality, and success in such combat is worthy of celebration. My view is that Aaron Swartz might be alive today if he'd spent more time celebrating his victories.\n\nThank you for wishing me luck in this endeavor.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 32",
+      "replyTo": "32",
+      "topics": [
+        "Neighborhood identity",
+        "Urgency",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-35",
+      "sourceId": "34",
+      "row": 35,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Delusional. Didn't even address anything I said lmao, just doubling down. Still fighting ghosts.",
+      "author": "iantayls",
+      "date": "2026-09-29",
+      "note": "reply to 33",
+      "replyTo": "33",
+      "topics": []
+    },
+    {
+      "id": "reddit-36",
+      "sourceId": "35",
+      "row": 36,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Come on now, don't be purposefully obtuse with me, please.\n\nThe WBUR story about the same meeting and protest mentioned rail service again and again, over a half dozen times and never mentioned gentrification or anything resembling what \"will make their neighborhood too desirable\" even once. What StreetsblogMASS did was the exact opposite. From the signs and images at the event, anyone can tell what the reality was.\n\nEveryone knows or should know the history of redlining around here and exactly what \"desirability\" means.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 34",
+      "replyTo": "34",
+      "topics": [
+        "Rail",
+        "Displacement",
+        "Gentrification",
+        "Engagement",
+        "Neighborhood identity",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-37",
+      "sourceId": "36",
+      "row": 37,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Lmao, so you read the comment. Or the first sentence, at least. Good job. You are still making arguments justifying why the link is valuable. At no point did I say it wasn't. Hence, fighting ghosts.\n\nI'm saying you're an asshole, regardless of the value of the information. If anything, the fact that I agree with you sharing that info makes your attitude even more annoying, because I know you're doing more harm than good.\n\nHave a nice life dude. Good lord.",
+      "author": "iantayls",
+      "date": "2026-09-29",
+      "note": "reply to 35",
+      "replyTo": "35",
+      "topics": [
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-38",
+      "sourceId": "37",
+      "row": 38,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "“What do you have in store for the people who will be displaced because you’re re-energizing a place that has been disinvested from for 60 years?” asked Solomon.”\n\nI understand the concern but this line of thinking is so nonsensical to me. The neighborhood is so neglected that we shouldn’t commit funds to improve it…because then the current residents will be displaced. Okay then I guess we just leave it shitty? That’s what you want?",
+      "author": "tgabs",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Neighborhood identity",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-39",
+      "sourceId": "38",
+      "row": 39,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "What if, instead of pretending that there are only two choices, investment and displacement on the one hand, or zero investment and no displacement on the other - we imagine it's possible to invest in a neighborhood while also taking steps to prevent displacement of long-term residents?",
+      "author": "Careless-College-374",
+      "date": "2026-09-29",
+      "note": "reply to 37",
+      "replyTo": "37",
+      "topics": [
+        "Displacement",
+        "Representation",
+        "Equity",
+        "Neighborhood identity",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-40",
+      "sourceId": "39",
+      "row": 40,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I am in favor of efforts and programs to help residents with limited means stay in their communities, but I also don’t think gentrification is fully avoidable when making improvements to public infrastructure",
+      "author": "tgabs",
+      "date": "2026-09-29",
+      "note": "reply to 38",
+      "replyTo": "38",
+      "topics": [
+        "Displacement",
+        "Gentrification",
+        "Representation"
+      ]
+    },
+    {
+      "id": "reddit-41",
+      "sourceId": "40",
+      "row": 41,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Why is it nonsensical? Suppose their concerns are valid and Mattapan becomes like say Brookline, including the demographics. Why would the current residents want that? \n\nDownvote as you would like, but reality is most development in MA is blocked. People don’t want their neighborhood to change, for various reasons.",
+      "author": "evkiddo",
+      "date": "2026-09-29",
+      "note": "reply to 37",
+      "replyTo": "37",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-42",
+      "sourceId": "41",
+      "row": 42,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Either you want investment or you don’t. can’t complain about both",
+      "author": "tgabs",
+      "date": "2026-09-29",
+      "note": "reply to 40",
+      "replyTo": "40",
+      "topics": [
+        "Equity"
+      ]
+    },
+    {
+      "id": "reddit-43",
+      "sourceId": "42",
+      "row": 43,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "ncluding the demographics\n\nGee what could you possibly mean by that.",
+      "author": "LtCdrHipster",
+      "date": "2026-09-29",
+      "note": "reply to 40",
+      "replyTo": "40",
+      "topics": []
+    },
+    {
+      "id": "reddit-44",
+      "sourceId": "43",
+      "row": 44,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Mattapan and Brookline have different demographics. I am pretty clear on what I mean.",
+      "author": "evkiddo",
+      "date": "2026-09-29",
+      "note": "reply to 42",
+      "replyTo": "42",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-45",
+      "sourceId": "44",
+      "row": 45,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Build the Wall, huh?",
+      "author": "LtCdrHipster",
+      "date": "2026-09-29",
+      "note": "reply to 43",
+      "replyTo": "43",
+      "topics": []
+    },
+    {
+      "id": "reddit-46",
+      "sourceId": "45",
+      "row": 46,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "You see this a lot, where NIMBYs will say something very explicitly, no ambiguity, and it’s so gross that the only thing their fellow travelers can do is pretend that noticing they said it is itself offensive.",
+      "author": "No_Delay3995",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Polarization"
+      ]
+    },
+    {
+      "id": "reddit-47",
+      "sourceId": "46",
+      "row": 47,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Hence the downvotes for pointing it out",
+      "author": "jojenns",
+      "date": "2026-09-29",
+      "note": "reply to 45",
+      "replyTo": "45",
+      "topics": []
+    },
+    {
+      "id": "reddit-48",
+      "sourceId": "47",
+      "row": 48,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "“We want a train”\n\nThese same people opposed the Blue Hill Ave commuter rail stop. At some point it’s time to not take unserious people seriously and just move forward.",
+      "author": "spedmunki",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Rail",
+        "Reliability"
+      ]
+    },
+    {
+      "id": "reddit-49",
+      "sourceId": "48",
+      "row": 49,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "This opposition is astroturfing at its finest. Worrell has to be getting money from somewhere to oppose it. Dianne Wilkerson, a convict, is being seriously listened to here (WHY?!) and she only acts when it’s in her financial benefit. Building a branch of the Orange Line would involve a junction somewhere near Ruggles where space is already constrained because of the adjacent NEC tracks. I wouldn’t be surprised if the price for that piece alone somehow got to $1B. So the T proposes a relatively-quick-to-build nine-figure project that would greatly improve the lives of residents in the short term.\n\nThe opponents perplex me on this point.\n\nThe project won’t adequately address neighborhood transit issues and there\n\nfore\n\nneeds to be a rail-based solution.\n\nThe project is such a great idea that it will lead to immediate gentrification.\n\nWhich is it? Is it half-assed or is it a great idea?",
+      "author": "ipsumdeiamoamasamat",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Displacement",
+        "Gentrification",
+        "Representation",
+        "Neighborhood identity",
+        "Funding",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-50",
+      "sourceId": "49",
+      "row": 50,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "What’s crazy is people in mattapan actually want it and Boston has the survey data to prove it.\n\nJust like with anything, community meetings are trash and just get astroturfed.",
+      "author": "Unusual-Astronaut152",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Engagement",
+        "Representation",
+        "Neighborhood identity",
+        "Evidence"
+      ]
+    },
+    {
+      "id": "reddit-51",
+      "sourceId": "50",
+      "row": 51,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Christian MilNeil and StreetsblogMASS don't seem like an objective source for information about what many opponents wanted.\n\nProtesters opposed to center-running bus lanes...opposed to this...a tone of polite skepticism among the critics...concerns that building a safer street with more trees and fast, reliable transit would fuel gentrification\n\nCompare that to the WBUR article about the exact same protest and meeting:\n\nThursday evening’s discussion often veered back into a refrain from opponents who say that the corridor should be serviced by a subway extension or enhanced commuter rail instead of buses...\n\n“No center bus lane! We want a train,” one person shouted through a megaphone.\n\n“Don’t let them lock us into a bus only future; we need rail here on Blue Hill Avenue,” Worrell shouted...\n\nGichuru said during the rally. “There’s almost a paternalistic relationship where City Hall knows best and those of us living on the corridor don’t know what’s best for our lives. If people had an opportunity to have a true conversation about rail, that would be so much better.”\n\nThe words \"subway\", \"train,\" or \"rail\" do not appear once in the StreetsBlog Mass article. What deranged media madness is this?",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Reliability",
+        "Safety",
+        "Displacement",
+        "Gentrification",
+        "Trust",
+        "Engagement",
+        "Future planning",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-52",
+      "sourceId": "51",
+      "row": 52,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Are they suggesting that the center bus lanes will somehow make it impossible to improve the Fairmount Line or build a new subway line?",
+      "author": "aray25",
+      "date": "2026-09-29",
+      "note": "reply to 50",
+      "replyTo": "50",
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-53",
+      "sourceId": "52",
+      "row": 53,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I think the objection isn't that a center bus lane will make rail impossible, it's a fear that the city will say, \"Well, they've got a center bus rail and that's good enough, so we don't need to spend any more time and energy on this already underserved community\" and so they'll never get the rail they think they need because the city won't want to spend the money. I think this inside agitator person must be having a lot of discussions/arguments about this topic, given the way they're snapping at everyone in this thread and implying they're morons for not already being fully informed on the topic.",
+      "author": "ChickenAndTelephone",
+      "date": "2026-09-29",
+      "note": "reply to 51",
+      "replyTo": "51",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Trust",
+        "Representation",
+        "Equity",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-54",
+      "sourceId": "53",
+      "row": 54,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "The elephant in the room is that the orange line extension like Worrell wants would cost something like $3B. There is no world in which that is happening in the next 5-10 years. While that idea is being actually vetted for feasibility the community can benefit from the proposed street project that actually has a design and funding behind it.",
+      "author": "tgabs",
+      "date": "2026-09-29",
+      "note": "reply to 52",
+      "replyTo": "52",
+      "topics": [
+        "Representation",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-55",
+      "sourceId": "54",
+      "row": 55,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "And the other reality is, if there is going to be any OL extension, it's going to be along the Needham Line not Blue Hill Ave.",
+      "author": "Maxpowr9",
+      "date": "2026-09-29",
+      "note": "reply to 53",
+      "replyTo": "53",
+      "topics": []
+    },
+    {
+      "id": "reddit-56",
+      "sourceId": "55",
+      "row": 56,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "also an orange line extension there would actually cause gentrification the way they are talking about but no yuppies are moving to Matapan for a center-running bus lane lol.",
+      "author": "Worldly_Quail5252",
+      "date": "2026-09-29",
+      "note": "reply to 54",
+      "replyTo": "54",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Gentrification"
+      ]
+    },
+    {
+      "id": "reddit-57",
+      "sourceId": "56",
+      "row": 57,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "The real problem is that certain NIMBY politicians are selling this as \"bus lanes or subway\" as you describe while knowing full well that the actual choice is \"bus lanes or nothing.\" How many of these rail-not-bus protestors would still be protesting if they know the true alternative?",
+      "author": "aray25",
+      "date": "2026-09-29",
+      "note": "reply to 52",
+      "replyTo": "52",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Polarization"
+      ]
+    },
+    {
+      "id": "reddit-58",
+      "sourceId": "57",
+      "row": 58,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Most of them do not want the center bus lane either way. No one will listen to them but that should be clear at this point that the anti’s are truly anti",
+      "author": "jojenns",
+      "date": "2026-09-29",
+      "note": "reply to 56",
+      "replyTo": "56",
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-59",
+      "sourceId": "58",
+      "row": 59,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I care about public transit, but I live in Somerville, so the topic itself of Blue Hill Ave is of little interest to me. I am not well-informed about it. It's the media coverage of WBUR versus StreetsblogMASS that's completely riveting. I've never seen a more stark example of what's wrong with specialized non-profit media in this region. So I'm going off about that and redditors' responses to it.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 52",
+      "replyTo": "52",
+      "topics": [
+        "Bus",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-60",
+      "sourceId": "59",
+      "row": 60,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "The city can’t build a subway line. That’s up to the T.",
+      "author": "ipsumdeiamoamasamat",
+      "date": "2026-09-29",
+      "note": "reply to 52",
+      "replyTo": "52",
+      "topics": [
+        "Rail",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-61",
+      "sourceId": "60",
+      "row": 61,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I mean, Phillip Eng, the head of the T, was also there",
+      "author": "ChickenAndTelephone",
+      "date": "2026-09-29",
+      "note": "reply to 59",
+      "replyTo": "59",
+      "topics": []
+    },
+    {
+      "id": "reddit-62",
+      "sourceId": "61",
+      "row": 62,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "You said the city would build the subway line. Not the T.",
+      "author": "ipsumdeiamoamasamat",
+      "date": "2026-09-29",
+      "note": "reply to 60",
+      "replyTo": "60",
+      "topics": [
+        "Rail",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-63",
+      "sourceId": "62",
+      "row": 63,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Whoever they are in your mind, I hope you ask your question to them.\n\nI'm performing a media comparison between WBUR and StreetsblogMASS because I've gotten pissed off too many times about manipulative non-profits in the past who abuse media to misrepresent the reality of what local people and elected officials think and say.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 51",
+      "replyTo": "51",
+      "topics": [
+        "Representation",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-64",
+      "sourceId": "63",
+      "row": 64,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Anyone who is objecting to the bus lane because they want rail.",
+      "author": "aray25",
+      "date": "2026-09-29",
+      "note": "reply to 62",
+      "replyTo": "62",
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-65",
+      "sourceId": "64",
+      "row": 65,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Yeah it’s amazing how rare it is to see anyone accurately portray the arguments of people they disagree with on the internet.",
+      "author": "parabostonian",
+      "date": "2026-09-29",
+      "note": "reply to 63",
+      "replyTo": "63",
+      "topics": []
+    },
+    {
+      "id": "reddit-66",
+      "sourceId": "65",
+      "row": 66,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "I suspect that there's a disconnect between the funders of these conniving and lying nonprofit media outlets and the media outlets themselves. I don't know about the Conservation Law Foundation because lawyers tend to be the root cause of the cover-your-ass lying crap. But places like the Barr Foundation and its donors most likely don't approve of the genuinely anti-democratic output of the StreetsblogMASS reporting done by MilNeil. My guess is that he thinks he needs to keep the funds flowing by misrepresenting what councilors and protestors say and don't say as much as possible.\n\nWhen WBUR makes it obvious that MilNeil's blog is anti-democratic and anti-reality, I suspect that the Conservation Law Foundation gives their wholehearted approval. What power wants is to discourage democratic participation and encourage a sense of hopelessness. Maybe other donors like the Barr Foundation genuinely don't want that or maybe I'm just naive, and all of society's wealthy owners and donors want to support those who misrepresent what local people say and think.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 65",
+      "replyTo": "65",
+      "topics": [
+        "Representation",
+        "Funding",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-67",
+      "sourceId": "66",
+      "row": 67,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Streetsblog is not true journalism, it’s an advocacy sledge hammer first and foremost. That’s the attitude the founder of Streetsblog had with the original NYC site and it permeates through to the Boston edition.",
+      "author": "ipsumdeiamoamasamat",
+      "date": "2026-09-29",
+      "note": "reply to 50",
+      "replyTo": "50",
+      "topics": []
+    },
+    {
+      "id": "reddit-68",
+      "sourceId": "67",
+      "row": 68,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "When it comes to misrepresenting local meetings and local protests that involve words from elected councilors, is that what the funders of the Conservation Law Foundation want?\n\nI see NYC is a media power place. Maybe they all expect that there. Maybe it's changing with Mamdani. I don't know. But I've always seen Boston as a local democratic power place.\n\nIf Streetsblog keeps misrepresenting local people and our elected leaders then the funders of the Conservation Law Foundation should know about it, and we should know who they are. Regardless of where a person stands on particular issues, it's repulsive to be against representative democracy by misrepresenting what takes place at meetings and protests where elected people speak. Funders should know they're funding a repulsive anti-democratic media outlet, and the public should know who those funders are.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 66",
+      "replyTo": "66",
+      "topics": [
+        "Engagement",
+        "Representation",
+        "Funding",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-69",
+      "sourceId": "68",
+      "row": 69,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Mass Streetblogs is trash--just outsiders telling residents how they need to live their lives.",
+      "author": "NoTamforLove",
+      "date": "2026-09-29",
+      "note": "reply to 50",
+      "replyTo": "50",
+      "topics": [
+        "Representation",
+        "Polarization"
+      ]
+    },
+    {
+      "id": "reddit-70",
+      "sourceId": "69",
+      "row": 70,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "You can see the word \"Rail\" in both images:\n\nOn signs at the protest as \"Blue Hill Deserves RAIL\"\n\nOn the screen at the meeting as \"Potential future rail\"\n\nBut it's not mentioned once in their article text. So many non-profits around here can't be trusted to depict reality. What a sham.",
+      "author": "Inside_agitator",
+      "date": "2026-09-29",
+      "note": "reply to 68",
+      "replyTo": "68",
+      "topics": [
+        "Rail",
+        "Trust",
+        "Engagement",
+        "Future planning",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-71",
+      "sourceId": "70",
+      "row": 71,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Create an orange line branch and elevate the tracks onto viaducts in the middle of Blue Hill Ave? Just a wild idea since tunneling is too costly and labor intensive, similar to what Vancouver is doing with the Surrey-Langley extension.",
+      "author": "Right_Highlight_219",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-72",
+      "sourceId": "71",
+      "row": 72,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Build the subway! Solve 3 problems at once. You can even make it a bus subway to start out and save the $3B real job for when it will cost $10B. Blue Hill Ave has needed a subway line for decades.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Funding",
+        "Future planning",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-73",
+      "sourceId": "72",
+      "row": 73,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "The City holding three listening sessions on the ONE proposal option is like a Russian election with just Putin on the ballot after all the other candidates mysteriously fell ill.\n\nGood for these residents for calling out this sham community engagement.",
+      "author": "NoTamforLove",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Trust",
+        "Engagement",
+        "Representation"
+      ]
+    },
+    {
+      "id": "reddit-74",
+      "sourceId": "73",
+      "row": 74,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "There have been meetings about this project since 2024 (EDIT: 2019!). These are not the first meetings.",
+      "author": "cden4",
+      "date": "2026-09-29",
+      "note": "reply to 72",
+      "replyTo": "72",
+      "topics": [
+        "Engagement"
+      ]
+    },
+    {
+      "id": "reddit-75",
+      "sourceId": "74",
+      "row": 75,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Since 2019!!!\n\n2024 was just the 15% design feedback push.",
+      "author": "similaralike",
+      "date": "2026-09-29",
+      "note": "reply to 73",
+      "replyTo": "73",
+      "topics": []
+    },
+    {
+      "id": "reddit-76",
+      "sourceId": "75",
+      "row": 76,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "What a younger generation of would-be city planners may have missed is that this is not a new proposal. At least 15 years ago the MBTA sought to do something similar. Also at that time the MBTA again made it difficult to engage the public. Neighborhood organizations banded together and after some outright coercive efforts (we won't vote for you if you do not represent us) got city electeds and state electeds on board to speak out to stop it. It WAS stopped.\n\nIt was never about neighborhood improvements or the like but some seriously investigated concerns on safety, health (highest asthma rate in the city), and assess to their own neighborhood. The earlier plan called for an enclosed busway with walls surrounding it with no crossings except at specified intersections.\n\nThis would have been done with Obama-era funding. The appearance of the first 60-ft articulated buses were some of that money. The buses were delivered before the \"shovel ready\" project was done.\n\nThis is not about neighborhood improvements or desirability, which, for what its worth, is a nice and clandestine way of saying \"gentrification.\" It was and remains about improving \"passenger miles travelled\" which is a transportation term to demonstrate how good a bus or rail line operates. This is a calculation of number of people boarding, miles travelled, and in what amount of time. How many remember when they tried to do this by spreading out the bus stops along Blue Hill Ave. That was opposed as well. Only a few were removed.\n\nOne of the questions not being asked is whether the funds taken for a \"shovel ready project\" will have to be returned if this does not happen. We're talking millions there.\n\nSo this has never been a new idea or a new plan. This is the same effort that came about over 15 odd years back. It's a zombie project that no one wanted then, and no one wants now.\n\nAs to the issues regarding the elderly and disabled that now have to cross an active bike and active traffic lane, there have been close calls on existing such center-lane bus installations and that has been an issue before the MBTA's Transportation Access Group (RTAG) which is the advisory body for the disabled and senior population, but as of right now RTAG has yet to get on board with its own clientele's concerns. Sadly, RTAG, and bodies like it in other states are controlled by the local transportation authority, in this case the MBTA. RTAG's leadership which has a board, shows in its bylaws that the MBTA has right of refusal for anyone who will sit on that board, so they can assure that only their own apologists are in control. RTAG is not truly an independent body.\n\nThe T also pays for the facilitator (overseer) which at present is someone from the Boston Center for Independent Living (BCIL). They do great work but almost never answer direct questions when asked. No answer is a very loud answer.\n\nSo before we condemn those that are nay-saying this Blue Hill Ave project, understand the distrust that is embedded here. That distrust s not new, and has nothing to do with the so-called Orange Line spur project. If the people and reps from the impacted area do not want this, who then is pushing it? Lots of questions not being asked -- or answered -- or revealed.\n\nOne of Boston's biggest problems is that their planners, and those at the MBTA (which travel in similar circles BTW) refuse to look at the history of how things got the way they are. Either that info is not available, or they have no interest in learning from the past. Let's just look forward with my great new vision and to hell with why things are like they are now. This is a prevalent attitude in Boston planners. So we are at substantial risk or making the same mistakes again.\n\nAnd for the young whipper-snappers out there, the center bus lane on Geneva Ave and the one proposed for Blue Hill Ave is where the center lane for street cars used to be. That is why those roads are so wide. Until the early 1950s you could board a trolley at Mattapan and ride to the Egleston Sq. Station on the Orange Line with a transfer. Other branches went to Dudley (Nubian). So is this a reinvention of the wheel here?\n\nLook at everything. Not just the headlines on this project.",
+      "author": "ppomeroy",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Reliability",
+        "Parking",
+        "Traffic",
+        "Safety",
+        "Bikes",
+        "Accessibility",
+        "Displacement",
+        "Gentrification",
+        "Trust",
+        "Engagement",
+        "Representation",
+        "Neighborhood identity",
+        "Funding",
+        "Urgency",
+        "Access",
+        "Media framing",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-77",
+      "sourceId": "76",
+      "row": 77,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "This project is literally people at the T and at the City of Boston saying \"Blue Hill Ave bus riders have some of the slowest and longest (time-wise) commutes of people who ride transit. Let's get those buses moving faster so that people can get where they need to go faster.\" That's it. Simple as that. There's no hidden agenda.\n\nAnd yes center bus lanes were proposed back in 2009 when stimulus funding suddenly came available. The public pushed back and said \"we'd rather have nothing rather than a plan we haven't had enough time to review.\" We've now spent the last few years doing that.",
+      "author": "cden4",
+      "date": "2026-09-29",
+      "note": "reply to 75",
+      "replyTo": "75",
+      "topics": [
+        "Bus",
+        "Reliability",
+        "Trust",
+        "Funding",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-78",
+      "sourceId": "77",
+      "row": 78,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "Fuck that noise. The T has gone out of its way to work with the community here. This proposal dates back SEVEN YEARS. The T is a transit agency and not in charge of zoning and development. That is a city issue. That also is an issue for the private land owners in the area. They have a right to jack up rents if the area is determined to be more desirable. They also have the right to not look only at short-term profit and to work with long-time residents. The actions of private land owners are not the T’s responsibility.",
+      "author": "ipsumdeiamoamasamat",
+      "date": "2026-09-29",
+      "note": "reply to 75",
+      "replyTo": "75",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Trust",
+        "Representation",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-79",
+      "sourceId": "78",
+      "row": 79,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "One of the easy ways you can tell that the concerns over safety on the center platforms are a lie is that Blue Hills is currently one of the most dangerous streets for pedestrians in the entire city and the opponents are not willing to sacrifice a single second of drive time or a single parking spot to make it safer.\n\nPoint me to where the opponents of the BRT who cry about getting to the platforms have instead suggested a major road diet, expanding the sidewalks, adding concrete daylighting at every intersection, and moving to longer, all walk traffic signal cycles throughout the whole avenue. Bet you can’t, because they don’t actually support pedestrian safety.",
+      "author": "No_Delay3995",
+      "date": "2026-09-29",
+      "note": "reply to 75",
+      "replyTo": "75",
+      "topics": [
+        "Parking",
+        "Traffic",
+        "Safety",
+        "Bikes",
+        "Displacement",
+        "Affordability",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-80",
+      "sourceId": "79",
+      "row": 80,
+      "thread": "Mayor Wu and Phil Eng Pitch Latest Blue Hill Avenue Redesign To Skeptics In Mattapan",
+      "text": "We can do better than prevent it from increasing! If we unpave the road and then remove the sewer and water infrastructure, it will lower property values significantly. Huge win for the community.",
+      "author": "wSkkHRZQy24K17buSceB",
+      "date": "2026-09-29",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Gentrification",
+        "Representation"
+      ]
+    },
+    {
+      "id": "reddit-81",
+      "sourceId": "80",
+      "row": 81,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "So are they actually going to build this one or nerf it after another 2 years of community meetings",
+      "author": "TerrierBoi",
+      "date": "2026-09-04",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Engagement",
+        "Representation"
+      ]
+    },
+    {
+      "id": "reddit-82",
+      "sourceId": "81",
+      "row": 82,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "They’re gonna repave it with 500 feet of bus lanes and call it a victory for the public process. The next day some person is gonna be hit by a car because the driver running a red light couldn’t see the pedestrian due to the 30 double-parked cars blocking his field of vision and the people that fought against this will shrug their shoulders and act like it’s some natural phenomenon you can’t do anything about, like the Himalayan mountains.",
+      "author": "Sandoongi1986",
+      "date": "2026-09-04",
+      "note": "reply to 80",
+      "replyTo": "80",
+      "topics": [
+        "Bus",
+        "Parking",
+        "Traffic",
+        "Safety"
+      ]
+    },
+    {
+      "id": "reddit-83",
+      "sourceId": "82",
+      "row": 83,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "This is so accurate it's painful. Just missing an Uber or a Doordash.",
+      "author": "schorschico",
+      "date": "2026-09-04",
+      "note": "reply to 81",
+      "replyTo": "81",
+      "topics": []
+    },
+    {
+      "id": "reddit-84",
+      "sourceId": "83",
+      "row": 84,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Who do you think ran the light?",
+      "author": "blackdynomitesnewbag",
+      "date": "2026-09-04",
+      "note": "reply to 82",
+      "replyTo": "82",
+      "topics": []
+    },
+    {
+      "id": "reddit-85",
+      "sourceId": "84",
+      "row": 85,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "the opposition to this is asking trump to rescind the funding for it... your guess is as good as anyone's if it happens",
+      "author": "Plenty_Apartment_874",
+      "date": "2026-09-04",
+      "note": "reply to 80",
+      "replyTo": "80",
+      "topics": [
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-86",
+      "sourceId": "85",
+      "row": 86,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Brother they’re STILL packing out churches and my entire instagram feed is just redesign hate.\n\nThe black community hate it so let’s just say 2 years of delays is on deck.\n\nWhat’s telling is it’s not just old people it’s literally the whole spectrum from like 25 year olds to 85 year olds.\n\nThere is sooo much ill will towards white stadium and blue hill ave that isn’t caught on Reddit. Been in Boston a long time I haven’t seen the black community this much against an infrastructure improvement in my 32 years",
+      "author": "UMassTwitter",
+      "date": "2026-09-04",
+      "note": "reply to 80",
+      "replyTo": "80",
+      "topics": [
+        "Reliability",
+        "Representation",
+        "Race",
+        "Delay"
+      ]
+    },
+    {
+      "id": "reddit-87",
+      "sourceId": "86",
+      "row": 87,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "It is wild how much people have seemingly come together to hate on this one project in particular. I'm seeing the same stuff all over Instagram that you probably are. In the reporting on last night's meeting though, it seems like reception was warmer and the anti bus lane crowd was smaller than I would have expected. Hopefully that's a sign that the city's messaging is getting through to some folks.",
+      "author": "TerrierBoi",
+      "date": "2026-09-04",
+      "note": "reply to 85",
+      "replyTo": "85",
+      "topics": [
+        "Bus",
+        "Trust",
+        "Engagement"
+      ]
+    },
+    {
+      "id": "reddit-88",
+      "sourceId": "87",
+      "row": 88,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Blue hill Avenue is a cultural point of pride and it’s symbolic to black Boston in a way non black residents won’t appreciate they just see it as a shitty road.\n\nThis really ain’t the platform to get into all that though",
+      "author": "UMassTwitter",
+      "date": "2026-09-04",
+      "note": "reply to 86",
+      "replyTo": "86",
+      "topics": [
+        "Representation",
+        "Race",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-89",
+      "sourceId": "88",
+      "row": 89,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Fair enough - I've been staying out of the discourse on this one as much as possible. Meanwhile I'm dying for them to bring even a fraction of these changes to Allston for the 57 bus corridor",
+      "author": "TerrierBoi",
+      "date": "2026-09-04",
+      "note": "reply to 87",
+      "replyTo": "87",
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-90",
+      "sourceId": "89",
+      "row": 90,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Wait so bike lanes but not connected and contiguous? Am I understanding that correctly?? \n\nI’m so tired of the bullshit. We know what works. The commercial businesses on Comm Ave are doing great and the street is safer to cross now and pleasant to walk on plus much safer for cyclists. Blue Hill Ave should be designed the same way even though it’s a bus, not a train. Theres no logical reason to let the current transit preferences of current residents determine the fucking infrastructure that will be in place for the next 50 years. This should 100% be about safe transportation in all modes in a major corridor and proven strategies around economic drivers (safe bike and ped infra increases retail, period.)",
+      "author": "Tooloose-Letracks",
+      "date": "2026-09-04",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Reliability",
+        "Traffic",
+        "Safety",
+        "Bikes",
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Urgency",
+        "Delay",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-91",
+      "sourceId": "90",
+      "row": 91,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "The plan includes a continuous, two-way, sidewalk-level bike lane on the southbound side of BHA from American Legion Highway to Woodhaven St, with a proposed shared-use path that extends from ALH to Seaver St",
+      "author": "the_djchi",
+      "date": "2026-09-04",
+      "note": "reply to 89",
+      "replyTo": "89",
+      "topics": [
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-92",
+      "sourceId": "91",
+      "row": 92,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "I finally got a chance to look. There’s a block at the north end where the “shared use path” ends and there’s just nothing.  At the south end, the bike facility ends suddenly a block from Mattapan Square.  This is bad design.\n\nBasically once again Mattapan gets screwed over. A few business owners and older folks are scared of change so the entire neighborhood gets a backward facing design that’ll be dangerous and outdated on day one. Micromobility is the future, pedestrian comfort and amenities are what boosts the local economy, yet Mattapan gets a car-centric design that all but confirms that the economic status quo of the central business corridor won’t change for another fifty years.",
+      "author": "Tooloose-Letracks",
+      "date": "2026-09-04",
+      "note": "reply to 90",
+      "replyTo": "90",
+      "topics": [
+        "Traffic",
+        "Safety",
+        "Bikes",
+        "Neighborhood identity",
+        "Future planning",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-93",
+      "sourceId": "92",
+      "row": 93,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "No. Look at the new designs closely.",
+      "author": "Background_Okra7079",
+      "date": "2026-09-04",
+      "note": "reply to 90",
+      "replyTo": "90",
+      "topics": []
+    },
+    {
+      "id": "reddit-94",
+      "sourceId": "93",
+      "row": 94,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "So bike riders can just get f’d I guess.",
+      "author": "Flat_Try747",
+      "date": "2026-09-04",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-95",
+      "sourceId": "94",
+      "row": 95,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "bike riders on blue hill ave tend to be the lowest income people in the city.\n\nIt's the rich assholes who live in the mansions along Seaver street who are causing problems - calling on the NAACP and the trump admin to put pressure on Wu. I really wish she had a backbone to stand up to these people.",
+      "author": "Badtakesingeneral",
+      "date": "2026-09-04",
+      "note": "reply to 93",
+      "replyTo": "93",
+      "topics": [
+        "Bikes",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-96",
+      "sourceId": "95",
+      "row": 96,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "What mansions on Seaver St? The Seaver St area around Blue Hill Ave is mostly early 20th century apartment buildings. Literally the exact opposite of mansions.",
+      "author": "New-Trifle-7097",
+      "date": "2026-09-04",
+      "note": "reply to 94",
+      "replyTo": "94",
+      "topics": []
+    },
+    {
+      "id": "reddit-97",
+      "sourceId": "96",
+      "row": 97,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Yeah, I'm confused by this too",
+      "author": "DiopticTurtle",
+      "date": "2026-09-04",
+      "note": "reply to 95",
+      "replyTo": "95",
+      "topics": []
+    },
+    {
+      "id": "reddit-98",
+      "sourceId": "97",
+      "row": 98,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Mansions along Seaver St 😂",
+      "author": "canarduck",
+      "date": "2026-09-04",
+      "note": "reply to 94",
+      "replyTo": "94",
+      "topics": []
+    },
+    {
+      "id": "reddit-99",
+      "sourceId": "98",
+      "row": 99,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Big fan of Holmes' response around wanting increased enforcement around people double parking.",
+      "author": "Impressive-Dig-3892",
+      "date": "2026-09-04",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Parking"
+      ]
+    },
+    {
+      "id": "reddit-100",
+      "sourceId": "99",
+      "row": 100,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Damn the bus lanes. Give me a trolley.",
+      "author": "ProfessorUpvote",
+      "date": "2026-09-04",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-101",
+      "sourceId": "100",
+      "row": 101,
+      "thread": "Blue Hill Ave. overhaul gets fresh design pitch ahead of community meetings",
+      "text": "Subway for Blue Hill Ave. Then you can fit the cars/bikes and pedestrians with ease.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-09-04",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Rail",
+        "Traffic",
+        "Safety",
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-102",
+      "sourceId": "101",
+      "row": 102,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "I was at the town hall meeting for the MBTA and city redesign of Blue Hill Ave at Morning Star Baptist Church last night, and have been following this project closely.\nThere is, undoubtedly, opposition to this project. There is also a lot of support for it. And there are both of those things from Black residents of Mattapan, so any invocation of “racism” or “not listening to the community” is idiotic. \n1 - There’s only been one attempt to do truly representative City-wide polling on the Mayor’s “Safe Streets” agenda but the results are very, very clear: there is more support than opposition in every neighborhood, in every racial/ethnic grouping, and at every age group. \n\nSee: https://www.documentcloud.org/documents/28024460-city-of-boston-2025-community-survey-transportation-summary/\n\n2 - The City and MBTA have done a terrible job documenting and continually pointing out all of the outreach that they did leading up to this design, but they did a huge amount of it—they sent mailers to 23,000 homes, walked into 100+ businesses on the corridor, did dozens of in-person events, sent out surveys again and again, etc. They estimate having spoken to 4,000 people along the way. https://storymaps.arcgis.com/stories/e42a74b392ec412c8fdaca4416da16d2\n\nCommunity priorities—bus riders want better transit, kids and their parents want safer streets, and (almost?) everyone agrees that public realm improvements are great—have been turned into an actual street design. And the newest design is responsive to subsequent feedback from residents and businesses who wanted more parking and less constrained vehicular travel. \n\n3 - The Globe article https://www.bostonglobe.com/2026/09/10/metro/blue-hill-avenue-public-meeting-wu-eng-bus-lane/#comment-224285446 article says, “When Bishop John Borders III asked opponents of the project to stand, half the room rose.” Someone should go back to the video feed. I was in the room, and it sure felt like significantly less than half the room rose. \n\nThere’s a legitimate discussion to be had about the safety—and accessibility—of requiring bus riders to cross vehicular traffic to access the bus. But an alternative of side-running bus lanes that can easily be blocked by cars, and that create bus/car conflicts at every intersection, is not obviously safer. Project critics continue to complain that the City didn’t evaluate alternatives, but the City specifically did evaluate alternatives. \n\nI agree that the MBTA should study a rail alternative. But infrastructure projects have to pass cost/benefit tests (at many steps of the state and federal approval processes) and it’s pretty obvious that this one would/will fail: the costs of building rail through densely-populated neighborhoods would be astronomical. \n\nThe fact is that running frequent bus service in a dedicated lane can get you pretty close to the transit quality of rail—and for a fraction of the cost.\n\nNew train stations will remove parking, or even buildings, in Grove Hall or Nubian Square, and the transit benefits, in terms of how many people could be moved from Mattapan Square to Ruggles, would be small/incremental relative to bus service in a dedicated lane.\n\nAll in all, Globe readers are marginally dumber after reading an article as biased-towards-controversy and fact-free as this one https://www.bostonglobe.com/2026/09/10/metro/blue-hill-avenue-public-meeting-wu-eng-bus-lane/#comment-224285446\n\nPlease do better.",
+      "author": "r/boston",
+      "date": "2026-09-11",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Reliability",
+        "Parking",
+        "Traffic",
+        "Safety",
+        "Accessibility",
+        "Displacement",
+        "Affordability",
+        "Trust",
+        "Engagement",
+        "Representation",
+        "Race",
+        "Neighborhood identity",
+        "Funding",
+        "Evidence",
+        "Access",
+        "Media framing",
+        "Polarization",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-103",
+      "sourceId": "102",
+      "row": 103,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "Unfortunately, most of the news articles I have seen paint a negative bias towards the project.\n\nMost of the backlash I saw from protestors does not make sense.",
+      "author": "No-Environment9264",
+      "date": "2026-09-11",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-104",
+      "sourceId": "103",
+      "row": 104,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "I’m seeing a ton of posts on Facebook in opposition but no real alternative. This is an investment in an underserved community. Finally getting the attention it deserves and people are rejecting for what?",
+      "author": "Low_Olive_526",
+      "date": "2026-09-11",
+      "note": "reply to 102",
+      "replyTo": "102",
+      "topics": [
+        "Representation",
+        "Equity"
+      ]
+    },
+    {
+      "id": "reddit-105",
+      "sourceId": "104",
+      "row": 105,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "All in all, Globe readers are marginally dumber after reading an article as biased-towards-controversy and fact-free as this one https://www.bostonglobe.com/2026/09/10/metro/blue-hill-avenue-public-meeting-wu-eng-bus-lane/#comment-224285446\n\nI have definitely picked up on a seeming bias in the Globe's reporting, and it's got me, once again, thinking of canceling (doing their 1$ for 8 months deal). I just can't imagine why anyone internally would be against the redesign, and suspect it comes more from wanting to seem like they are giving critics a fair shake of having a voice, but unintentionally making it seem like the opposition is greater than it actually is.",
+      "author": "SpaceBasedMasonry",
+      "date": "2026-09-11",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Engagement",
+        "Funding",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-106",
+      "sourceId": "105",
+      "row": 106,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "The opponents don’t have to make convincing arguments. They just have to stall long enough for Trump to pull the funding.",
+      "author": "Flat_Try747",
+      "date": "2026-09-11",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-107",
+      "sourceId": "106",
+      "row": 107,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "There’s a legitimate discussion to be had about the safety—and accessibility—of requiring bus riders to cross vehicular traffic to access the bus.\n\nWith curbside bus stops, riders still have to cross the street on one end of their journey or the other, so I don't even see how center-running buses change how much traffic people need to cross. Of course any design needs to be safe and accessible for people to cross the street, I'm just so unconvinced that center-running vs curbside stops make a difference.",
+      "author": "zaphods_paramour",
+      "date": "2026-09-11",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Parking",
+        "Traffic",
+        "Safety",
+        "Accessibility",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-108",
+      "sourceId": "107",
+      "row": 108,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "It’s literally no different than the B, C, and E green lines. Median running transit has been done for a long time",
+      "author": "Victor_Korchnoi",
+      "date": "2026-09-11",
+      "note": "reply to 106",
+      "replyTo": "106",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-109",
+      "sourceId": "108",
+      "row": 109,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "It's even better than at least half of the B and E line stations!",
+      "author": "zaphods_paramour",
+      "date": "2026-09-11",
+      "note": "reply to 107",
+      "replyTo": "107",
+      "topics": []
+    },
+    {
+      "id": "reddit-110",
+      "sourceId": "109",
+      "row": 110,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "Right? Like bus stops will still have cross walks and now they're only crossing one single-direction lane of traffic. I haven't looked at the design but why not raise each of those cross walks, differentiate their color from the street, and place flashing signs? We live in a city, why is crossing the street suddenly a point of controversy?",
+      "author": "HighPriestOG",
+      "date": "2026-09-11",
+      "note": "reply to 106",
+      "replyTo": "106",
+      "topics": [
+        "Bus",
+        "Traffic",
+        "Safety",
+        "Displacement",
+        "Affordability",
+        "Trust",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-111",
+      "sourceId": "110",
+      "row": 111,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "Thanks for engaging on this issue and sharing - I too went to the meeting, have strong feelings about the apparent non-alignment of motivations. I've seen the Globe be unjustifiably even more divisive than the article but II agree with you that this narrative spewen in the media sensationalizes the non-alignment of beliefs, values, and motivations , implying \"common ground\" is a contradiction in terms.\n\nThe MBTA's plan gets better but the tenor of the explanation to the community fails to engage interactively. I missed Eng speak, I was late and came in while the two city planners / MBTA capital folks(?) went through their slide deck and presented the plan. What I heard was \"this is why our plan does what you said you wanted and we worked so hard to make everyone happy that we're confident this represents the best plan for all stakeholders given the resource envelope designated for the corridor\" or \"here's what we're about to do to your neighborhood while we call it a open meeting for feedback\" - they pledged to stay as long as necessary to discuss and I will take a leap of faith and suggest they may have earnestly meant that - but the tone of the conversation made it feel hollow. Along the lines of your post, I felt that the MBTA's proposal in itself tries extremely hard to incorporate community feedback and needs, and their community engagement continuously improves, but that this is lost in the ensuing perception by most involved because of the posturing. What happened when this community's orange line elevated on the southern portion of Washington St. was deconstructed was a travesty because the decision for the OL underground alignment to be in the \"SW corridor\" is defensible but everything that followed was terrible transit planning. I'm of the opinion that the trackless trolley (TT) approach would've been far better than the Silver Line BRT approach, successful, and perhaps eventually upgraded to LRT. In the excellent doc \"Equal or Better\" the MBTA planner suggests as much as does the then-SOT. But they recount how the community didn't hear them - and they didn't hear the community, either (that nobody got a chance to engage as equals and collobrators). So the notion of the TT being \"just a bus\" prevailed and still clouds this argument.\n\nI live in Quincy, by Wollaston. Quincy is a relative transit paradise with heavy-rail subway RL access strengthened by parallel CR lines (so helpful during diversion / delays). Returning home from the meeting on the 21 , 22, and OL Shuttle bus in the area \"drove home\" the point of disparity between neighborhoods (don't get me started. The OG RL Braintree Branch was designed to segregate the branches even if not intentionally). The MBTA has advanced their BEMU Fairmount CR project and I think that's great, will help the situation signfigiantly. But I don't know that it alone (15 min headways) & busses in exclusive transit ways will constitute evenly and fairly distributed service delivery in comparison to RL-A, RL-B, OL. I don't know because that wasn't the discussion last night. I've been trying to calculate 7 scenarios ranging from No-Build, BRT, LRT 50% STO and surface-median on BHA (underground Nubian-Roxbury Crossing), fully exclusive ROW LRT, HRT (OL) and I steadfastly don't think that branching the OL is the right call here, best cost/benefit, best support to area. I support Councilor Worrell's goals & motivations , and I reached out on facebook in a simple message; He replied enthusiastically and carved time for me to (virtually) meet with his COS, Policy Dir., him, and we engaged in a manner I found encouraging, respectful, helpful. In fact, their language broadened (now advocating \"rail rapid transit\" and not just OL branch) - I shouldn't imply that my suggestions are to thank for this, just that their willingness to be flexibile was immediate. Below I'm pasting a related message I wrote to a MBTA Transit Enthusiast fb group on the matter.\n\nAn exclusive busway (75%?) could be designed for upgrade to Light Rail Transit (LRT - but don't think Green Line, think dedicated ROW) and operated in less than 5 years as an extension of the Mattapan HSL which is already scheduled for upgrades to accomodate the 2019 Green Line LRVs (slated for Mattapan in a few years) which could become a very sensible compromise between a branched OL in 20-30 years at huge expense vs. hits to OL Forest Hills service and the MBTA's current proposal - which I've not even had a chance yet to digest and am not dismissing or endorsing yet; but my point is that this conversation needs to happen amicably, cooperatively, and pragmatically and thanks OP for continuing that earnestly here.\n\nAll the best,\n\nDave",
+      "author": "DaveDavesSynthist",
+      "date": "2026-09-11",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Reliability",
+        "Parking",
+        "Safety",
+        "Displacement",
+        "Affordability",
+        "Trust",
+        "Engagement",
+        "Representation",
+        "Neighborhood identity",
+        "Funding",
+        "Urgency",
+        "Delay",
+        "Access",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-112",
+      "sourceId": "111",
+      "row": 112,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "My similar post / response in a facebook group when sharing Councilor Worrell's fb post:\n\nDave Daves Seaward’s Post\n\nI became aware of City Councilman Worrell via his OL branching proposal that was widely dismissed as “unserious” in transit enthusiast online communities. I reached out to him to have more conversation and … I quickly learned that these folks are serious, happy to engage, open to ideas. This is my first engagement with local city politicians and I was happily and surprisingly encouraged beyond my previously-held skepticism. He responded, his team responded, they’re ready to have the right conversations (they are serious).\n\n[Brian Worrell’s Post\n\"We do not have to choose between making Blue Hill Avenue safer today and planning for better transportation tomorrow.\nIn the City’s own Blue Hill Avenue engagement plan, residents were presented with two options: a center-running bus lane or safety improvements. We can use the $18 million for those safety improvements now while we work on a real transportation plan with a bigger vision for the corridor.\nRail is not some wild idea. We had rail on Blue Hill Avenue, and planning documents dating back to the 1970s called for studying rail along this corridor. Other cities have also used this grant program to support rail projects.\nWe need safer crosswalks, better lighting, upgraded signals, improved sidewalks and bus stops, and stronger traffic enforcement now. None of that needs to be tied to a center-running bus lane.\nWhat we should not do is lock our community into a bus-only future for another 40 years while neighborhoods like Roslindale continue pushing for rail expansion.\nMake Blue Hill Avenue safer now. Then bring the City, the MBTA, our state delegation, and the community together to create a transportation plan that actually meets our needs today and gives us a bigger vision for the future.\"]",
+      "author": "DaveDavesSynthist",
+      "date": "2026-09-11",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Traffic",
+        "Safety",
+        "Trust",
+        "Engagement",
+        "Representation",
+        "Neighborhood identity",
+        "Funding",
+        "Urgency",
+        "Future planning",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-113",
+      "sourceId": "112",
+      "row": 113,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "I think I would be more willing to consider the legitimacy of Worrell’s proposal here if it didn’t seem predicated on first blocking the bus lane. My concern is that he’s much more likely to gain traction for blocking the bus lane than he is for building a rail line so the possibility that we end up with nothing is very real. Perhaps it is worth reaching out to him even though I don’t live in his district.",
+      "author": "eherot",
+      "date": "2026-09-11",
+      "note": "reply to 111",
+      "replyTo": "111",
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-114",
+      "sourceId": "113",
+      "row": 114,
+      "thread": "Thoughts on yesterday's Blue Hill Ave town hall meeting",
+      "text": "I love to see that this is your response because this is the type of thinking that makes sense to me too. Let me find a link to councilor Worrell’s next-day radio interview where he explicitly stated that his position is wanting to explore the range of alternatives and have a discourse revealing the trade-offs of the various modes and their impacts. The orange line branch was their first suggestion, a starting point for conversation. And he talks about rail on Blue Hill Ave (surface rail, as existed on BHA previously which is presumably why there is space for it still and why we already know it is feasible) as a promising possible option - in my mind that’s compatible with starting initially with a center bus lane!\n\nI don’t live in his district either so i understand your hesitation to reach out as if you’re a constituent but Im so glad that I did because I had low expectations overturned. I am going to reach out to them now to see when I could check in with them about this next and would welcome your joining - but also I wouldn’t want to stop you from reaching out individually, independently, because I don’t want you to just “take my word for it.”",
+      "author": "DaveDavesSynthist",
+      "date": "2026-09-11",
+      "note": "reply to 112",
+      "replyTo": "112",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Urgency",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-115",
+      "sourceId": "114",
+      "row": 115,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "Just build the bus lanes! We can rip out the parking later.",
+      "author": "aray25",
+      "date": "2026-09-05",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Reliability",
+        "Parking"
+      ]
+    },
+    {
+      "id": "reddit-116",
+      "sourceId": "115",
+      "row": 116,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "It's at least much better than losing the federal money and keeping the status quo. If this was the original plan it honestly would've been fine, it's just so frustrating to see the city constantly walk back ambitious improvements.",
+      "author": "Axel_Wench",
+      "date": "2026-09-05",
+      "note": "reply to 114",
+      "replyTo": "114",
+      "topics": [
+        "Trust",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-117",
+      "sourceId": "116",
+      "row": 117,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "Very cool to see the City choosing angled parking over actually connecting the bike lane all the way through Mattapan Square to the Neoponset Greenway. At least it'll match the Cummins Hwy bike lanes in that regard.",
+      "author": "Axel_Wench",
+      "date": "2026-09-05",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Parking",
+        "Bikes",
+        "Trust",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-118",
+      "sourceId": "117",
+      "row": 118,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "I agree, but at least you can take Woodhaven St (a quieter residential street) to the new Cummins Hwy bike lanes, then connect to the Neponset Trail from there. It's a small detour, but I'm happy to make this compromise if it means the project will actually get built.\n\nNot saying that I agree with this, but if car users feel like they are going to be negatively impacted by the change, the project will inevitably get sent to redesign again. And extending the bike lane all the way through Mattapan Square likely would have removed too much parking. That's our unfortunate reality. The plus side is that bikers get 2.25 miles of continuous protected bike lanes on an arterial road.",
+      "author": "the_djchi",
+      "date": "2026-09-05",
+      "note": "reply to 116",
+      "replyTo": "116",
+      "topics": [
+        "Parking",
+        "Traffic",
+        "Bikes",
+        "Trust",
+        "Representation",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-119",
+      "sourceId": "118",
+      "row": 119,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "I'll have to keep that detour in mind! I haven't been down to Cummins Hwy since basically the whole thing was a construction zone, I want to check it out again now that they're mostly(?) done",
+      "author": "Axel_Wench",
+      "date": "2026-09-05",
+      "note": "reply to 117",
+      "replyTo": "117",
+      "topics": [
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-120",
+      "sourceId": "119",
+      "row": 120,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "Yeah imagine how nice the pedestrian access could be if they had safe way for bikers to go from Franklin park to Mattapan square/ Neoponset greenway.",
+      "author": "Immediate_Subject552",
+      "date": "2026-09-05",
+      "note": "reply to 116",
+      "replyTo": "116",
+      "topics": [
+        "Parking",
+        "Safety",
+        "Bikes",
+        "Neighborhood identity",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-121",
+      "sourceId": "120",
+      "row": 121,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "My dream is that they do this work on BHA and then make improvements to Morton st (bare minimum: add continuous sidewalks).",
+      "author": "Immediate_Subject552",
+      "date": "2026-09-05",
+      "note": "reply to 119",
+      "replyTo": "119",
+      "topics": []
+    },
+    {
+      "id": "reddit-122",
+      "sourceId": "121",
+      "row": 122,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "\"We owe Louisa more than our grief. We owe her action, we have to do better\"\n\nIs this doing better?",
+      "author": "Louisa would have loved more parking spaces",
+      "date": "2026-09-05",
+      "note": "",
+      "replyTo": null,
+      "topics": []
+    },
+    {
+      "id": "reddit-123",
+      "sourceId": "122",
+      "row": 123,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "Louisa would have loved more parking spaces",
+      "author": "Victor_Korchnoi",
+      "date": "2026-09-05",
+      "note": "reply to 121",
+      "replyTo": "121",
+      "topics": [
+        "Parking"
+      ]
+    },
+    {
+      "id": "reddit-124",
+      "sourceId": "123",
+      "row": 124,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "…from reading the article, yes?",
+      "author": "chillax63",
+      "date": "2026-09-05",
+      "note": "reply to 121",
+      "replyTo": "121",
+      "topics": [
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-125",
+      "sourceId": "124",
+      "row": 125,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "So there are safety improvements for all road users incorporated in this design?",
+      "author": "dpm25",
+      "date": "2026-09-05",
+      "note": "reply to 123",
+      "replyTo": "123",
+      "topics": [
+        "Safety"
+      ]
+    },
+    {
+      "id": "reddit-126",
+      "sourceId": "125",
+      "row": 126,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "It said sidewalk level bike paths. Is that not better?",
+      "author": "chillax63",
+      "date": "2026-09-05",
+      "note": "reply to 124",
+      "replyTo": "124",
+      "topics": [
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-127",
+      "sourceId": "126",
+      "row": 127,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "There is no sidewalk level path in the composite image.",
+      "author": "dpm25",
+      "date": "2026-09-05",
+      "note": "reply to 125",
+      "replyTo": "125",
+      "topics": []
+    },
+    {
+      "id": "reddit-128",
+      "sourceId": "127",
+      "row": 128,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "Well in the article it mentions one so idk.",
+      "author": "chillax63",
+      "date": "2026-09-05",
+      "note": "reply to 126",
+      "replyTo": "126",
+      "topics": [
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-129",
+      "sourceId": "128",
+      "row": 129,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "The image is of current conditions… look at the proposed design. Protected sidewalk level two way bike lane along the whole corridor.",
+      "author": "Wonderful_Team_3289",
+      "date": "2026-09-05",
+      "note": "reply to 126",
+      "replyTo": "126",
+      "topics": [
+        "Bikes",
+        "Displacement",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-130",
+      "sourceId": "129",
+      "row": 130,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "Not quite the whole corridor but better than that image implies.\n\nThe high quality infrastructure diassapears at probably the most dangerous point, the intersection in front of dominos/t mobile/ the trolley.",
+      "author": "dpm25",
+      "date": "2026-09-05",
+      "note": "reply to 128",
+      "replyTo": "128",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-131",
+      "sourceId": "130",
+      "row": 131,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "My city of Lowell has a center bus lane but I think I only see a few times where's buses have use it. Seen more emergency vehicles use it. A shame because it's really protected and no cars drive on it. But for some reason they never bothered to get the bus signal lights to work. Where as the city has been. Doing other things lately. Feels like they won't to.",
+      "author": "TheDarkClaw",
+      "date": "2026-09-05",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Reliability",
+        "Traffic",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-132",
+      "sourceId": "131",
+      "row": 132,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "So funny that only one of the pictures features a bike lane and they didn't even bother labeling it. /s",
+      "author": "trevorkafka",
+      "date": "2026-09-05",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-133",
+      "sourceId": "132",
+      "row": 133,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "There better be daylighting because a net increase in parking and keeping the 4 lanes feel like they're going to cause safety sacrificies to appease the people driving, and I lack trust in said drivers to not drive like psychopaths if the road isn't explicitly designed to force it.",
+      "author": "Pokemonred200",
+      "date": "2026-09-05",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Parking",
+        "Traffic",
+        "Safety",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-134",
+      "sourceId": "133",
+      "row": 134,
+      "thread": "Boston shares updated design for Blue Hill Ave bus project",
+      "text": "I am concerned whatever bike infrastructure they will include will have an awkward gap between it and the facilities on Cummins and the Neponset River. Feels like if they aren't properly connected, its just going to have to be done later on.",
+      "author": "patsguy12118721",
+      "date": "2026-09-05",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Reliability",
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-135",
+      "sourceId": "134",
+      "row": 135,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The people who are against the center running bus lanes are the ones who do not want to give up double and triple parking because this will stop that. Then all the business will claim that it's the reason why business has dropped because they know they rely on the double/triple parking for their business to survive.",
+      "author": "bostonaruban66",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Parking",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-136",
+      "sourceId": "135",
+      "row": 136,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Sitting in the 'community meeting', that's basically what they're asking for. They basically want traffic to be fixed, they like the road width as it is, the problem is actually how ugly the street is and how it needs trees. Their idea of investment in the black community is simply beatification\n\nIt's like every episode of Kitchen Nightmares where the restauranteur thinks their food is amazing aand they're so confident Ramsay giving them a free makeover and publicity is all they need",
+      "author": "digitalsciguy",
+      "date": "2026-07-06",
+      "note": "reply to 134",
+      "replyTo": "134",
+      "topics": [
+        "Traffic",
+        "Engagement",
+        "Representation",
+        "Equity",
+        "Race"
+      ]
+    },
+    {
+      "id": "reddit-137",
+      "sourceId": "136",
+      "row": 137,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I live in the area. Hot take: pedestrians and cyclists in Dorchester and Mattapan deserve safe access to Franklin Park, and no one should care if the assholes who triple park on Blue Hill Ave to go grocery shopping don’t like it.",
+      "author": "Upstairs_Bat5752",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Parking",
+        "Safety",
+        "Bikes",
+        "Neighborhood identity",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-138",
+      "sourceId": "137",
+      "row": 138,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I don’t live there but drive by and I agree. There are a lot of pedestrians there already and I think they deserve better than an old unmaintained highway for suburbanites to speed through",
+      "author": "timberdoodle3000",
+      "date": "2026-07-06",
+      "note": "reply to 136",
+      "replyTo": "136",
+      "topics": [
+        "Traffic",
+        "Safety"
+      ]
+    },
+    {
+      "id": "reddit-139",
+      "sourceId": "138",
+      "row": 139,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "There are plenty of anti social locals who speed through the neighborhood and would kill a person to save 30 seconds, too lol. Kraft had a lot of support here because he opposed these safe streets upgrades. Guess what? He was losing so badly he got laughed out of the race. It’s time for the rest of us to move forward and get this done.",
+      "author": "Upstairs_Bat5752",
+      "date": "2026-07-06",
+      "note": "reply to 137",
+      "replyTo": "137",
+      "topics": [
+        "Safety",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-140",
+      "sourceId": "139",
+      "row": 140,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I live in the neighborhood and 10000% agree. There is no safe access to Franklin park. The folks who are afraid the transit improvements will make the neighborhood too expensive for current residents need to evaluate if they never want it to get better.",
+      "author": "Immediate_Subject552",
+      "date": "2026-07-06",
+      "note": "reply to 136",
+      "replyTo": "136",
+      "topics": [
+        "Bus",
+        "Parking",
+        "Safety",
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Neighborhood identity",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-141",
+      "sourceId": "140",
+      "row": 141,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Stopping this project isn’t going to lower or freeze the rent anywhere. The thing that would actually make the neighborhood more affordable again, building a huge amount of dense housing, is also opposed by everyone in the neighborhood because they care more about parking their cars.",
+      "author": "Upstairs_Bat5752",
+      "date": "2026-07-06",
+      "note": "reply to 139",
+      "replyTo": "139",
+      "topics": [
+        "Parking",
+        "Traffic",
+        "Displacement",
+        "Affordability",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-142",
+      "sourceId": "141",
+      "row": 142,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "It’s the same thing in areas that already got their expanded transit. People don’t want to change their way of life. They needed a car for everything before, so they can’t possibly see a world in which they don’t have a car.\n\nAdditionally, it’s so difficult and expensive to move, that you almost can’t blame people for not wanting to change how things are.",
+      "author": "boston4923",
+      "date": "2026-07-06",
+      "note": "reply to 140",
+      "replyTo": "140",
+      "topics": [
+        "Bus",
+        "Traffic"
+      ]
+    },
+    {
+      "id": "reddit-143",
+      "sourceId": "142",
+      "row": 143,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "They can still have and use a car, but we should still aim to make it easier to get around without a car. Tons of places in the world do better on transit, bike, and walking infrastructure while still having a lot of people driving cars. In their mind this possibility doesn't exist.",
+      "author": "wSkkHRZQy24K17buSceB",
+      "date": "2026-07-06",
+      "note": "reply to 141",
+      "replyTo": "141",
+      "topics": [
+        "Bus",
+        "Traffic",
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-144",
+      "sourceId": "143",
+      "row": 144,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Agreed. I think educating people on what their life could look like there with transit is important. People don’t have the vision, so they cling to their cars.",
+      "author": "boston4923",
+      "date": "2026-07-06",
+      "note": "reply 142",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Traffic"
+      ]
+    },
+    {
+      "id": "reddit-145",
+      "sourceId": "144",
+      "row": 145,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The angled parking in the proposal looks better anyway!",
+      "author": "BagMostlyWater",
+      "date": "2026-07-06",
+      "note": "reply to 136",
+      "replyTo": "136",
+      "topics": [
+        "Parking"
+      ]
+    },
+    {
+      "id": "reddit-146",
+      "sourceId": "145",
+      "row": 146,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Boston has proven time and time again it has no ambition for greatness and would like to shoot itself in the foot when it comes to anything related to housing or transit policy to appease ill informed voters or nimbys",
+      "author": "Doctrina_Stabilitas",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Reliability",
+        "Affordability",
+        "Polarization"
+      ]
+    },
+    {
+      "id": "reddit-147",
+      "sourceId": "146",
+      "row": 147,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The Boston globe allowing a pro transit voice is welcoming and shocking.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-148",
+      "sourceId": "147",
+      "row": 148,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Wonderful article!! However I have a feeling that the former secretary’s sentiment about the councilors “acting in good faith” when introducing their last-minute OLX proposal to Mattapan Square was just him being polite. As the secretary said, this project has been discussed, proposed, worked, and re-worked since at least 2009 with the 28X project, and the councilors have been around in Boston politics back then. If they truly cared about the needs of their constituents and seriously wanted to extend the Orange Line down Blue Hill Ave, they would have brought it up way back then as a potential solution! Maybe, just maybe, the city could have taken it up for environmental studies, federal grant applications, design/engineering, and perhaps by now in 2026 it could have been a real project!!!\n\nBut no, the councilors decided that because there’s now actual money for this project, they produce a half-baked Orange Line extension using a crappy AI-generated MBTA map to grab people’s attention and to try and get Trump to take back money that’s already dedicated to this project!! All because they don’t like it!\n\nWould everyone in this city love if the Orange Line is to be extended to Mattapan Square from Ruggles? Absolutely! No doubt about it!! I would’ve used it every day if I could to get to college and beyond. But it’s so obvious that the councilor’s proposal was made to get the existing BRT project canceled. BRT is an excellent and realistic step in the right direction for what the corridor needs RIGHT NOW. Plus, this project will also build shorter and safer crosswalks, retain 90%+ of parking spots, have protected bike lanes, and give acres of new green space for trees. At the end of the day, the 30,000+ daily bus riders and the hundreds of thousands living near the corridor deserve something better for the community NOW! The city as a whole can’t afford to wait another half century for a half-baked promise. The councilors are only gonna let their constituents down even more.",
+      "author": "iop_318",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Reliability",
+        "Parking",
+        "Safety",
+        "Bikes",
+        "Affordability",
+        "Trust",
+        "Representation",
+        "Neighborhood identity",
+        "Funding",
+        "Urgency",
+        "Delay",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-149",
+      "sourceId": "148",
+      "row": 149,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "If the community blocks this, I never want to hear moans about “transit desert” or “equity” again for this area…",
+      "author": "ethan1231",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Representation",
+        "Equity"
+      ]
+    },
+    {
+      "id": "reddit-150",
+      "sourceId": "149",
+      "row": 150,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Also going to share that there is ACTIVE CONSTRUCTION to bring 300+ new units of income-restricted housing to the area. As a neighbor to this project and BHA, I often wonder how the influx of cars and drivers from this project could be mitigated by better transit. If you think the area is a mess now, just wait.",
+      "author": "Immediate_Subject552",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Reliability",
+        "Traffic",
+        "Affordability",
+        "Urgency",
+        "Delay"
+      ]
+    },
+    {
+      "id": "reddit-151",
+      "sourceId": "150",
+      "row": 151,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Subway makes the most sense. You can argue all day long about the AI map they produced to sell the idea but the idea is the best out there for the volume of riders. The bus lane is not the best solution.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-152",
+      "sourceId": "151",
+      "row": 152,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "If you could wave a wand and magic a subway into existence, sure. But we can't even get red-blue connector. The bus solution can be done soon. If people wanna start planning an orange line extension IN ADDITION to the busway, that'd be cool too!",
+      "author": "BagMostlyWater",
+      "date": "2026-07-06",
+      "note": "reply to 150",
+      "replyTo": "150",
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-153",
+      "sourceId": "152",
+      "row": 153,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Self defeatism is the life blood of this group. The subway solves a problem the bus lane does not.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 151",
+      "replyTo": "151",
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-154",
+      "sourceId": "153",
+      "row": 154,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Self-defeatism is killing a good project like this for a fantasy subway project. We can and should work towards those sorts of fantasy projects! But they take a long, long time as well as lots of work and funding. Incremental lower-hanging fruit like this helps keep the city alive and growing enough to support large projects, and starts improving everyone’s lives much quicker.",
+      "author": "bubblyswans",
+      "date": "2026-07-06",
+      "note": "reply to 152",
+      "replyTo": "152",
+      "topics": [
+        "Rail",
+        "Trust",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-155",
+      "sourceId": "154",
+      "row": 155,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "not a good project. Its a waste. It is a bottleneck that needs capacity added not subtracted. You are making it worse. Let's make it better.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 153",
+      "replyTo": "153",
+      "topics": []
+    },
+    {
+      "id": "reddit-156",
+      "sourceId": "155",
+      "row": 156,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "BRT adds more capacity what the fuck are you talking about.",
+      "author": "bubblyswans",
+      "date": "2026-07-06",
+      "note": "reply to 154",
+      "replyTo": "154",
+      "topics": []
+    },
+    {
+      "id": "reddit-157",
+      "sourceId": "156",
+      "row": 157,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "it adds capacity to the bus path during peak demand when the spacing is 2 minutes apart. When the spacing is 10 minutes apart and the buses are half empty then your capacity is cut because you created a harsher bottleneck.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 155",
+      "replyTo": "155",
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-158",
+      "sourceId": "157",
+      "row": 158,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "So do we need a subway because there's so much demand or do we not need a bus lane because there's so little demand?",
+      "author": "13nobody",
+      "date": "2026-07-06",
+      "note": "reply t 156",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-159",
+      "sourceId": "158",
+      "row": 159,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "You keep using that word, capacity. I do not think it means what you think it means. Peak demand IS the capacity bottleneck. That capacity still exists off-peak—half-empty buses mean there is even more capacity than is being used. What you’re whining about is space being taken away from cars. But capacity isn’t measured in how much public space we let people hog with gigantic, polluting vehicles, it’s measured in people who can get from A to B.\n\nThe subway proposal is a perfect demonstration of the extremely typical bad faith approach carbrains use: you don’t care about anything but keeping your parking and extra lanes, so you argue for killing good projects and pretend we’re going to do something much bigger that will never come to fruition instead. Same thing Elon Musk did with Hyperloop.",
+      "author": "bubblyswans",
+      "date": "2026-07-06",
+      "note": "reply to 156",
+      "replyTo": "156",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Parking",
+        "Traffic"
+      ]
+    },
+    {
+      "id": "reddit-160",
+      "sourceId": "159",
+      "row": 160,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "There is heavy traffic in that area throughout the day. The buses are only on peak spacing for parts of the day. Adding capacity is not that hard of a thing to fully understand. Have 4 lanes of pavement....will have have 4 lanes of pavement...no capacity added.\n\nI am very much in favor of building this train line and others. You folks call this a solution or a good project and it is not. Again, grab some cones and prove it. You can use all the statue headed ones and save some cash.\n\nYou folks are just anti-train. Not sure why....",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 158",
+      "replyTo": "158",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Traffic"
+      ]
+    },
+    {
+      "id": "reddit-161",
+      "sourceId": "160",
+      "row": 161,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "That's literally true for any transit corridor. Subway is always best transit solution, but its also the most complicated, expensive, and disruptive to build. Unless you want to have no change for the next 20 years (at least) and an even bigger fight about gentrification/ displacement, the bus lane is a fantastic, ready-to-go, straight forward, and funded option that will greatly improve majority of BHA users lives.",
+      "author": "samsongam",
+      "date": "2026-07-06",
+      "note": "reply to 150",
+      "replyTo": "150",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Displacement",
+        "Gentrification",
+        "Representation",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-162",
+      "sourceId": "161",
+      "row": 162,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "You're letting perfect be the enemy of good. Of course a subway would be the best. It would be best to build an orbital route, it would be best to convert the D back to heavy rail and extend the blue to Riverside. It would be best to build NSRL. We shouldn't stop improving the network just because there's a theoretical better option.",
+      "author": "13nobody",
+      "date": "2026-07-06",
+      "note": "reply to 150",
+      "replyTo": "150",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-163",
+      "sourceId": "162",
+      "row": 163,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Your letting apathy be the victor instead of an actual solution. Be less apathetic. Subway isnt perfect either but it moves the needle. Bus lane is no solution here. The traffic volume in the area warrants a subway. A subway helps add MORE capacity so that you can add MORE housing. Both capacity and housing are needed. Culpepper is right, the bus lane is wrong. Subway!",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 161",
+      "replyTo": "161",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Traffic",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-164",
+      "sourceId": "163",
+      "row": 164,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "So work towards a subway while the bus lane is operational!\n\nThere's a ton of homework that needs to done for a subway before you can even put a shovel in the ground. Where will the stations be? What sort of dirt will you be digging through? Where are the utilities? What will surface construction look like? Who's going to pay for it?",
+      "author": "13nobody",
+      "date": "2026-07-06",
+      "note": "reply to 162",
+      "replyTo": "162",
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-165",
+      "sourceId": "164",
+      "row": 165,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Step one: Decide the best solution to the problem.\n\nStep two: hire an engineer to design the solution\n\nStep three three: bid the job out\n\nStep four build it\n\nStep five: enjoy the problem being solved and not made worse\n\nYou could have construction started using a design-build approach and be under way in a year. You could put damages on the completion side and have the thing built in 3 years.\n\nUtilities are not a new invention. You put the subway in the middle of the ROW and use cut and cover. You have enough room for utilities on either side of the new tunnel. Will it be hard? Yes. Will it be expensive? yes. Doing nothing will be more expensive. Doing the bus lane makes the bus flow better for peak part of the day but all other transit flows worse 24/7. Anytime the bus lane is empty during about 20 hours per day the new lane would be a waste of space. You can see this on Columbus Ave. You can test this by doing it now with cones. Try it for a month or a week and see what its like.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 163",
+      "replyTo": "163",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Urgency",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-166",
+      "sourceId": "165",
+      "row": 166,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Decide to do thing\n\n????\n\nIt's done!",
+      "author": "13nobody",
+      "date": "2026-07-06",
+      "note": "reply to 164",
+      "replyTo": "164",
+      "topics": []
+    },
+    {
+      "id": "reddit-167",
+      "sourceId": "166",
+      "row": 167,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Ohhhh I didn’t know it was that simple!! Brb gotta run to the statehouse with this plan! Lol",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 165",
+      "replyTo": "165",
+      "topics": [
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-168",
+      "sourceId": "167",
+      "row": 168,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "you folks are like jackals....the country needs solutions. Your plans are not solutions. The subway is.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 166",
+      "replyTo": "166",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-169",
+      "sourceId": "168",
+      "row": 169,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The subway CAN be a solution! But why are you so intent on canceling another solution which is already planned and paid for? A solution designed by engineers to improve bus flow.\n\nESPECIALLY when there’s no funding for a subway and there’s no way to get that funding from this current iteration of the federal government.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 167",
+      "replyTo": "167",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Displacement",
+        "Affordability",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-170",
+      "sourceId": "169",
+      "row": 170,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "s...Subway is a solution. Bus lane is not.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 168",
+      "replyTo": "168",
+      "topics": [
+        "Bus",
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-171",
+      "sourceId": "170",
+      "row": 171,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Please share any research or study showing that only subways improve transit access and speed of transit. I’d love to see anyone who agrees with you that the only solution to transit is subways.\n\nYou’d search long and hard and realize that oh there’s tons of solutions. And bus lanes is a solution.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "repky to 169",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Rail",
+        "Safety",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-172",
+      "sourceId": "171",
+      "row": 172,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "...I don't research. I build. You need something built. You need a solution. Studying things to death is the worst line of argument.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 170",
+      "replyTo": "170",
+      "topics": []
+    },
+    {
+      "id": "reddit-173",
+      "sourceId": "172",
+      "row": 173,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Brother. You’re making a claim! That subway is the only solution. Why do you think that? Maybe if you shared why ppl would agree or disagree. Instead you’re just saying it is because you say so? It’s exhausting and boring.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 171",
+      "replyTo": "171",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-174",
+      "sourceId": "173",
+      "row": 174,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The subway is a solution...not the only solution. You keep getting that wrong.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 172",
+      "replyTo": "172",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-175",
+      "sourceId": "174",
+      "row": 175,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "You’re the one saying the subway is the solution and nothing else is a solution lmfao",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 173",
+      "replyTo": "173",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-176",
+      "sourceId": "175",
+      "row": 176,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I cant keep replying the same thing to you. There are many possible solutions to the traffic ills of BH Ave. Cutting the capacity in half is not one of them. I present that Culpepper's plan is something that will add capacity to the corridor and is a solution. A SOLUTION. Not the only solution. Not even my solution. My solution would be take it a few steps further than just a subway.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 174",
+      "replyTo": "174",
+      "topics": [
+        "Rail",
+        "Traffic"
+      ]
+    },
+    {
+      "id": "reddit-177",
+      "sourceId": "176",
+      "row": 177,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "No one is cutting capacity in half with the bus plan. You’re making that up. Or someone made that up and you’re sharing it as the truth.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 175",
+      "replyTo": "175",
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-178",
+      "sourceId": "177",
+      "row": 178,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Completion of a subway tunnel and running trains in 3 years? Lmaooo nowhere in the world has ever shown that your made up timeline is possible.\n\nConstruction underway in a year? Yeah you’ve never seen what environmental approval takes. And moving utilities when there’s not a clear map of where they are would take many many years alone.\n\nHow does the bus lane make traffic worse 24/7 lol.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 164",
+      "replyTo": "164",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Traffic"
+      ]
+    },
+    {
+      "id": "reddit-179",
+      "sourceId": "178",
+      "row": 179,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "4 years. One year design and three years construction. It can be done. It has been done. You are choosing to drag it out. Change the laws. Build the subway. The govt can grant a permit to itself very quickly when it is demanded.\n\nEvery day you wait is another day without a solution.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 177",
+      "replyTo": "177",
+      "topics": [
+        "Rail",
+        "Reliability",
+        "Delay"
+      ]
+    },
+    {
+      "id": "reddit-180",
+      "sourceId": "179",
+      "row": 180,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "name one example of this timeline? I’d be shocked if one example like this exists anywhere. Changing laws takes time…. Could take years to just change the laws you’d want to.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 178",
+      "replyTo": "178",
+      "topics": []
+    },
+    {
+      "id": "reddit-181",
+      "sourceId": "180",
+      "row": 181,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "You could change the laws in a day. On the final day of the FY, the legislature EXCELS at passing laws. Excels. Demanding results would do the same. They work for us. We can fire them. You wont. Nothing will get solved. We will remain wasting time bickering on reddit when we could be building. We should build solutions. The lane is not....the subway is.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 179",
+      "replyTo": "179",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-182",
+      "sourceId": "181",
+      "row": 182,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "According to whom? You’re claiming that the bus lane isn’t a solution and the only option is a subways. What is driving that opinion? Do you have anything that backs the claim? If not that’s why no one agrees",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 180",
+      "replyTo": "180",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Traffic"
+      ]
+    },
+    {
+      "id": "reddit-183",
+      "sourceId": "182",
+      "row": 183,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I never said the only solution is a subway. I said the better option is a subway. The best solution would be far more involved and if you folks hate the subway....then you will go to civil war over my other plan.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply 181",
+      "replyTo": null,
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-184",
+      "sourceId": "183",
+      "row": 184,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "No one hates the idea of a subway. Everyone hates canceling a project that took a decade to plan and fund for one that has NO legs in the current federal political climate.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 182",
+      "replyTo": "182",
+      "topics": [
+        "Rail",
+        "Displacement",
+        "Affordability",
+        "Funding",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-185",
+      "sourceId": "184",
+      "row": 185,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The cost, time, and disruption would be massive in comparison. Nothing wrong with subway especially in the dense neighborhood but why throw away a project that would provide positive impact NOW for one that might maybe one day possibly get studied and not likely built.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Rail",
+        "Neighborhood identity",
+        "Funding",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-186",
+      "sourceId": "185",
+      "row": 186,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "blah blah blah...everything is disruptive. The bus lane would be disruptive. The cost is worth it. Time? if not now when? You can nay say all you want. You can downvote all you want. Will the bus lane solve the problem? No. The subway will. The subway will allow denser housing along the BH Ave corridor. Frankly, it's a no brainer. I would think this sub would go for it but it always rejects it. Some love affair with slow buses? Subway all the way. City council is right.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 184",
+      "replyTo": "184",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Reliability",
+        "Affordability",
+        "Trust",
+        "Funding",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-187",
+      "sourceId": "186",
+      "row": 187,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The bus lanes construction timeline would be from 2027-2030 so three construction seasons.\n\nThe construction of the orange line (on a right of way that had to deal with very little traffic on the south west corridor) was 8 years of active construction. This doesn’t include the 10 years of planning. Which all came after around 7 years of activism.\n\nSo let’s assume these all take the same time you’re looking at 25 years from now until the trains move on blue hills Ave. even if you make it 20 years that’s still way too long for this area to wait for transit improvement. ESPECIALLY when there’s a planned. Funded. And shovel ready project that could be finished in 3 years. If you’re so bullish about the orange line expansion to blue hills Ave this should be seen as a proof of massive ridership that demands an orange line extension. Not an either or. This could be seen as the first step towards an orange line extension.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 185",
+      "replyTo": "185",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Reliability",
+        "Traffic",
+        "Funding",
+        "Evidence",
+        "Urgency",
+        "Delay"
+      ]
+    },
+    {
+      "id": "reddit-188",
+      "sourceId": "187",
+      "row": 188,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "we build year round...seasons ended long ago. Defeat yourself all you want...2030-2026 is 4 years not 25....\n\nYou sound defeated. This is why nothing gets built. This is the mindset that needs to change. We need to build. We need to think bigger. You folks are all defeated in solving problems. Not sure how to solve that when me and two city councilors are among the few fighting this battle.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 186",
+      "replyTo": "186",
+      "topics": [
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-189",
+      "sourceId": "188",
+      "row": 189,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I’m sorry. Do you genuinely think you can build a subway tunnel in 4 years? Like start today and we will be on it in 4 years? Lmfaooo. If you do I have a beach house to sell you in Idaho….\n\nIt took 25 years to build the orange line on the south west corridor from activist starting the pressure to opening the line.\n\nYou think that somehow we can build faster when we have to tunnel when the orange line on the south west corridor required no tunnels??? This is genuinely funny",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 187",
+      "replyTo": "187",
+      "topics": [
+        "Rail",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-190",
+      "sourceId": "189",
+      "row": 190,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "100% Defeat yourself. Let us build it. It can be done.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 188",
+      "replyTo": "188",
+      "topics": []
+    },
+    {
+      "id": "reddit-191",
+      "sourceId": "190",
+      "row": 191,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "If you have a single example of a similar project being completed in that timeline Id be a believer. But you don’t.\n\nEven the Empire State Building had a similar proof of concept build before it was built in NYC to prove timelines. You can’t do that",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 189",
+      "replyTo": "189",
+      "topics": [
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-192",
+      "sourceId": "191",
+      "row": 192,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I am not doing that. This does not mean that I can't do that. It can be built. It can be built quicker than any sad sack examples you present. The ESB is one example of building something fast. It is obviously not a subway. It is not in the middle of an existing busy corridor. If you folks stopped bickering with me over this nonsense and dedicated yourselves to building this thing it would be built very quickly. But keep on bickering while rome burns....",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 190",
+      "replyTo": "190",
+      "topics": [
+        "Rail"
+      ]
+    },
+    {
+      "id": "reddit-193",
+      "sourceId": "192",
+      "row": 193,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The Empire State Building has NOTHING to do with transit construction lol.\n\nI can build a shed in a day. We should be able to build a skyscraper in a day! (That’s how you sound btw)\n\nYou’re the one making claims with no evidence. If you showed me it was possible I’d change my opinion and join you in advocating for a subway tunnel. This is a prime opportunity for you to get more people to agree with you and you’re just saying “I’m not doing that” and that’s fine! That’s why no one believes you.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 191",
+      "replyTo": "191",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Evidence",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-194",
+      "sourceId": "193",
+      "row": 194,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Sure, adding an OL subway extension makes LOADS of sense.\n\nEvery one of us reading and commenting will be dead and buried by the time a subway line is built, if ever. It is little more than a fever dream at the moment.\n\nBRT is designed and funded. Never let perfect be the enemy of good. Or as George Patton put it, \"A good plan violently executed now is better than a perfect plan executed at some indefinite time in the future.\"",
+      "author": "RockHead-MA",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Rail",
+        "Funding",
+        "Urgency",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-195",
+      "sourceId": "194",
+      "row": 195,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Defeated like all the others in this sub. You folks need a W for once...if only to show you something better is possible. The bus lane will make things worse for most. It is not \"good\" If it were good then prove it tomorrow by coning off a bus lane in the corridor and see what happens.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 193",
+      "replyTo": "193",
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-196",
+      "sourceId": "195",
+      "row": 196,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "if you can call us all defeatists, I'm okay with calling you a pie-in-the-sky dreamer. I do admire your passion; it's what it takes to move a vision forward.\n\nWhen Culpepper and Worrell (my councilor) re-proposed the OL extension, one of my first thoughts was that they were creating political cover for themselves and attempting to move the Overton window on an OL extension. That's still possibly their plan. It's a great idea. It should happen.\n\nPolitically, there is no realistic chance of it happening on your time frame. The political will and funding aren't there. We can't even get a sensible transit network of cheap, safe, protected bike lanes built in Boston, FFS.\n\nThis morning I drove my partner to her office in Nubian Square from Dorchester Center (near Shawmut), as she's having some blood pressure issues. It was an hour+ round trip drive. T is even longer. She's ridden the Red Line downtown for years. The T is a non-starter for her to get to Nubian because the current system is far too slow. I could have biked the round trip in ~40 minutes. Bike is also a non-starter for her for lack of safe bike infrastructure.",
+      "author": "RockHead-MA",
+      "date": "2026-07-06",
+      "note": "reply to 194",
+      "replyTo": "194",
+      "topics": [
+        "Bus",
+        "Reliability",
+        "Traffic",
+        "Safety",
+        "Bikes",
+        "Displacement",
+        "Affordability",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-197",
+      "sourceId": "196",
+      "row": 197,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I don't disagree that my timeline is very much a challenge that MA may not be up for. If we claim to be better that so many others in the country then I don't see why we can't prove it. It would take leadership and that is lacking in many areas of the state right now.\n\nThanks for your reply. Of all that I replied to here, this was the most pleasant.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 195",
+      "replyTo": "195",
+      "topics": [
+        "Urgency",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-198",
+      "sourceId": "197",
+      "row": 198,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "In the article you are commenting under, it literally says that the MAJORITY of people who use this corridor are on the bus. So improving bus access will improve the lives of MOST people who use it. That's not even to mention the added bike lanes that will make biking a reasonable option for everyone in the community, adding to the potential use.\n\nSecondly, a coned off bus lane is entirely missing the advantage of a BRT bus lane. It's about entirely reconfiguring the space (including median revonfiguration, safe raised boarding areas, signal priority, road resurfacing, greenery, and safe crossings) for the safety of all. Comparing cones to the final bus lane design is like comparing a toy wagon to a minivan.",
+      "author": "samsongam",
+      "date": "2026-07-06",
+      "note": "reply to 194",
+      "replyTo": "194",
+      "topics": [
+        "Bus",
+        "Safety",
+        "Bikes",
+        "Representation",
+        "Access",
+        "Media framing"
+      ]
+    },
+    {
+      "id": "reddit-199",
+      "sourceId": "198",
+      "row": 199,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "If the bike lanes get as much use as the ones on american legion then that should be a fun change....as to the counts of people on each mode, I havent seen the numbers. If the bus spacings are at 1-2 minutes and full then I would agree on the counts...it would also give more weight to a rail solution rather than bus.\n\nThe coned off lane would be a proof of concept test. It would help illustrate how the change would affect all the people using the area. It would be cheap and easy to do. I get that full build out would have some parts that would be safer and better splits of each mode.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 197",
+      "replyTo": "197",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Safety",
+        "Bikes"
+      ]
+    },
+    {
+      "id": "reddit-200",
+      "sourceId": "199",
+      "row": 200,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Your examples of American legion bike lanes and using cones for BHA are very conveniently connected. The bike lanes on American legion haven't got a ton of ridership yet because they don't connect, the lanes are decent but currently to get to them you'd have to risk your life on very high traffic, high speed, dangerous streets (including current bha).\n\nThat's similar to what you're proposing about the cones as a proof of concept. Cones are not infrastructure and they would be woefully incomplete, meaning people won't feel safe boarding a bus stop in the middle of the street with only cones and it will fail to improve the lives of most users in the neighborhood.\n\nYou do know that all this stuff has been studied extensively right? With successful examples through the US and the world? Just because you want something to happen, doesn't mean it will happen. And maybe it's possible for us to build a subway in 4 years sometime in the future, but that doesn't just happen overnight by sheer will without a political revolution, top-down. You have to build up the internal knowledge base and proficiency, you have to build out systems of project management that we don't have, and you have to go through some trial and error that we haven't done yet. In the mean time, a bus lane is a great, well studied improvement and we can begin building the long term proficiency for more tunneling simultaneously.",
+      "author": "samsongam",
+      "date": "2026-07-06",
+      "note": "reply to 198",
+      "replyTo": "198",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Traffic",
+        "Safety",
+        "Bikes",
+        "Displacement",
+        "Affordability",
+        "Neighborhood identity",
+        "Evidence",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-201",
+      "sourceId": "200",
+      "row": 201,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The ALHW bike lanes connect two fairly dense neighborhoods. Seems like I would have seen more than 2 bikes in my hundreds of trips down the street. Other bike lanes elsewhere suffer from disconnectedness...yet have at least some usage.\n\nReading comprehension is a thing. I did not state the cones would be the answer....but a test. A short test to see if dedicating half the road to the bus traffic would be plus or a minus. It is really simple and really cheap to prove the case. You can cone off the right lane too even though that isnt the plan....\n\nYour last paragraph is the defeatist approach mentioned earlier in parts of this discussion. Projects start as ideas. This is where leadership matters. At least two members of the city council are willing to stand up and start the real discussion.\n\nYour studies will not reflect the realities of BH Ave. Put the cones up and prove you are right. Just let me know the week you try it so I can fill up some other road needing a diet. lol....",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 199",
+      "replyTo": "199",
+      "topics": [
+        "Bus",
+        "Traffic",
+        "Bikes",
+        "Trust",
+        "Neighborhood identity",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-202",
+      "sourceId": "201",
+      "row": 202,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Oh you are a Culpepper and Worrell fan. This makes a lot more sense now. Studies, best practices, and actual knowledge don't matter, just blind confidence/stubbornness that you are right and leadership (what that means to you i have no idea). Where does the money come from? How do we legitimately build a metro and the incredibly complex underground interchanges necessary in 4 years? Are we going to become China overnight?\n\nWhat bike lanes get usage but are being thrown directly into 6 lane ultra crash prone intersections?\n\nPeople will not board a bus in the middle of BHA if they are only protected bya flimsy cone, and drivers will not respect flimsy cones. Weve seen it in tests on Mass Ave and Columbus ave already. We already have the data. Real data, real expertise, real knowledge. It goes entirely against what you're saying, but somehow you think you know better because of your amazing leadership and positive attitude?",
+      "author": "samsongam",
+      "date": "2026-07-06",
+      "note": "reply to 200",
+      "replyTo": "200",
+      "topics": [
+        "Bus",
+        "Traffic",
+        "Safety",
+        "Bikes",
+        "Funding",
+        "Evidence",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-203",
+      "sourceId": "202",
+      "row": 203,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I have zero idea of their thoughts besides this one. I am in complete agreement with them on the subway to Mattapan Square. You go \"make sense\" and assume things at your own risk.\n\nAll your questions are valid questions. FWIW, china should be following our lead on these things. We turtle our way forward at our peril and no one else's.\n\nMentioned elsewhere or maybe here...you can cone off the right lane as a test of the plan too....just a thought. This is the main problem. No one seems to be thinking. You don't have data of closing down 50% of the through lanes on a major artery in the city. None of the other projects around here see the chaos that exists in Matt Sq.\n\nThe experts are being paid to say the things you are parroting. If they said otherwise...they would get fired. I never said anything about my leadership on any of these comments. I said leadership. Not \"my\" leadership. Not in my abilities to lead this group into what should happen. Frankly, my leadership would fire half the people in government and tell the other half that they need to rethink their approach to completing things.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to to 202",
+      "replyTo": null,
+      "topics": [
+        "Rail",
+        "Trust",
+        "Neighborhood identity",
+        "Evidence"
+      ]
+    },
+    {
+      "id": "reddit-204",
+      "sourceId": "203",
+      "row": 204,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "How will it make it worse? Please provide actual reasons.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 194",
+      "replyTo": "194",
+      "topics": []
+    },
+    {
+      "id": "reddit-205",
+      "sourceId": "204",
+      "row": 205,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I have answered this a number of times already. Feel free to read through the thread.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 203",
+      "replyTo": "203",
+      "topics": []
+    },
+    {
+      "id": "reddit-206",
+      "sourceId": "205",
+      "row": 206,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Weird. All i see are opinions based on nothing?",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 204",
+      "replyTo": "204",
+      "topics": []
+    },
+    {
+      "id": "reddit-207",
+      "sourceId": "206",
+      "row": 207,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "well just open your eyes....",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 205",
+      "replyTo": "205",
+      "topics": []
+    },
+    {
+      "id": "reddit-208",
+      "sourceId": "207",
+      "row": 208,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "To all your opinions you’ve shared? With no evidence to back them up? Lolololol",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 206",
+      "replyTo": "206",
+      "topics": [
+        "Evidence"
+      ]
+    },
+    {
+      "id": "reddit-209",
+      "sourceId": "208",
+      "row": 209,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The evidence you seek is out there. I am not your research aide. My opinions posted are just that, my opinion. It is based on traveling through the city on a daily basis and throughout the day. It is also based on being part of the building process....including several rail projects large and small.\n\nI am no expert in transportation design. No one on here is. You go search the web for reports and other documents all day long but what you really need to do is get out there and build. Not you specifically but the state and the country.\n\nWe need to build a lot more and a lot more often. This is not a make work thing for me as I am much closer to retiring than would benefit from such effort.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 207",
+      "replyTo": "207",
+      "topics": [
+        "Rail",
+        "Trust",
+        "Evidence",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-210",
+      "sourceId": "209",
+      "row": 210,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "“I’m no expert in transportation design” yeah you aren’t. And there are experts who designed the bus way lmfaooo.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 208",
+      "replyTo": "208",
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-211",
+      "sourceId": "210",
+      "row": 211,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The people who are against the center running bus lanes are the ones who do not want to give up double and triple parking because this will stop that. Then all the business will claim that it's the reason why business has dropped because they know they rely on the double/triple parking for their business to survive.",
+      "author": "bostonaruban66",
+      "date": "2026-07-06",
+      "note": "reply to 209",
+      "replyTo": "209",
+      "topics": [
+        "Bus",
+        "Parking",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-212",
+      "sourceId": "211",
+      "row": 212,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "sorry, my original post here was replying to another comment and not yours. That has been deleted. Illegal parking is not something I am advocating. Taking away all the parking (which is proposed in some parts of this plan will definitely harm some businesses in some ways. Maybe they survive in other ways.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 210",
+      "replyTo": "210",
+      "topics": [
+        "Parking",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-213",
+      "sourceId": "212",
+      "row": 213,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "the people that designed it.....were asked to design a bus lane. They were not hired to find the solution to the problem. Sure you understand the difference. As I noted, I am not an expert in transportation design, but I am an expert in completing requests by government agencies. I can assure you that no one on the design ever uttered the words \"you should build a subway instead of paying us to design this bus lane\". Thinking this was driven (intentional) by experts and not pols is the most ridiculous thought on reddit today.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 209",
+      "replyTo": "209",
+      "topics": [
+        "Bus",
+        "Rail",
+        "Traffic",
+        "Urgency",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-214",
+      "sourceId": "213",
+      "row": 214,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "They weren’t asked to design a bus lane. There was a design alternatives process and in that they decided a bus lane met the goals of the MBTA and the city best.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 212",
+      "replyTo": "212",
+      "topics": [
+        "Bus",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-215",
+      "sourceId": "214",
+      "row": 215,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "When the MBTA hired the designers, The MBTA wrote the scope of work. The MBTA said what they wanted. That might not be what you see but it is absolutely what happened. The MBTA didn't say \" give us the solution to this traffic/transit hellhole. You can believe whatever you want but I am very familiar with the inner workings on MBTA/MassDOT and COB design contracts. On that I have a lot of experience on.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 213",
+      "replyTo": "213",
+      "topics": [
+        "Bus",
+        "Traffic",
+        "Trust"
+      ]
+    },
+    {
+      "id": "reddit-216",
+      "sourceId": "215",
+      "row": 216,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I hear that if you walk into an Amtrak office and propose digging the Orange Line under the Northeast Corridor they’ll give you a free deportation to Rhode Island",
+      "author": "TheSausageFattener",
+      "date": "2026-07-06",
+      "note": "reply to 150",
+      "replyTo": "150",
+      "topics": []
+    },
+    {
+      "id": "reddit-217",
+      "sourceId": "216",
+      "row": 217,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "branching the Orange Line and reducing frequencies to Forest Hills is not the solution, even if we could spawn in a subway\n\nin a world where digging a subway from Mattapan to Ruggles is feasible, an Urban Ring is also feasible. Make Mattapan-Ruggles part of that instead so you get 3 minute service instead of 6 minute service",
+      "author": "Ugmyusernamewastake",
+      "date": "2026-07-06",
+      "note": "reply to 215",
+      "replyTo": "215",
+      "topics": [
+        "Rail",
+        "Reliability",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-218",
+      "sourceId": "217",
+      "row": 218,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "You can skip the branch and make a whole new line. The branch idea is just cheaper overall.\n\nanything is feasible. A line covering blue hill ave is warranted based on demand. If demand says urban ring is warranted then I am all in favor.",
+      "author": "PLS-Surveyor-US",
+      "date": "2026-07-06",
+      "note": "reply to 216",
+      "replyTo": "216",
+      "topics": []
+    },
+    {
+      "id": "reddit-219",
+      "sourceId": "218",
+      "row": 219,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Better transit = higher rents = pushing out people in the neighborhood. I don’t think anyone opposes better transit, but they fear for what it will do to the community.",
+      "author": "Immediate_Subject552",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Neighborhood identity"
+      ]
+    },
+    {
+      "id": "reddit-220",
+      "sourceId": "219",
+      "row": 220,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Better transit doesn’t equal higher rents. There’s nowhere that shows what you’re saying is true. The major thing leading to higher rents is not enough housing being built",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 218",
+      "replyTo": "218",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-221",
+      "sourceId": "220",
+      "row": 221,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "A. It's a somewhat legit concern.\n\nB. There are ways to counteract that concern.\n\nC. It's still just a fucking bus line. People aren't going to move to Blue Hill Avenue from the Seaport because a more tolerable bus service is offered. The pearl clutching here is insane.",
+      "author": "ipsumdeiamoamasamat",
+      "date": "2026-07-06",
+      "note": "reply to 219",
+      "replyTo": "219",
+      "topics": [
+        "Bus"
+      ]
+    },
+    {
+      "id": "reddit-222",
+      "sourceId": "221",
+      "row": 222,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Oh I was just describing the logic, I don’t agree with it lol",
+      "author": "Immediate_Subject552",
+      "date": "2026-07-06",
+      "note": "reply to 220",
+      "replyTo": "220",
+      "topics": []
+    },
+    {
+      "id": "reddit-223",
+      "sourceId": "222",
+      "row": 223,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "There was some concern about that in Somerville in 2014 for the then future GLX based on past history with the Red Line extension:\n\nhttps://www.mapc.org/wp-content/uploads/2017/09/Dimensions_of_Displacement_Final_Draft_2_10_14-1.pdf\n\nfrom that report:\n\nThe Somerville community’s experience with Davis Square is a cautionary tale: a spike in demand for\n\nhousing in the surrounding neighborhood following the opening of the new T station led to rapid\n\nincreases in housing costs. Because of the dearth of adequate measures to mitigate displacement, the\n\ndemographic makeup of the neighborhood changed quickly and dramatically.",
+      "author": "winstonoboggoe02215",
+      "date": "2026-07-06",
+      "note": "reply to 221",
+      "replyTo": "221",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Neighborhood identity",
+        "Funding",
+        "Future planning"
+      ]
+    },
+    {
+      "id": "reddit-224",
+      "sourceId": "223",
+      "row": 224,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The root cause of that is not the transit tho. It’s the fact that Somerville hasn’t built housing to meet the demand.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 222",
+      "replyTo": "222",
+      "topics": [
+        "Bus",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-225",
+      "sourceId": "224",
+      "row": 225,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "The real Story is that existing landlords got increased land value from the GLX so they charger higher rents to make up for the government spending and government taxation to fund it:",
+      "author": "kevalry",
+      "date": "2026-07-06",
+      "note": "reply to 223",
+      "replyTo": "223",
+      "topics": [
+        "Displacement",
+        "Affordability",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-226",
+      "sourceId": "225",
+      "row": 226,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "So if history were different and the Red Line had not been extended to Davis Sq., housing costs there would still be the same today if it was only served by local buses as it was pre-Red Line?",
+      "author": "winstonoboggoe02215",
+      "date": "2026-07-06",
+      "note": "reply to 223",
+      "replyTo": "223",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Funding",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-227",
+      "sourceId": "226",
+      "row": 227,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "Sorry… you think that better access to transit lead to higher rent? That’s correlation not true causation. Just one step deeper in thought gets you to causation.\n\nLet’s do the Davis square example. Davis square was opened 1984. Before it opened Davis square was a rough neighborhood. And within 10 years there was strong gentrification and an increase in rent of about 50%. You could look at that and say transit leads to higher rent but there’s another story there.\n\nFrom 1980 until 1990 there were only around 1500 housing units built in all of Somerville.\n\nFor reference from 1990-2000 there were only 469 housing units built.\n\nAll during this time the amount of people per housing unit decreased massively.\n\nWhat does this get you? A supply that hasn’t increased to match the demand of the surrounding area.\n\nMore connectivity isn’t the root cause of the prices going up. The lack of building is.",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 225",
+      "replyTo": "225",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Gentrification",
+        "Neighborhood identity",
+        "Access"
+      ]
+    },
+    {
+      "id": "reddit-228",
+      "sourceId": "227",
+      "row": 228,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "So you do believe that if Davis Sq was only served by buses today, rents would be the same in that area of Somerville.",
+      "author": "winstonoboggoe02215",
+      "date": "2026-07-06",
+      "note": "reply to 227",
+      "replyTo": "227",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Urgency"
+      ]
+    },
+    {
+      "id": "reddit-229",
+      "sourceId": "228",
+      "row": 229,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "There’s tons of camberville only served by busses with massive rents. So yeah? Do you think if they built more housing rents would be as high?",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 227",
+      "replyTo": "227",
+      "topics": [
+        "Displacement",
+        "Affordability"
+      ]
+    },
+    {
+      "id": "reddit-230",
+      "sourceId": "229",
+      "row": 230,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "I think there are multiple parts to the equation, building more housing stock would reduce the costs by increasing the supply, providing more direct and faster transportation makes a place more desirable and increases demand. Both things can be true",
+      "author": "winstonoboggoe02215",
+      "date": "2026-07-06",
+      "note": "reply to 228",
+      "replyTo": "228",
+      "topics": [
+        "Affordability",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-231",
+      "sourceId": "230",
+      "row": 231,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "But why does improving transit make a place more desirable? Because there’s so few homes near fast transit. So more improved transit across the board would also increase supply of homes with fast transit thus reducing the impact of improved transit on prices. Basically if more places are connected to high quality transit. Then demand for high quality transit is spread across more areas and it becomes essentially a non factor for the cost of housing",
+      "author": "Far-Cheesecake-9212",
+      "date": "2026-07-06",
+      "note": "reply to 229",
+      "replyTo": "229",
+      "topics": [
+        "Bus",
+        "Safety",
+        "Affordability",
+        "Funding"
+      ]
+    },
+    {
+      "id": "reddit-232",
+      "sourceId": "231",
+      "row": 232,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "If there was unlimited funding to build massive amounts of high quality transit in every corridor, like say a deep bore rapid transit tunnel under Blue Hill Ave, then sure. But the reality of funding and costs, based on the past 60 years of expansion since the Urban Mass Transportation Act of 1964 was passed, suggests there are limits of what can and will be built, and thus when something is built, there is a risk of displacement of existing residents. I think MAPC is an agency that is in favor of both expanding transit and increasing housing density, yet the 2014 report I linked suggests that they think displacement after transit improvements is a possibility if steps are not taken to expand housing ahead of the transit construction. From the study: \"The Somerville community’s experience with Davis Square is a cautionary tale: a spike in demand for housing in the surrounding neighborhood following the opening of the new T station led to rapid increases in housing costs. Because of the dearth of adequate measures to mitigate displacement, the demographic makeup of the neighborhood changed quickly and dramatically.\"",
+      "author": "winstonoboggoe02215",
+      "date": "2026-07-06",
+      "note": "reply to 230",
+      "replyTo": "230",
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Representation",
+        "Neighborhood identity",
+        "Funding",
+        "Responsibility"
+      ]
+    },
+    {
+      "id": "reddit-233",
+      "sourceId": "232",
+      "row": 233,
+      "thread": "The time has come’: Blue Hill Avenue deserves proposed bus transit upgrades",
+      "text": "How dare he champion what was a very viable plan then and now!\n\nARPA funds had to be spent quickly. Debate that all you want with the 2009 Congress. But the point was to have shovel-ready projects. Aloisi and MassDOT looked at one of the biggest problems in the system — moving people along Blue Hill Avenue, which did not have a Fairmount Line station then, to get them into the city — and came up with a quick, no-brainer attempt to fix it.\n\nHe did the work. He mentioned repeated bus rides on the 28, which is a bloody mess and has been for decades. This wasn't just some guy from Eastie coming in and telling the minority community what should be done. He *experienced* these same issues. A thoughtful plan was proposed. Say what you want about Jim Aloisi, but he is a technocrat who comes from a city neighborhood that was much like Roxbury and Mattapan, just of a different pigmentation. He understood the issue at play.\n\nMistrust between the Black community and Beacon Hill existed long before the 28X proposal. There are legit reasons why it was and still is there. It didn't help that people elected to represent these folks weren't doing the job. Dianne Wilkerson was too busy stuffing wads of Benjamins in her bra.\n\n[Speaking of Dianne, her rehabilitation (and people actually listening to her on this) disgusts me. She proved she was out for herself. As have many pols. Most aren't dumb enough to get caught on camera. What has she done in service to her community since getting out of prison? I certainly haven't heard of anything and if someone can offer something, please share with the class.]",
+      "author": "ipsumdeiamoamasamat",
+      "date": "2026-07-06",
+      "note": "",
+      "replyTo": null,
+      "topics": [
+        "Bus",
+        "Displacement",
+        "Affordability",
+        "Trust",
+        "Representation",
+        "Race",
+        "Neighborhood identity",
+        "Funding",
+        "Urgency",
+        "Future planning",
+        "Access"
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import {
   dialogueNarrative,
   endingNarrative,
   endingTransition,
+  mitigationNarrative,
 } from "../public/narrative.js";
 import { feedbackQuestions } from "../public/engine.js";
 const prompt = feedbackQuestions[0];
@@ -66,4 +67,12 @@ test("character replies omit UI-owned follow-up offers, including saved replies"
     ),
     "Your follow-up asks about access. Short stops still matter.",
   );
+});
+
+test("mitigation review hides internal instructions while preserving proposed changes", () => {
+  const recommendation = "Your recommendation is Option B with additional pedestrian improvements.";
+  const change = "You mentioned delivery access. Consider whether a loading zone would address that concern.";
+  assert.equal(mitigationNarrative(`Mitigation Gate Review\n\n${recommendation}\n\n${change}\n\nThe application may now set MITIGATION_GATE to RESOLVED and proceed to the hard completion check.`), `${recommendation}\n\n${change}`);
+  assert.equal(mitigationNarrative(change), change);
+  assert.ok(mitigationNarrative("MITIGATION_GATE is RESOLVED").length > 0);
 });

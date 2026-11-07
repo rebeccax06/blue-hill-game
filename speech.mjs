@@ -33,14 +33,28 @@ export async function createSpeech(
       signal: AbortSignal.timeout(60000),
     },
   );
-  if (!response.ok)
+  if (!response.ok) {
+    const failure = await response.json().catch(() => null);
+    const code = failure?.detail?.status;
+    const messages = {
+      quota_exceeded:
+        "ElevenLabs usage allowance is exhausted. Check your account credits and this API key’s usage limit, or wait for your allowance to reset.",
+      invalid_api_key:
+        "ElevenLabs rejected the API key. Update ELEVENLABS_API_KEY and restart the server.",
+      missing_permissions:
+        "The ElevenLabs API key is missing Text to Speech permission. Enable it in the key’s settings.",
+      voice_not_found:
+        "The selected ElevenLabs voice is unavailable. Check ELEVENLABS_VOICE_ID and your account’s voice access.",
+    };
     throw Error(
-      response.status === 401 || response.status === 403
-        ? "ElevenLabs rejected the key or voice permissions. Check Text to Speech access and your selected voice."
-        : response.status === 429
-          ? "ElevenLabs usage limit reached. Try again later."
-          : "ElevenLabs could not generate speech. Check your account credits and voice settings.",
+      messages[code] ||
+        (response.status === 401 || response.status === 403
+          ? "ElevenLabs rejected the key or voice permissions. Check Text to Speech access and your selected voice."
+          : response.status === 429
+            ? "ElevenLabs request limit reached. Try again later."
+            : "ElevenLabs could not generate speech. Check your account credits and voice settings."),
     );
+  }
   const audio = Buffer.from(await response.arrayBuffer());
   if (!audio.length) throw Error("ElevenLabs returned no audio.");
   if (cache.size >= 20) cache.delete(cache.keys().next().value);

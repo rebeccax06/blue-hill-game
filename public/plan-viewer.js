@@ -8,15 +8,37 @@ const escape = (value) =>
       ],
   );
 
-export function mountPlanViewer(root, section) {
-  const plan = section.plan;
+export function mountPlanViewer(
+  root,
+  section,
+  { initialStyle, onFeature } = {},
+) {
+  const sourcePlan = section.plan;
+  const plan =
+    section.number === 12 &&
+    sourcePlan &&
+    !sourcePlan.layers.some((l) => l.id === "platforms")
+      ? {
+          ...sourcePlan,
+          layers: [
+            {
+              id: "platforms",
+              label: "Bus platform near Vesta Road",
+              image: "/explorer/assets/section-12-layer-platforms.png",
+              color: "#d7b829",
+              pixels: 2547,
+            },
+            ...sourcePlan.layers,
+          ],
+        }
+      : sourcePlan;
   if (!plan) return () => {};
   const hasModel = section.number === 12;
   root.innerHTML = `<div class="plan-toolbar"><div role="group" aria-label="Street visualization">${hasModel ? '<button type="button" data-plan-style="three" aria-pressed="true">3D street</button>' : ""}<button type="button" data-plan-style="illustrated" aria-pressed="${!hasModel}">Street sketch</button><button type="button" data-plan-style="clear" aria-pressed="false">Clear plan</button><button type="button" data-plan-style="original" aria-pressed="false">Aerial context</button></div><div class="plan-zoom-controls"><button type="button" data-plan-zoom="out" aria-label="Zoom plan out">−</button><output aria-live="polite">100%</output><button type="button" data-plan-zoom="in" aria-label="Zoom plan in">+</button><button type="button" data-plan-zoom="fit">Fit</button></div></div><div class="three-camera-controls" ${hasModel ? "" : "hidden"} role="group" aria-label="3D camera"><button type="button" data-three-camera="overview" aria-pressed="true">Overview</button><button type="button" data-three-camera="street" aria-pressed="false">Street level</button><button type="button" data-three-camera="top" aria-pressed="false">Top view</button><span>Drag to orbit · pinch to zoom</span></div><div class="three-street-view" ${hasModel ? "" : "hidden"}></div><div class="plan-canvas-wrap" ${hasModel ? "hidden" : ""}><canvas tabindex="0" role="img" aria-label="Interactive design drawing for ${escape(section.title)}. Drag to pan, use plus and minus to zoom, or arrow keys to pan."></canvas><span class="plan-gesture-hint">Drag to pan · + / − to zoom</span><p class="plan-loading" role="status">Loading the complete drawing…</p></div><div class="plan-layer-buttons" role="group" aria-label="Highlight features in the drawing"><button type="button" data-plan-layer="all" aria-pressed="true">All features</button>${plan.layers.map((layer) => `<button type="button" data-plan-layer="${layer.id}" aria-pressed="false"><i style="background:${layer.color}"></i>${escape(layer.label)}</button>`).join("")}</div><p class="plan-layer-description" aria-live="polite">Choose a color to highlight its markings in the original geometry. Click a colored marking for its key.</p>`;
   const canvas = root.querySelector("canvas"),
     ctx = canvas.getContext("2d");
   let dead = false,
-    style = hasModel ? "three" : "illustrated",
+    style = initialStyle || (hasModel ? "three" : "illustrated"),
     layer = "all",
     zoom = 1,
     panX = 0,
@@ -139,6 +161,7 @@ export function mountPlanViewer(root, section) {
       `${style === "illustrated" ? "Schematic street perspective" : "Source design drawing"} for ${section.title}. Drag to pan; use plus and minus to zoom.`,
     );
     draw();
+    onFeature?.(id);
   };
   root
     .querySelectorAll("[data-plan-layer]")
@@ -343,6 +366,8 @@ export function mountPlanViewer(root, section) {
       });
   resize();
   changeZoom(1);
+  if (initialStyle)
+    root.querySelector(`[data-plan-style="${initialStyle}"]`)?.click();
   setLayer("all");
   return () => {
     dead = true;

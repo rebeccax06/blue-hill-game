@@ -10,9 +10,9 @@ const escape = (value) =>
   );
 const topicIcons = ["↕", "P", "↱", "↔", "BUS", "♧"];
 
-export function createSectionExplorer({ onDone }) {
+export function createSectionExplorer({ onDone, initialSection = 12 }) {
   let dataPromise,
-    selected = 11,
+    selected = initialSection - 1,
     currentView = "drawing",
     query = "";
   let disposePlan = () => {};
@@ -38,14 +38,15 @@ export function createSectionExplorer({ onDone }) {
         const data = await dataPromise;
         if (!root.isConnected) return;
         root.innerHTML = `<section class="section-explorer" aria-labelledby="explorer-title">
-          <div class="explorer-heading"><div><span class="eyebrow orange">Explore the real proposal · September 2026</span><h1 id="explorer-title" tabindex="-1">Explore the avenue,<br> block by block.</h1><p>Get to know Blue Hill Avenue, from Mattapan Square to Grove Hall. Pick a block on the corridor map, then explore the design in detail.</p></div><button type="button" class="primary explorer-done">Continue to the game <span aria-hidden="true">↗</span></button></div>
-          <p class="explorer-context">These are the City of Boston and MBTA’s September 2026 proposal materials. The game’s A, B, and C options are separate simulated choices.</p>
+          <div class="explorer-heading"><div><span class="eyebrow orange">Explore the real proposal · September 2026</span><h1 id="explorer-title" tabindex="-1">Explore the avenue,<br> block by block.</h1><p>Get to know Blue Hill Avenue, from Mattapan Square to Grove Hall. Pick a block on the corridor map, then explore the design in detail.</p></div><button type="button" class="primary explorer-done">Use this block in the game <span aria-hidden="true">↗</span></button></div>
+          <p class="explorer-context">These are the City of Boston and MBTA’s September 2026 proposal materials. Choose a block to carry its proposal details into your conversations and recommendation. A, B, and C are simulated policy approaches to that block, not alternative engineering drawings.</p>
           <div class="explorer-layout"><aside class="explorer-sidebar" aria-label="Choose a section"><div class="explorer-sidebar-top"><span class="eyebrow">The corridor · South to north</span><p>Mattapan Square <span aria-hidden="true">→</span> Grove Hall</p><label for="section-search">Find a street or landmark</label><input id="section-search" type="search" placeholder="Try Harvard or Happy Supermarket" value="${escape(query)}" autocomplete="off"></div><div class="corridor-map"></div><details class="section-list-disclosure"><summary>Browse all sections</summary><nav class="corridor-guide" aria-label="Blue Hill Avenue sections"></nav></details><p class="corridor-caption">Schematic corridor diagram, not to scale. Click a numbered block to explore its drawing.</p></aside><div class="explorer-detail"></div></div>
         </section>`;
         const detail = root.querySelector(".explorer-detail");
         const guide = root.querySelector(".corridor-guide");
         const search = root.querySelector("#section-search");
-        root.querySelector(".explorer-done").onclick = onDone;
+        root.querySelector(".explorer-done").onclick = () =>
+          onDone(data.sections[selected]);
 
         const renderGuide = () => {
           const map = root.querySelector(".corridor-map");
@@ -94,7 +95,7 @@ export function createSectionExplorer({ onDone }) {
           const dialog = document.createElement("dialog");
           dialog.className = "explorer-zoom";
           dialog.setAttribute("aria-label", label);
-          dialog.innerHTML = `<div class="explorer-zoom-toolbar"><strong>${escape(label)}</strong><div><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output aria-live="polite">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="reset">Fit</button><a href="${escape(source)}" target="_blank" rel="noopener">Source PDF ↗</a><button type="button" data-zoom="close" aria-label="Close enlarged image" autofocus>×</button></div></div><div class="explorer-zoom-scroll" tabindex="0" aria-label="Enlarged design. Use zoom buttons and scroll to explore."><img src="${image}" alt="${escape(label)}"></div>`;
+          dialog.innerHTML = `<div class="explorer-zoom-toolbar"><strong>${escape(label)}</strong><div><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output aria-live="polite">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="reset">Fit</button><a href="${escape(source)}" target="_blank" rel="noopener">Source image ↗</a><button type="button" data-zoom="close" aria-label="Close enlarged image" autofocus>×</button></div></div><div class="explorer-zoom-scroll" tabindex="0" aria-label="Enlarged design. Use zoom buttons and scroll to explore."><img src="${image}" alt="${escape(label)}"></div>`;
           document.body.append(dialog);
           const img = dialog.querySelector("img");
           const viewport = dialog.querySelector(".explorer-zoom-scroll");
@@ -141,7 +142,7 @@ export function createSectionExplorer({ onDone }) {
               label: "Design drawing",
               image: section.drawing,
               title: `${section.title} — proposed design drawing`,
-              source: `${data.sources.blocks.url}#page=${section.page}`,
+              source: section.slide,
               page: section.page,
               sourceTitle: data.sources.blocks.title,
             },
@@ -150,7 +151,7 @@ export function createSectionExplorer({ onDone }) {
               label: "Full project slide",
               image: section.slide,
               title: `${section.title} — full project slide`,
-              source: `${data.sources.blocks.url}#page=${section.page}`,
+              source: section.slide,
               page: section.page,
               sourceTitle: data.sources.blocks.title,
             },
@@ -159,7 +160,7 @@ export function createSectionExplorer({ onDone }) {
               return {
                 ...view,
                 label: view.condition,
-                source: `${data.sources.renderings.url}#page=${view.page}`,
+                source: view.image,
                 sourceTitle: data.sources.renderings.title,
               };
             }),
@@ -167,7 +168,7 @@ export function createSectionExplorer({ onDone }) {
           const active =
             views.find((view) => view.id === currentView) || views[0];
           currentView = active.id;
-          detail.innerHTML = `<article aria-labelledby="section-title"><div class="section-detail-top"><span class="eyebrow">Section ${String(section.number).padStart(2, "0")} / 20</span><div class="section-step"><button type="button" data-step="-1" aria-label="Previous section" ${selected === 0 ? "disabled" : ""}>←</button><button type="button" data-step="1" aria-label="Next section" ${selected === data.sections.length - 1 ? "disabled" : ""}>→</button></div></div><h2 id="section-title" tabindex="-1">${escape(section.title)}</h2><p class="section-location">${escape(section.description)}</p><div class="section-compare"><section class="interactive-plan-card" aria-labelledby="interactive-plan-title"><div class="compare-card-heading"><span class="eyebrow">Explore the design</span><h3 id="interactive-plan-title">Picture this stretch of the avenue</h3></div><div class="interactive-plan"></div><p class="plan-source-note">${section.number === 12 ? "Three.js prototype: colored road features are traced from this drawing. Context footprints are interpreted; building heights and object details are illustrative. Other sections currently use the schematic street sketch." : "Street sketch is approximate: widths, buildings, and object locations are schematic. The detailed Three.js prototype is available at Harvard St to Vesta Rd (section 12)."} Clear plan and aerial context preserve the original design geometry.</p></section><section class="source-plan-card" aria-label="Original project drawing"><div class="compare-card-heading"><span class="eyebrow">Compare with the source</span><h3>The original project drawing</h3></div><div class="section-view-controls" role="group" aria-label="Project views">${views.map((view) => `<button type="button" data-project-view="${view.id}" aria-pressed="${active.id === view.id}">${escape(view.label)}</button>`).join("")}</div><figure class="section-figure"><button type="button" class="section-image-button" aria-label="Enlarge ${escape(active.title)}"><img src="${active.image}" alt="${escape(active.title)}" ${active.id === "slide" ? 'class="section-full-slide"' : ""}><span class="section-enlarge"><span aria-hidden="true">⊕</span> Enlarge & explore</span></button><figcaption><span>${escape(active.sourceTitle)} · Page ${active.page}</span><a href="${escape(active.source)}" target="_blank" rel="noopener">Open source PDF ↗</a></figcaption></figure>${section.renderings.length ? '<p class="section-rendering-note">The existing and proposed views above show the nearby named landmark; the design drawing shows this section.</p>' : '<p class="section-rendering-note">Explore the full project slide for street photos, annotations, and the drawing legend.</p>'}</section></div><div class="section-notes-heading"><h3>What’s proposed here</h3><span>From project slide ${section.page}</span></div><div class="section-topics">${section.topics.map((topic, index) => `<section class="section-topic"><div class="section-topic-icon" aria-hidden="true">${topicIcons[index]}</div><div><h4>${escape(topic.label)}</h4><p>${escape(topic.text)}</p></div></section>`).join("")}</div><div class="section-bottom-nav"><button type="button" data-step="-1" ${selected === 0 ? "disabled" : ""}>← Previous section</button><button type="button" data-step="1" ${selected === data.sections.length - 1 ? "disabled" : ""}>Next section →</button></div></article>`;
+          detail.innerHTML = `<article aria-labelledby="section-title"><div class="section-detail-top"><span class="eyebrow">Section ${String(section.number).padStart(2, "0")} / 20</span><div class="section-step"><button type="button" data-step="-1" aria-label="Previous section" ${selected === 0 ? "disabled" : ""}>←</button><button type="button" data-step="1" aria-label="Next section" ${selected === data.sections.length - 1 ? "disabled" : ""}>→</button></div></div><h2 id="section-title" tabindex="-1">${escape(section.title)}</h2><p class="section-location">${escape(section.description)}</p><div class="section-compare"><section class="interactive-plan-card" aria-labelledby="interactive-plan-title"><div class="compare-card-heading"><span class="eyebrow">Explore the design</span><h3 id="interactive-plan-title">Picture this stretch of the avenue</h3></div><div class="interactive-plan"></div><p class="plan-source-note">${section.number === 12 ? "Three.js prototype: colored road features are traced from this drawing. Context footprints are interpreted; building heights and object details are illustrative. Other sections currently use the schematic street sketch." : "Street sketch is approximate: widths, buildings, and object locations are schematic. The detailed Three.js prototype is available at Harvard St to Vesta Rd (section 12)."} Clear plan and aerial context preserve the original design geometry.</p></section><section class="source-plan-card" aria-label="Original project drawing"><div class="compare-card-heading"><span class="eyebrow">Compare with the source</span><h3>The original project drawing</h3></div><div class="section-view-controls" role="group" aria-label="Project views">${views.map((view) => `<button type="button" data-project-view="${view.id}" aria-pressed="${active.id === view.id}">${escape(view.label)}</button>`).join("")}</div><figure class="section-figure"><button type="button" class="section-image-button" aria-label="Enlarge ${escape(active.title)}"><img src="${active.image}" alt="${escape(active.title)}" ${active.id === "slide" ? 'class="section-full-slide"' : ""}><span class="section-enlarge"><span aria-hidden="true">⊕</span> Enlarge & explore</span></button><figcaption><span>${escape(active.sourceTitle)} · Page ${active.page}</span><a href="${escape(active.source)}" target="_blank" rel="noopener">Open source image ↗</a></figcaption></figure>${section.renderings.length ? '<p class="section-rendering-note">The existing and proposed views above show the nearby named landmark; the design drawing shows this section.</p>' : '<p class="section-rendering-note">Explore the full project slide for street photos, annotations, and the drawing legend.</p>'}</section></div><div class="section-notes-heading"><h3>What’s proposed here</h3><span>From project slide ${section.page}</span></div><div class="section-topics">${section.topics.map((topic, index) => `<section class="section-topic"><div class="section-topic-icon" aria-hidden="true">${topicIcons[index]}</div><div><h4>${escape(topic.label)}</h4><p>${escape(topic.text)}</p></div></section>`).join("")}</div><div class="section-bottom-nav"><button type="button" data-step="-1" ${selected === 0 ? "disabled" : ""}>← Previous section</button><button type="button" data-step="1" ${selected === data.sections.length - 1 ? "disabled" : ""}>Next section →</button></div></article>`;
           disposePlan = mountPlanViewer(
             detail.querySelector(".interactive-plan"),
             section,

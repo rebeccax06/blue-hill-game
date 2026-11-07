@@ -38,3 +38,12 @@ export function dialogueNarrative(value) {
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
+
+// Also clean saved reviews generated before the student-facing prompt was tightened.
+export function mitigationNarrative(value) {
+  return String(value ?? "")
+    .split(/\n\s*\n/)
+    .filter((paragraph) => !/\b(?:MITIGATION_GATE|FINAL_OPTION|FINAL_AMENDMENTS|RESOLVED|mitigation gate|completion check|ready to freeze|freezing the package|application (?:may|can|should|must)|implementation (?:details|checks))\b/i.test(paragraph))
+    .join("\n\n")
+    .trim() || "Review your recommendation and any changes you want to include before continuing.";
+}

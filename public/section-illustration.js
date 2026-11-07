@@ -66,7 +66,7 @@ export function sectionIllustration(section, highlight = "all") {
   const line = (points, color, width = 1, extra = "") =>
     `<polyline points="${points.map((p) => P(...p).join(",")).join(" ")}" stroke="${color}" stroke-width="${width}" fill="none" ${extra}/>`;
   const group = (feature, art) =>
-    `<g data-illustrated-feature="${feature}" opacity="${highlight === "all" || highlight === feature ? 1 : 0.16}">${art}</g>`;
+    `<g data-illustrated-feature="${feature}" opacity="${highlight === "all" || highlight === feature || (highlight === "yellow" && feature === "platforms") ? 1 : 0.16}">${art}</g>`;
   const box = (x, y, w, d, h, color, roof = "#e9dfca") =>
     poly(
       [
@@ -360,7 +360,7 @@ export function sectionIllustration(section, highlight = "all") {
   if (f.station) {
     const l = get("Median")[0];
     parts += group(
-      "yellow",
+      "platforms",
       poly(
         [
           [l.start - 0.5, -65],
@@ -374,7 +374,7 @@ export function sectionIllustration(section, highlight = "all") {
     place(
       l.center,
       -40,
-      "yellow",
+      "platforms",
       box(l.center - 0.3, -59, 0.6, 1.2, 17, "#789084") +
         box(l.center - 0.3, -33, 0.6, 1.2, 17, "#789084") +
         poly(

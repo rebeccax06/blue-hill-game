@@ -123,13 +123,22 @@ export async function mountStreetThree(root, section, onFeature) {
   };
   for (const feature of model.features)
     for (const ring of feature.polygons) {
-      polygon(
+      const object = polygon(
         ring,
         feature.id === "yellow" ? 0.35 : feature.id === "green" ? 0.15 : 0.05,
         featureColors[feature.id],
         feature.id,
         0.09,
       );
+      if (
+        feature.id === "yellow" &&
+        ring.every(
+          ([px, py]) => px >= 738 && px <= 916 && py >= 297 && py <= 320,
+        )
+      ) {
+        object.material.userData.platform = true;
+        object.userData.feature = "platforms";
+      }
     }
   model.buildings.forEach((building, index) => {
     polygon(
@@ -216,10 +225,12 @@ export async function mountStreetThree(root, section, onFeature) {
   // These figures provide scale and do not represent observed passenger counts.
   const passenger = (px, py, shirt, skin, withBag = false) => {
     const person = new THREE.Group();
-    person.userData.feature = "yellow";
+    person.userData.feature = "platforms";
     person.userData.kind = "waiting-passenger";
     const part = (geometry, color, position) => {
       const object = mesh(geometry, material(color, "yellow"), "yellow");
+      object.material.userData.platform = true;
+      object.userData.feature = "platforms";
       object.position.set(...position);
       person.add(object);
       return object;
@@ -359,7 +370,11 @@ export async function mountStreetThree(root, section, onFeature) {
   const setFeature = (feature) => {
     materials.forEach((mat) => {
       if (!mat.userData.feature) return;
-      const active = feature === "all" || mat.userData.feature === feature;
+      const active =
+        feature === "all" ||
+        (feature === "platforms"
+          ? mat.userData.platform === true
+          : mat.userData.feature === feature);
       mat.transparent = !active;
       mat.opacity = active ? 1 : 0.2;
       mat.depthWrite = active;

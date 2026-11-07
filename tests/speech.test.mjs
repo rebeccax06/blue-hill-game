@@ -35,3 +35,28 @@ test("speech rejects invalid input and reports permission failures without expos
     /key or voice permissions/,
   );
 });
+
+test("speech distinguishes quota exhaustion from authentication and permissions", async () => {
+  for (const [code, message] of [
+    ["quota_exceeded", /usage allowance is exhausted/],
+    ["invalid_api_key", /rejected the API key/],
+    ["missing_permissions", /missing Text to Speech permission/],
+    ["voice_not_found", /voice is unavailable/],
+  ]) {
+    await assert.rejects(
+      createSpeech(`diagnose ${code}`, {
+        key: "test-secret",
+        request: async () =>
+          new Response(
+            JSON.stringify({
+              detail: { status: code, message: "private upstream details" },
+            }),
+            { status: 401 },
+          ),
+      }),
+      (error) =>
+        message.test(error.message) &&
+        !error.message.includes("private upstream details"),
+    );
+  }
+});

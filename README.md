@@ -35,7 +35,9 @@ Without a key, the game runs in **offline preview mode**. Characters explicitly 
 
 ## Text and voice
 
-Turn the **Voice** switch on to reveal **Start microphone** and **Read aloud**. Turning it off stops listening and playback. Start the microphone to dictate into the current answer or say “choose option A”, B, or C when design cards are visible. Review and confirm or send manually; text remains editable.
+Expand **Voice**, then turn its switch on to reveal **Start microphone** and **Read aloud**. Turning it off stops listening and playback. Start the microphone to dictate into the current answer or say “choose option A”, B, or C when design cards are visible. Review and confirm or send manually; text remains editable.
+
+Choose a paragraph from the narration menu or press its ▶ button to start there. Narration continues through the following paragraphs. Pause/resume stays beside Read aloud while a clip is playing. Expand **Playback options** for paragraph selection, 0.75×–2× speed, and a position slider.
 
 Read aloud uses ElevenLabs through the local server. Set `ELEVENLABS_API_KEY` in `.env` (`ELEVEN_LABS_API_KEY` is also accepted), then restart the server. Optional `ELEVENLABS_VOICE_ID` selects a voice. `ELEVENLABS_MODEL` defaults to `eleven_multilingual_v2`. The API key needs Text to Speech access. Narration text is sent to ElevenLabs; up to 20 generated clips are cached in server memory to avoid repeated charges. The key stays on the server.
 
@@ -63,9 +65,25 @@ All rendered assets and metadata are included in `public/explorer/`. The Three.j
 
 The interface makes selections through buttons rather than requiring conversational parsing of policy names. During mitigation review, the player explicitly chooses whether to revise the package; suggested amendments are never automatically added. AI generation controls prose, while application logic controls stage transitions and completion gates.
 
+## Focused game layout
+
+Interviews, expert selection, priorities, pressure, reflections, and follow-up questions put the current task first, with the map available under **View your block & proposal**. Initial design comparison, resident selection, and final recommendation keep the map beside the task. The five-year outcome and final reflection keep the simulated before/after street visible beside the question on desktop and above it on mobile; the actual block proposal remains available for comparison. Feature cards show a one-sentence summary, with the full source note under **Proposal details**. Resident actions appear only when they can start an eligible interview or draft a question for the current resident. Commitment controls appear only during recommendation editing; selected commitments can still be reviewed afterward.
+
+## Interactive Happy Supermarket block
+
+Block 12 (Harvard Street–Vesta Road) replaces the generic street illustration inside the game with the actual zoomable proposal plan. Pick bus platforms, supermarket access, turns/crossings, the bike path, trees, or travel lanes to highlight source markings and reveal a short proposal note. Aerial context and the existing source-derived 3D prototype remain available. Color groups are labeled because green and yellow each cover several uses.
+
+During resident selection, feature cards can open an eligible interview with a drafted question. During an interview, the current resident’s feature button drafts a question for review before sending. During the final recommendation, feature cards add or remove authorized commitments, with the same two-amendment cap and confirmation step. Selected commitments remain visible beside the drawing without altering its source geometry. Other blocks retain their current game views.
+
+## Community sources and block focus
+
+The block chosen in the explorer stays alongside the game with its exact proposal plan and topic details. It grounds AI conversations and is saved in the final package and field notes. You can change the focus before confirming a recommendation; afterward the focus stays fixed. A/B/C remain simulated policy approaches rather than alternate source engineering plans.
+
+`public/comment-index.json` indexes all 232 supplied Reddit comments, including original workbook rows, thread titles, source IDs, authors, dates, reply references, and suggested topics based on the workbook codebook. Rebuild with `python3 scripts/build-comment-index.py`. Topic matching is heuristic, not verified qualitative coding. Each character shows related themes and a searchable source panel. AI dialogue receives up to four relevant comments as unverified public opinion, alongside canonical block facts. Fictional residents are never presented as the real commenters. Reddit comments are not a representative survey.
+
 ## Data and privacy
 
-Progress and notes are saved in this browser's local storage. AI mode sends the question and relevant game context through the local server to Claude. Ending generation receives only the final package, so interview choices and reflections do not determine outcomes. There is no research database, analytics, or submission to Boston or the MBTA. The optional Google Fonts stylesheet can be removed for a fully local offline presentation; system font fallbacks are provided.
+Progress and notes are saved in this browser's local storage. AI mode sends the question, selected block, relevant indexed comment excerpts, and game context through the local server to Claude. Ending generation receives only the final package, so interview choices and reflections do not determine outcomes. There is no research database, analytics, or submission to Boston or the MBTA. The optional Google Fonts stylesheet can be removed for a fully local offline presentation; system font fallbacks are provided.
 
 ## Validation
 
