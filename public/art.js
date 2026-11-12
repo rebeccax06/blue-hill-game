@@ -1,3 +1,4 @@
+import { northArrow } from "./north-arrow.js";
 export function portrait(index = 0, large = false) {
   const skins = [
     "#905b40",
@@ -700,5 +701,5 @@ export function street(
           66,
         );
   }
-  return `<svg viewBox="0 0 900 580" role="img" aria-label="${before ? "Illustrative starting street with shared bus and traffic space" : `Option ${option}: ${design.focus}. ${design.tradeoff}`} Illustrative layout, not an engineering plan."><defs><pattern id="dots-${option}-${before ? "before" : "after"}" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#85947c" opacity=".12"/></pattern></defs><rect width="900" height="580" fill="#e8eddf"/><rect width="900" height="580" fill="url(#dots-${option}-${before ? "before" : "after"})"/>${parts}<text x="28" y="555" font-family="sans-serif" font-size="10" fill="#6c7c68">${before ? "ILLUSTRATIVE STARTING STREET" : "SAME STREET SPACE · DIFFERENT PRIORITIES"}</text></svg>`;
+  return `<svg viewBox="0 0 900 580" role="img" aria-label="${before ? "Illustrative starting street with shared bus and traffic space" : `Option ${option}: ${design.focus}. ${design.tradeoff}`} Illustrative layout, not an engineering plan."><defs><pattern id="dots-${option}-${before ? "before" : "after"}" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#85947c" opacity=".12"/></pattern></defs><rect width="900" height="580" fill="#e8eddf"/><rect width="900" height="580" fill="url(#dots-${option}-${before ? "before" : "after"})"/>${parts}<svg x="738" y="12" width="150" height="100">${northArrow(view === "plan" ? 0 : -66)}</svg><text x="28" y="555" font-family="sans-serif" font-size="10" fill="#6c7c68">${before ? "ILLUSTRATIVE STARTING STREET" : "SAME STREET SPACE · DIFFERENT PRIORITIES"}</text></svg>`;
 }

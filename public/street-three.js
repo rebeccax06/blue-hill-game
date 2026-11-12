@@ -1,3 +1,4 @@
+import { northArrow } from "./north-arrow.js";
 import * as THREE from "three";
 import { OrbitControls } from "/vendor/three/OrbitControls.js";
 
@@ -19,6 +20,11 @@ export async function mountStreetThree(root, section, onFeature) {
   const loading = root.querySelector(".three-loading");
   root.replaceChildren(renderer.domElement);
   if (loading) root.append(loading);
+  const compass = document.createElement("div");
+  compass.className = "north-indicator";
+  compass.innerHTML = northArrow();
+  root.append(compass);
+  const compassNeedle = compass.querySelector("g");
   const canvas = renderer.domElement;
   canvas.tabIndex = 0;
   canvas.setAttribute("role", "img");
@@ -26,7 +32,9 @@ export async function mountStreetThree(root, section, onFeature) {
     "aria-label",
     `3D model of ${section.title}. Drag to orbit, pinch to zoom, or use camera buttons. Keyboard arrows rotate; plus and minus zoom.`,
   );
-  const scale = 0.12;
+  const scale = 130 / model.width;
+  const unit = model.metersPerPixel ? scale / model.metersPerPixel : 1;
+  const labelTextures = [];
   const x = (value) => (value - model.width / 2) * scale;
   const z = (value) => (value - model.height / 2) * scale;
   const scene = new THREE.Scene();
@@ -53,6 +61,7 @@ export async function mountStreetThree(root, section, onFeature) {
   controls.enableDamping = false;
   const groups = new Map(),
     materials = [];
+  const materialCache = new Map();
   const features = ["context", "bus", "green", "yellow", "blue", "red"];
   features.forEach((key) => {
     const group = new THREE.Group();
@@ -61,7 +70,10 @@ export async function mountStreetThree(root, section, onFeature) {
     scene.add(group);
   });
   const material = (color, feature = "context") => {
+    const key = `${feature}:${color}`;
+    if (materialCache.has(key)) return materialCache.get(key);
     const mat = new THREE.MeshStandardMaterial({ color, roughness: 0.85 });
+    materialCache.set(key, mat);
     mat.userData.feature = feature;
     materials.push(mat);
     return mat;
@@ -74,12 +86,27 @@ export async function mountStreetThree(root, section, onFeature) {
     groups.get(feature).add(object);
     return object;
   };
-  const polygon = (points, height, color, feature = "context", base = 0) => {
+  const polygon = (
+    points,
+    height,
+    color,
+    feature = "context",
+    base = 0,
+    holes = [],
+  ) => {
     const shape = new THREE.Shape();
     points.forEach(([px, py], i) =>
       i ? shape.lineTo(x(px), -z(py)) : shape.moveTo(x(px), -z(py)),
     );
     shape.closePath();
+    for (const ring of holes) {
+      const hole = new THREE.Path();
+      ring.forEach(([px, py], i) =>
+        i ? hole.lineTo(x(px), -z(py)) : hole.moveTo(x(px), -z(py)),
+      );
+      hole.closePath();
+      shape.holes.push(hole);
+    }
     const geometry = new THREE.ExtrudeGeometry(shape, {
       depth: height,
       bevelEnabled: false,
@@ -111,15 +138,33 @@ export async function mountStreetThree(root, section, onFeature) {
     "context",
     -0.6,
   );
-  polygon(model.road, 0.08, "#737c76");
-  model.sidewalks.forEach((points) => polygon(points, 0.25, "#dcd4bf"));
-  polygon(model.carriageway, 0.08, "#808c82");
+  if (model.roadShapes)
+    model.roadShapes.forEach((shape) =>
+      polygon(shape.outer, 0.08, "#737c76", "context", 0, shape.holes),
+    );
+  else
+    (model.roads || [model.road])
+      .filter((points) => points.length)
+      .forEach((points) => polygon(points, 0.08, "#737c76"));
+  if (model.sidewalkShapes)
+    model.sidewalkShapes.forEach((shape) =>
+      polygon(
+        shape.outer,
+        0.23 * unit,
+        "#dcd4bf",
+        "context",
+        0.08,
+        shape.holes,
+      ),
+    );
+  else model.sidewalks.forEach((points) => polygon(points, 0.25, "#dcd4bf"));
+  if (model.carriageway.length) polygon(model.carriageway, 0.08, "#808c82");
   const featureColors = {
-    bus: "#ba7a6e",
-    green: "#91ad86",
-    yellow: "#d8c38a",
-    blue: "#a8b9c3",
-    red: "#c47062",
+    bus: "#bc776d",
+    green: "#4d936d",
+    yellow: "#d7b829",
+    blue: "#4b6db5",
+    red: "#d76254",
   };
   for (const feature of model.features)
     for (const ring of feature.polygons) {
@@ -131,6 +176,7 @@ export async function mountStreetThree(root, section, onFeature) {
         0.09,
       );
       if (
+        model.section === 12 &&
         feature.id === "yellow" &&
         ring.every(
           ([px, py]) => px >= 738 && px <= 916 && py >= 297 && py <= 320,
@@ -140,86 +186,232 @@ export async function mountStreetThree(root, section, onFeature) {
         object.userData.feature = "platforms";
       }
     }
+  // Shared facade language across the corridor; footprints and massing vary by GIS building.
+  const windows = [];
+  const label = (text, px, py, elevation, kind = "landmark") => {
+    const image = document.createElement("canvas");
+    const context = image.getContext("2d");
+    context.font = "600 30px system-ui";
+    const textWidth = Math.ceil(context.measureText(text).width);
+    image.width = textWidth + 32;
+    image.height = 58;
+    context.fillStyle = kind === "street" ? "#f7f4e8e8" : "#fdf9edf5";
+    context.beginPath();
+    context.roundRect(0, 0, image.width, image.height, 10);
+    context.fill();
+    context.fillStyle = "#254b3d";
+    context.font = "600 30px system-ui";
+    context.textBaseline = "middle";
+    context.fillText(text, 16, 29);
+    const texture = new THREE.CanvasTexture(image);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    labelTextures.push(texture);
+    const mat = new THREE.SpriteMaterial({
+      map: texture,
+      depthTest: false,
+      transparent: true,
+    });
+    materials.push(mat);
+    const sprite = new THREE.Sprite(mat);
+    const height = kind === "street" ? 2.0 : 2.8;
+    sprite.scale.set((height * image.width) / image.height, height, 1);
+    sprite.position.set(x(px), elevation, z(py));
+    sprite.userData.label = text;
+    groups.get("context").add(sprite);
+    return sprite;
+  };
   model.buildings.forEach((building, index) => {
-    polygon(
-      building.footprint,
-      building.height,
-      ["#cab99e", "#c6c7b5", "#cbbfae"][index % 3],
-    );
-    // Source footprints are retained; roof heights are display assumptions.
+    const residential = ["R1", "R2", "R3", "R4", "A"].includes(building.use);
+    const colors = residential
+      ? ["#c9bda7", "#c1c1ac", "#bdafa0", "#cbbca5"]
+      : ["#b79780", "#b4ac98", "#b7b8a5"];
+    const facade = colors[index % colors.length];
+    polygon(building.footprint, building.height, facade, "context", 0.1);
     const roof = polygon(
       building.footprint,
-      0.12,
-      "#e7dfc9",
+      0.22 * unit,
+      residential ? "#aaa99b" : "#bdb9a9",
       "context",
-      building.height,
+      building.height + 0.1,
     );
     roof.userData.name = building.name;
+    // One instanced draw for all windows keeps dense neighborhood blocks responsive.
     for (let i = 0; i < building.footprint.length; i++) {
       const a = building.footprint[i],
         b = building.footprint[(i + 1) % building.footprint.length];
       const dx = x(b[0]) - x(a[0]),
-        dz = z(b[1]) - z(a[1]),
-        length = Math.hypot(dx, dz);
-      for (let distance = 2; distance < length - 1; distance += 3.3)
-        for (let level = 2.7; level < building.height - 1; level += 3) {
+        dz = z(b[1]) - z(a[1]);
+      const length = Math.hypot(dx, dz);
+      for (
+        let distance = 1.3 * unit;
+        distance < length - unit;
+        distance += 2.8 * unit
+      )
+        for (
+          let level = 2.3 * unit;
+          level < building.height - 0.8 * unit;
+          level += 3.1 * unit
+        ) {
           const fraction = distance / length;
-          const window = mesh(
-            new THREE.BoxGeometry(1.15, 1.15, 0.12),
-            material("#6b8781"),
-          );
-          window.position.set(
-            x(a[0]) + dx * fraction,
-            level,
-            z(a[1]) + dz * fraction,
-          );
-          window.rotation.y = -Math.atan2(dz, dx);
+          windows.push({
+            x: x(a[0]) + dx * fraction,
+            y: level + 0.1,
+            z: z(a[1]) + dz * fraction,
+            angle: -Math.atan2(dz, dx),
+          });
         }
     }
   });
+  if (windows.length) {
+    const panes = new THREE.InstancedMesh(
+      new THREE.BoxGeometry(1.05 * unit, 1.25 * unit, 0.08 * unit),
+      material("#607c78"),
+      windows.length,
+    );
+    const dummy = new THREE.Object3D();
+    windows.forEach((window, i) => {
+      dummy.position.set(window.x, window.y, window.z);
+      dummy.rotation.y = window.angle;
+      dummy.updateMatrix();
+      panes.setMatrixAt(i, dummy.matrix);
+    });
+    panes.userData.feature = "context";
+    groups.get("context").add(panes);
+  }
+  // Landmark names are taken from the project drawings, not inferred businesses.
+  (model.landmarks || []).forEach((landmark) => {
+    const building = model.buildings.find((b) => b.id === landmark.buildingId);
+    label(
+      landmark.name,
+      ...landmark.position,
+      (building?.height || 0) + 3.4,
+      landmark.kind,
+    );
+  });
+  (model.streetLabels || [])
+    .slice(0, 4)
+    .forEach((street) => label(street.text, ...street.position, 1.4, "street"));
+  root.dataset.buildings = String(model.buildings.length);
   const tree = (px, py) => {
     const trunk = mesh(
-      new THREE.CylinderGeometry(0.12, 0.17, 2, 7),
+      new THREE.CylinderGeometry(0.16 * unit, 0.22 * unit, 2.7 * unit, 7),
       material("#8a755a", "green"),
       "green",
     );
-    trunk.position.set(x(px), 1.25, z(py));
+    trunk.position.set(x(px), 1.6 * unit, z(py));
     const crown = mesh(
-      new THREE.IcosahedronGeometry(1.3, 1),
+      new THREE.IcosahedronGeometry(2.15 * unit, 1),
       material("#7e9a6d", "green"),
       "green",
     );
-    crown.position.set(x(px), 3, z(py));
+    crown.position.set(x(px), 4.2 * unit, z(py));
   };
-  model.trees.forEach((point) => tree(...point));
+  [...model.trees, ...(model.contextTrees || [])].forEach((point) =>
+    tree(...point),
+  );
+  const roadCenter = (px) => {
+    const count = Math.floor(model.road.length / 2);
+    const samples = model.road
+      .slice(0, count)
+      .map(([x, y], i) => [
+        x,
+        (y + model.road[model.road.length - i - 1][1]) / 2,
+      ]);
+    let index = samples.findIndex((point, i) => i && point[0] >= px);
+    if (index < 1) index = px < samples[0][0] ? 1 : samples.length - 1;
+    const a = samples[index - 1],
+      b = samples[index];
+    return a[1] + ((b[1] - a[1]) * (px - a[0])) / (b[0] - a[0]);
+  };
+  const alignVehicle = (feature, start, px, py) => {
+    const group = groups.get(feature);
+    const parts = group.children.slice(start);
+    const vehicle = new THREE.Group();
+    vehicle.userData.feature = feature;
+    vehicle.position.set(x(px), 0, z(py));
+    vehicle.rotation.y = -Math.atan2(
+      roadCenter(px + 10) - roadCenter(px - 10),
+      20,
+    );
+    parts.forEach((part) => {
+      part.position.x -= x(px);
+      part.position.z -= z(py);
+      vehicle.add(part);
+    });
+    group.add(vehicle);
+  };
   model.buses.forEach(([px, py], index) => {
-    box(px, py, 9.5, 2.4, 2.6, "#eee4ca", "bus", 0.3);
-    box(px, py, 8.5, 2.43, 0.95, "#496a6d", "bus", 1.4);
-    box(px, py, 9.1, 2.3, 0.15, "#f2ebd9", "bus", 2.95);
-    for (const delta of [-3, 3])
+    const start = groups.get("bus").children.length;
+    box(
+      px,
+      py,
+      11.8 * unit,
+      2.5 * unit,
+      2.7 * unit,
+      "#eee4ca",
+      "bus",
+      0.09 + 0.35 * unit,
+    );
+    box(
+      px,
+      py,
+      10.5 * unit,
+      2.53 * unit,
+      1 * unit,
+      "#496a6d",
+      "bus",
+      0.09 + 1.5 * unit,
+    );
+    box(
+      px,
+      py,
+      11.5 * unit,
+      2.4 * unit,
+      0.15 * unit,
+      "#f2ebd9",
+      "bus",
+      0.09 + 3.05 * unit,
+    );
+    for (const delta of [-3.7, 3.7])
       for (const side of [-1, 1]) {
         const wheel = mesh(
-          new THREE.CylinderGeometry(0.4, 0.4, 0.2, 12),
+          new THREE.CylinderGeometry(0.45 * unit, 0.45 * unit, 0.2 * unit, 12),
           material("#35473d", "bus"),
           "bus",
         );
         wheel.rotation.x = Math.PI / 2;
-        wheel.position.set(x(px) + delta, 0.5, z(py) + side * 1.2);
+        wheel.position.set(
+          x(px) + delta * unit,
+          0.09 + 0.45 * unit,
+          z(py) + side * 1.25 * unit,
+        );
       }
+    alignVehicle("bus", start, px, py);
   });
   model.cars.forEach(([px, py], index) => {
-    const feature = index < 4 ? "blue" : "context";
+    const feature = "blue";
+    const start = groups.get(feature).children.length;
     box(
       px,
       py,
-      3.9,
-      1.6,
-      0.8,
+      4.3 * unit,
+      1.8 * unit,
+      0.9 * unit,
       ["#e4dcca", "#8ca6a0", "#d5b580"][index % 3],
       feature,
-      0.35,
+      0.09 + 0.25 * unit,
     );
-    box(px, py, 2, 1.4, 0.6, "#526d70", feature, 1.15);
+    box(
+      px,
+      py,
+      2.2 * unit,
+      1.6 * unit,
+      0.65 * unit,
+      "#526d70",
+      feature,
+      0.09 + 1.15 * unit,
+    );
+    alignVehicle(feature, start, px, py);
   });
   // Waiting passengers stand inside the long source-traced bus platform.
   // These figures provide scale and do not represent observed passenger counts.
@@ -267,17 +459,30 @@ export async function mountStreetThree(root, section, onFeature) {
         "#b58d61",
         [0.3, 0.64, 0.05],
       );
+    person.scale.setScalar(unit);
     person.position.set(x(px), 0.46, z(py));
     groups.get("yellow").add(person);
   };
-  [
-    [760, 310, "#b96c51", "#a76e4c", false],
-    [792, 309, "#537e88", "#79523c", true],
-    [825, 309, "#c3a256", "#b78260", false],
-    [860, 308, "#7d7692", "#684833", true],
-    [892, 308, "#6c8a69", "#ca9873", false],
-  ].forEach((args) => passenger(...args));
-  root.dataset.passengers = "5";
+  (model.section === 12
+    ? [
+        [760, 310, "#b96c51", "#a76e4c", false],
+        [792, 309, "#537e88", "#79523c", true],
+        [825, 309, "#c3a256", "#b78260", false],
+        [860, 308, "#7d7692", "#684833", true],
+        [892, 308, "#6c8a69", "#ca9873", false],
+      ]
+    : (model.passengers || []).map(([px, py], index) => [
+        px,
+        py,
+        ["#b96c51", "#537e88", "#c3a256"][index % 3],
+        ["#a76e4c", "#79523c", "#b78260"][index % 3],
+        index % 2 === 0,
+      ])
+  ).forEach((args) => passenger(...args));
+  root.dataset.passengers = String(
+    model.section === 12 ? 5 : (model.passengers || []).length,
+  );
+  root.dataset.modelSection = String(model.section);
   // Reuse actual road linework as paint, clipped to the traced road footprint.
   let paintTexture;
   try {
@@ -285,22 +490,37 @@ export async function mountStreetThree(root, section, onFeature) {
       const img = new Image();
       img.onload = () => resolve(img);
       img.onerror = reject;
-      img.src = section.plan.clear;
+      img.src = model.sourceSurface || section.plan.clear;
     });
     const paint = document.createElement("canvas");
     paint.width = model.width;
     paint.height = model.height;
     const context = paint.getContext("2d", { willReadFrequently: true });
-    context.beginPath();
-    model.road.forEach(([px, py], index) =>
-      index ? context.lineTo(px, py) : context.moveTo(px, py),
-    );
-    context.closePath();
-    context.clip();
-    context.drawImage(image, 0, 0);
+    for (const shape of model.roadShapes ||
+      (model.roads || [model.road]).map((outer) => ({ outer, holes: [] }))) {
+      const road = shape.outer;
+      context.beginPath();
+      road.forEach(([px, py], index) =>
+        index ? context.lineTo(px, py) : context.moveTo(px, py),
+      );
+      context.closePath();
+      for (const ring of shape.holes) {
+        ring.forEach(([px, py], index) =>
+          index ? context.lineTo(px, py) : context.moveTo(px, py),
+        );
+        context.closePath();
+      }
+      context.save();
+      context.clip("evenodd");
+      context.drawImage(image, 0, 0);
+      context.restore();
+    }
     const pixels = context.getImageData(0, 0, paint.width, paint.height);
     for (let i = 0; i < pixels.data.length; i += 4) {
-      const [r, g, b, a] = pixels.data.slice(i, i + 4);
+      const r = pixels.data[i],
+        g = pixels.data[i + 1],
+        b = pixels.data[i + 2],
+        a = pixels.data[i + 3];
       pixels.data[i] = 239;
       pixels.data[i + 1] = 235;
       pixels.data[i + 2] = 216;
@@ -334,6 +554,24 @@ export async function mountStreetThree(root, section, onFeature) {
   const render = () => {
     if (dead) return;
     renderer.render(scene, camera);
+    // Source sheets run south to north from left to right (+X). Project that
+    // ground direction through the current camera so orbiting stays truthful.
+    const origin = controls.target.clone().project(camera);
+    const north = controls.target
+      .clone()
+      .add(new THREE.Vector3(10, 0, 0))
+      .project(camera);
+    const angle =
+      (Math.atan2(
+        (north.x - origin.x) * canvas.clientWidth,
+        (north.y - origin.y) * canvas.clientHeight,
+      ) *
+        180) /
+      Math.PI;
+    compassNeedle.setAttribute(
+      "transform",
+      `translate(75 34) rotate(${angle})`,
+    );
     root.dataset.zoom = String(camera.zoom);
     if (!root.hidden) {
       const output = root.closest(".interactive-plan")?.querySelector("output");
@@ -343,7 +581,8 @@ export async function mountStreetThree(root, section, onFeature) {
   const resize = () => {
     const { width, height } = root.getBoundingClientRect();
     if (!width || !height) return;
-    const span = 155;
+    // Fit the complete source sheet at both narrow and wide viewport ratios.
+    const span = Math.max(155, ((model.height * scale + 12) * width) / height);
     camera.left = -span / 2;
     camera.right = span / 2;
     camera.top = (span * height) / width / 2;
@@ -470,6 +709,7 @@ export async function mountStreetThree(root, section, onFeature) {
       scene.traverse((object) => object.geometry?.dispose());
       materials.forEach((mat) => mat.dispose());
       paintTexture?.dispose();
+      labelTextures.forEach((texture) => texture.dispose());
       renderer.dispose();
       renderer.forceContextLoss();
       canvas.remove();

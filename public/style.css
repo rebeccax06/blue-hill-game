@@ -146,6 +146,20 @@ p {
   max-width: 410px;
   line-height: 1.8;
 }
+.ai-disclaimer {
+  max-width: 410px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-left: 3px solid #637166;
+  background: #eef1e9;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.ai-disclaimer strong {
+  display: block;
+  color: #344a3b;
+  margin-bottom: 4px;
+}
 .welcome {
   display: grid;
   grid-template-columns: 0.85fr 1.45fr;
@@ -2726,4 +2740,50 @@ dialog::backdrop {
 }
 .outcome-visual > details {
   font-size: 0.8rem;
+}
+
+.north-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: clamp(104px, 15vw, 150px);
+  pointer-events: none;
+  z-index: 2;
+}
+.north-indicator svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.person-choice {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.person-choice:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 5px;
+}
+.person-statistic {
+  margin: 14px 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.person-statistic p {
+  margin: 5px 0 8px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.person-statistic a {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

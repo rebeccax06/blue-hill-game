@@ -80,6 +80,31 @@ export const blockFeatures = [
       "What concerns would you have about traffic on this block with two travel lanes in each direction?",
   },
 ];
+// The detailed Happy Supermarket guide remains specific to that block.
+// Every other block uses its own published proposal notes with shared actions.
+export function featuresForBlock(block) {
+  if (block.number === 12) return blockFeatures;
+  const labels = {
+    bus: "Bus stops",
+    parking: "Parking & loading",
+    bike: "Walking & biking",
+  };
+  return blockFeatures.map((feature) => {
+    const topic = block.topics[feature.topic];
+    const text = topic.text;
+    const summary =
+      text.length > 180
+        ? text.slice(0, 177).replace(/\s+\S*$/, "") + "…"
+        : text;
+    return {
+      ...feature,
+      label: labels[feature.id] || feature.label,
+      layer: feature.id === "bus" ? "bus" : feature.layer,
+      summary,
+      question: `How would the proposed ${topic.label.toLowerCase()} changes on ${block.title} affect you?`,
+    };
+  });
+}
 export function mountBlockPlay(
   root,
   {
@@ -94,28 +119,30 @@ export function mountBlockPlay(
     onDetailsChange,
   },
 ) {
+  const features = featuresForBlock(block);
   let active =
-    focus === null
-      ? null
-      : blockFeatures.find((f) => f.id === focus) || blockFeatures[1];
+    focus == null ? null : features.find((f) => f.id === focus) || null;
   let detailsOpen = !!state.proposalDetailsOpen;
-  root.innerHTML = `<section class="block-play" aria-label="Play this block"><div class="block-play-heading"><div><span class="eyebrow">Your block · ${block.number}</span><h2>${esc(block.title)}</h2></div><span class="proposal-badge">Actual proposal</span></div><p class="micro">Tap a colored marking or choose a feature. Drag to explore.</p><div class="game-plan"></div><nav class="block-feature-tabs" aria-label="Explore block features">${blockFeatures.map((f) => `<button type="button" data-block-feature="${f.id}" aria-pressed="false">${esc(f.label)}</button>`).join("")}</nav><div class="block-feature-card" aria-live="polite"></div><details class="block-plan-source"><summary>Drawing & accuracy</summary><p>The plan uses the original proposal geometry. 3D boundaries follow source colors; building heights and context are illustrative. Color groups can include several uses. Recommendation markers represent policy choices, not engineered changes.</p><a href="${esc(block.slide)}" target="_blank" rel="noopener">Open extracted slide ${block.page} ↗</a></details></section>`;
-  const viewerBlock = {
-    ...block,
-    plan: {
-      ...block.plan,
-      layers: [
-        {
-          id: "platforms",
-          label: "Bus platform near Vesta Road (right side of drawing)",
-          image: "/explorer/assets/section-12-layer-platforms.png",
-          color: "#d7b829",
-          pixels: 2547,
-        },
-        ...block.plan.layers,
-      ],
-    },
-  };
+  root.innerHTML = `<section class="block-play" aria-label="Play this block"><div class="block-play-heading"><div><span class="eyebrow">Your block · ${block.number}</span><h2>${esc(block.title)}</h2></div><span class="proposal-badge">Actual proposal</span></div><p class="micro">Explore your neighborhood in 3D. Drag to orbit, or select a feature to see its proposal notes.</p><div class="game-plan"></div><nav class="block-feature-tabs" aria-label="Explore block features">${features.map((f) => `<button type="button" data-block-feature="${f.id}" aria-pressed="false">${esc(f.label)}</button>`).join("")}</nav><div class="block-feature-card" aria-live="polite"></div><details class="block-plan-source"><summary>Drawing & accuracy</summary><p>Proposal markings follow the original drawing. Buildings use Boston GIS footprints and available 2010 heights, approximately aligned at named intersections. Facades, trees, vehicles, and missing heights are illustrative. Color groups can include several uses. Recommendation markers represent policy choices, not engineered changes.</p><a href="${esc(block.slide)}" target="_blank" rel="noopener">Open extracted slide ${block.page} ↗</a></details></section>`;
+  const viewerBlock =
+    block.number === 12
+      ? {
+          ...block,
+          plan: {
+            ...block.plan,
+            layers: [
+              {
+                id: "platforms",
+                label: "Bus platform near Vesta Road (right side of drawing)",
+                image: "/explorer/assets/section-12-layer-platforms.png",
+                color: "#d7b829",
+                pixels: 2547,
+              },
+              ...block.plan.layers,
+            ],
+          },
+        }
+      : block;
   const viewer = root.querySelector(".game-plan");
   const card = root.querySelector(".block-feature-card");
   const editable = !state.frozen && state.stage === "final";
@@ -154,7 +181,7 @@ export function mountBlockPlay(
     const commitments = feature.amendments.filter(
       (id) => editable || ids.includes(id),
     );
-    card.innerHTML = `<p class="proposal-fact">${esc(feature.summary)}</p><details class="feature-detail" ${detailsOpen ? "open" : ""}><summary>Proposal details</summary><p>${esc(block.topics[feature.topic].text)}</p>${feature.id === "bus" ? "<p>The visible platform is the long yellow island on the right. Green on the left is the bike path; the second platform described in the notes is beyond this drawing.</p>" : ""}</details>${availablePeople.length ? `<div class="feature-people">${availablePeople.map((name) => `<button type="button" data-feature-person="${name}">${state.stage === "interview" ? "Draft a question" : `Ask ${esc(name)}`} ↗</button>`).join("")}</div>` : ""}${
+    card.innerHTML = `<p class="proposal-fact">${esc(feature.summary)}</p><details class="feature-detail" ${detailsOpen ? "open" : ""}><summary>Proposal details</summary><p>${esc(block.topics[feature.topic].text)}</p>${block.number === 12 && feature.id === "bus" ? "<p>The visible platform is the long yellow island on the right. Green on the left is the bike path; the second platform described in the notes is beyond this drawing.</p>" : ""}</details>${availablePeople.length ? `<div class="feature-people">${availablePeople.map((name) => `<button type="button" data-feature-person="${name}">${state.stage === "interview" ? "Draft a question" : `Ask ${esc(name)}`} ↗</button>`).join("")}</div>` : ""}${
       commitments.length
         ? `<div class="feature-changes">${commitments
             .map((id) => {
@@ -185,7 +212,7 @@ export function mountBlockPlay(
       );
   }
   const dispose = mountPlanViewer(viewer, viewerBlock, {
-    initialStyle: "clear",
+    initialStyle: "three",
     onFeature(layer) {
       let key = viewer.querySelector(".source-color-key");
       if (!key) {
@@ -199,9 +226,7 @@ export function mountBlockPlay(
           : `Source color group: ${viewerBlock.plan.layers.find((l) => l.id === layer)?.label || layer}`;
       if (layer === active?.layer || layer === "all") return;
       const feature =
-        layer === "red"
-          ? blockFeatures[1]
-          : blockFeatures.find((f) => f.layer === layer);
+        layer === "red" ? features[1] : features.find((f) => f.layer === layer);
       if (feature) show(feature, false);
     },
   });
@@ -213,7 +238,7 @@ export function mountBlockPlay(
           show(
             active?.id === b.dataset.blockFeature
               ? null
-              : blockFeatures.find((f) => f.id === b.dataset.blockFeature),
+              : features.find((f) => f.id === b.dataset.blockFeature),
           )),
     );
   show(active);

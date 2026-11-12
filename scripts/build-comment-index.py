@@ -48,7 +48,7 @@ for row,c in source[1:]:
         'note':c.get('F',''), 'replyTo':parent.group(1) if parent else None,
         'topics':[tag for tag,pattern in patterns.items() if re.search(pattern,text,re.I)]})
 people = {
-'Malik':['Bus','Reliability','Access'], 'Denise':['Parking','Accessibility'], 'Marisol':['Parking','Access','Funding'],
+'Malik':['Bus','Reliability','Access'], 'Simone':['Bus','Reliability','Access','Engagement'], 'Denise':['Parking','Accessibility'], 'Marisol':['Parking','Access','Funding'],
 'Angela':['Traffic','Parking','Access'], 'Gloria':['Displacement','Affordability','Gentrification','Neighborhood identity'],
 'Raymond':['Trust','Engagement','Responsibility','Evidence'], 'Tiana':['Safety','Bus','Access'],
 }

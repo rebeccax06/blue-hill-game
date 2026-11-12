@@ -79,7 +79,7 @@ test("freezing snapshots package and amendments are capped at two", () => {
     assert.ok(validPackage({ option, amendments: [11, 13] }));
 });
 test("source contains complete rosters, menus, priorities, and only branch-specific pressure content", () => {
-  assert.equal(C.people.length, 8);
+  assert.equal(C.people.length, 9);
   assert.equal(C.experts.length, 6);
   assert.equal(C.amendments.length, 13);
   assert.equal(C.priorities.length, 13);

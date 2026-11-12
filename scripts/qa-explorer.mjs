@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import http from "node:http";
 import { spawn } from "node:child_process";
-import { mkdtemp, writeFile, rm } from "node:fs/promises";
+import { mkdtemp, writeFile, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { handler } from "../server.mjs";
@@ -137,6 +137,31 @@ try {
       await evaluate('document.querySelectorAll(".section-topic").length'),
       6,
     );
+    await wait(
+      'document.querySelector(".three-street-view")?.dataset.ready==="true"',
+    );
+    assert.equal(
+      await evaluate(
+        'document.querySelector(".three-street-view").dataset.modelSection',
+      ),
+      String(index + 1),
+    );
+    await click('[data-three-camera="top"]');
+    await click('[data-plan-layer="bus"]');
+    assert.equal(
+      await evaluate(
+        'document.querySelector(".three-street-view").dataset.feature',
+      ),
+      "bus",
+    );
+    await click('[data-plan-layer="all"]');
+    await click('[data-three-camera="overview"]');
+    if ([0, 5, 14, 19].includes(index)) {
+      await evaluate(
+        'document.querySelector(".interactive-plan").scrollIntoView({block:"center"})',
+      );
+      await screenshot(`/tmp/bha-block-${index + 1}-3d.png`);
+    }
   }
   await click('[data-map-section="11"]');
   await wait(
@@ -242,7 +267,14 @@ try {
   );
   assert.equal(
     await evaluate('document.querySelectorAll("[data-section]").length'),
-    2,
+    JSON.parse(
+      await readFile(
+        new URL("../public/explorer/sections.json", import.meta.url),
+        "utf8",
+      ),
+    ).sections.filter((section) =>
+      `${section.title} ${section.description}`.toLowerCase().includes("happy"),
+    ).length,
   );
   await evaluate(
     'document.querySelector("#section-search").value="xyzdoesnotexist";document.querySelector("#section-search").dispatchEvent(new Event("input"))',

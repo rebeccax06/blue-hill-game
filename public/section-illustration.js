@@ -1,3 +1,4 @@
+import { northArrow } from "./north-arrow.js";
 const esc = (value) =>
   String(value ?? "").replace(
     /[&<>"']/g,
@@ -446,5 +447,5 @@ export function sectionIllustration(section, highlight = "all") {
   );
   if (highlight === "red")
     parts += `<rect x="220" y="475" width="460" height="46" rx="8" fill="#fff6f0" stroke="#d76254"/><text x="450" y="494" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="12" fill="#a34d40">${f.hasRemoved ? "Parking losses are described on this slide." : "No parking removal is described on this slide."}</text><text x="450" y="510" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#785f50">Use the source drawing for the affected locations.</text>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img" aria-label="${esc(section.title)} — schematic perspective based on project slide ${section.page}"><defs><pattern id="section-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#85947c" opacity=".12"/></pattern></defs><rect width="900" height="580" fill="#e8eddf"/><rect width="900" height="580" fill="url(#section-dots)"/>${parts}<text x="28" y="30" font-family="sans-serif" font-size="11" letter-spacing="1.4" fill="#294b3e">PROJECT SLIDE ${section.page} · ILLUSTRATED PERSPECTIVE</text><text x="28" y="555" font-family="sans-serif" font-size="10" fill="#65786a">SCHEMATIC · WIDTHS, BUILDINGS &amp; FEATURE LOCATIONS ARE ILLUSTRATIVE</text></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img" aria-label="${esc(section.title)} — schematic perspective based on project slide ${section.page}"><defs><pattern id="section-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#85947c" opacity=".12"/></pattern></defs><rect width="900" height="580" fill="#e8eddf"/><rect width="900" height="580" fill="url(#section-dots)"/>${parts}<svg x="738" y="12" width="150" height="100">${northArrow(-66)}</svg><text x="28" y="30" font-family="sans-serif" font-size="11" letter-spacing="1.4" fill="#294b3e">PROJECT SLIDE ${section.page} · ILLUSTRATED PERSPECTIVE</text><text x="28" y="555" font-family="sans-serif" font-size="10" fill="#65786a">SCHEMATIC · WIDTHS, BUILDINGS &amp; FEATURE LOCATIONS ARE ILLUSTRATIVE</text></svg>`;
 }

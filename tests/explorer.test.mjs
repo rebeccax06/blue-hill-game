@@ -126,3 +126,69 @@ test("Happy Supermarket model retains source coordinates, curved bus boundaries 
         assert.ok(x >= 0 && y >= 0 && x <= model.width && y <= model.height);
     }
 });
+
+test("every block has its own bounded source-aligned 3D geometry", async () => {
+  const fingerprints = new Set();
+  for (const section of data.sections) {
+    const file = await readFile(
+      new URL(`explorer/street-${section.number}.json`, publicRoot),
+      "utf8",
+    );
+    const model = JSON.parse(file);
+    assert.equal(model.section, section.number);
+    assert.equal(model.sourcePage, section.page);
+    assert.equal(model.sourceImage, section.plan.original);
+    assert.equal(model.width, section.plan.width);
+    assert.equal(model.height, section.plan.height);
+    assert.deepEqual(
+      model.features.map((f) => f.id),
+      section.plan.layers.map((f) => f.id),
+    );
+    assert.ok(model.features.find((f) => f.id === "bus").polygons.length > 0);
+    for (const feature of model.features)
+      for (const polygon of feature.polygons) {
+        assert.ok(polygon.length >= 3);
+        for (const [x, y] of polygon)
+          assert.ok(
+            Number.isFinite(x) &&
+              Number.isFinite(y) &&
+              x >= 0 &&
+              x <= model.width &&
+              y >= 0 &&
+              y <= model.height,
+          );
+      }
+    for (const [x, y] of model.trees)
+      assert.ok(x >= 0 && x <= model.width && y >= 0 && y <= model.height);
+    fingerprints.add(JSON.stringify(model.features));
+    assert.ok(
+      model.buildings.length >= 10,
+      "each block needs actual neighborhood buildings",
+    );
+    assert.ok(model.roads.length > 0);
+    assert.ok(model.sidewalkShapes.length > 0);
+    assert.ok(model.contextSource.buildings.includes("bostonplans.org"));
+    assert.equal(model.contextSource.heightVintage, 2010);
+    assert.ok(model.registration.controls.length >= 2);
+    assert.ok(model.metersPerPixel > 0.1 && model.metersPerPixel < 0.5);
+    for (const building of model.buildings) {
+      assert.ok(building.id > 0 && building.footprint.length >= 3);
+      assert.ok(building.heightMeters > 0 && building.height > 0);
+      assert.ok(
+        Math.abs(
+          building.height -
+            ((building.heightMeters / model.metersPerPixel) * 130) /
+              model.width,
+        ) < 0.002,
+      );
+      assert.match(building.heightSource, /Boston BLDG_HGT_2010|fallback/);
+      for (const [x, y] of building.footprint)
+        assert.ok(x >= 0 && y >= 0 && x <= model.width && y <= model.height);
+    }
+  }
+  assert.equal(
+    fingerprints.size,
+    20,
+    "blocks must not reuse another block’s layout",
+  );
+});

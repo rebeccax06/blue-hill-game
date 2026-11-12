@@ -1,3 +1,4 @@
+import { northArrow } from "./north-arrow.js";
 import { sectionIllustration } from "./section-illustration.js";
 const escape = (value) =>
   String(value).replace(
@@ -33,8 +34,8 @@ export function mountPlanViewer(
         }
       : sourcePlan;
   if (!plan) return () => {};
-  const hasModel = section.number === 12;
-  root.innerHTML = `<div class="plan-toolbar"><div role="group" aria-label="Street visualization">${hasModel ? '<button type="button" data-plan-style="three" aria-pressed="true">3D street</button>' : ""}<button type="button" data-plan-style="illustrated" aria-pressed="${!hasModel}">Street sketch</button><button type="button" data-plan-style="clear" aria-pressed="false">Clear plan</button><button type="button" data-plan-style="original" aria-pressed="false">Aerial context</button></div><div class="plan-zoom-controls"><button type="button" data-plan-zoom="out" aria-label="Zoom plan out">−</button><output aria-live="polite">100%</output><button type="button" data-plan-zoom="in" aria-label="Zoom plan in">+</button><button type="button" data-plan-zoom="fit">Fit</button></div></div><div class="three-camera-controls" ${hasModel ? "" : "hidden"} role="group" aria-label="3D camera"><button type="button" data-three-camera="overview" aria-pressed="true">Overview</button><button type="button" data-three-camera="street" aria-pressed="false">Street level</button><button type="button" data-three-camera="top" aria-pressed="false">Top view</button><span>Drag to orbit · pinch to zoom</span></div><div class="three-street-view" ${hasModel ? "" : "hidden"}></div><div class="plan-canvas-wrap" ${hasModel ? "hidden" : ""}><canvas tabindex="0" role="img" aria-label="Interactive design drawing for ${escape(section.title)}. Drag to pan, use plus and minus to zoom, or arrow keys to pan."></canvas><span class="plan-gesture-hint">Drag to pan · + / − to zoom</span><p class="plan-loading" role="status">Loading the complete drawing…</p></div><div class="plan-layer-buttons" role="group" aria-label="Highlight features in the drawing"><button type="button" data-plan-layer="all" aria-pressed="true">All features</button>${plan.layers.map((layer) => `<button type="button" data-plan-layer="${layer.id}" aria-pressed="false"><i style="background:${layer.color}"></i>${escape(layer.label)}</button>`).join("")}</div><p class="plan-layer-description" aria-live="polite">Choose a color to highlight its markings in the original geometry. Click a colored marking for its key.</p>`;
+  const hasModel = Boolean(section.plan);
+  root.innerHTML = `<div class="plan-toolbar"><div role="group" aria-label="Street visualization">${hasModel ? '<button type="button" data-plan-style="three" aria-pressed="true">3D street</button>' : ""}<button type="button" data-plan-style="illustrated" aria-pressed="${!hasModel}">Street sketch</button><button type="button" data-plan-style="clear" aria-pressed="false">Clear plan</button><button type="button" data-plan-style="original" aria-pressed="false">Aerial context</button></div><div class="plan-zoom-controls"><button type="button" data-plan-zoom="out" aria-label="Zoom plan out">−</button><output aria-live="polite">100%</output><button type="button" data-plan-zoom="in" aria-label="Zoom plan in">+</button><button type="button" data-plan-zoom="fit">Fit</button></div></div><div class="three-camera-controls" ${hasModel ? "" : "hidden"} role="group" aria-label="3D camera"><button type="button" data-three-camera="overview" aria-pressed="true">Overview</button><button type="button" data-three-camera="street" aria-pressed="false">Street level</button><button type="button" data-three-camera="top" aria-pressed="false">Top view</button><span>Drag to orbit · pinch to zoom</span></div><div class="three-street-view" ${hasModel ? "" : "hidden"}></div><div class="plan-canvas-wrap" ${hasModel ? "hidden" : ""}><canvas tabindex="0" role="img" aria-label="Interactive design drawing for ${escape(section.title)}. Drag to pan, use plus and minus to zoom, or arrow keys to pan."></canvas><div class="north-indicator">${northArrow()}</div><span class="plan-gesture-hint">Drag to pan · + / − to zoom</span><p class="plan-loading" role="status">Loading the complete drawing…</p></div><div class="plan-layer-buttons" role="group" aria-label="Highlight features in the drawing"><button type="button" data-plan-layer="all" aria-pressed="true">All features</button>${plan.layers.map((layer) => `<button type="button" data-plan-layer="${layer.id}" aria-pressed="false"><i style="background:${layer.color}"></i>${escape(layer.label)}</button>`).join("")}</div><p class="plan-layer-description" aria-live="polite">Choose a color to highlight its markings in the original geometry. Click a colored marking for its key.</p>`;
   const canvas = root.querySelector("canvas"),
     ctx = canvas.getContext("2d");
   let dead = false,
@@ -76,6 +77,7 @@ export function mountPlanViewer(
   };
   const draw = () => {
     if (dead || style === "three") return;
+    root.querySelector(".north-indicator").hidden = style === "illustrated";
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "#f9faf5";
     ctx.fillRect(0, 0, width, height);
@@ -144,7 +146,7 @@ export function mountPlanViewer(
       threeViewer?.setFeature(layer);
       description.textContent =
         layer === "all"
-          ? "Happy Supermarket 3D prototype. Colored street boundaries follow the source drawing; context footprints are interpreted and heights are illustrative. Select a feature to highlight its model geometry."
+          ? `${section.title}: source-aligned 3D model. Proposal markings follow this block’s drawing. Buildings use Boston GIS footprints and available 2010 heights; alignment and facade details are approximate. Compare Top view with Clear plan.`
           : `${item.label} highlighted in the 3D model. Source color groups may combine multiple kinds of features; compare with the original drawing.`;
     }
     if (style === "illustrated") {

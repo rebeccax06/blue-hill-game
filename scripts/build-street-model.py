@@ -1,8 +1,11 @@
-"""Trace source-color boundaries for the first 3D prototype (project slide 12).
+"""Build full neighborhood models from proposal markings and Boston GIS context.
 All coordinates remain in original drawing pixels. Heights are display assumptions.
-Requires NumPy, SciPy and Pillow; rerun after build-plan-assets.py.
+Requires NumPy, SciPy, Pillow and Shapely; rerun after build-plan-assets.py.
 """
 from pathlib import Path
+from shapely.geometry import Polygon  # Check context dependency before writing any models.
+import subprocess
+import sys
 import json
 import numpy as np
 from scipy import ndimage
@@ -78,3 +81,51 @@ model={
  'cars':[[350,394],[430,391],[783,269],[844,266],[500,295],[805,354]],
 }
 (OUT/'street-12.json').write_text(json.dumps(model,separators=(',',':'))+'\n')
+
+# Every other block retains the complete drawing as its ground surface. Only
+# source-colored geometry is raised; parcel lines are not building footprints.
+# Never copy section 12's road, vehicles, passengers, or buildings to another block.
+sections=json.loads((OUT/'sections.json').read_text())['sections']
+for section in sections:
+ if section['number']==12:continue
+ width,height=section['plan']['width'],section['plan']['height']
+ features=[];trees=[]
+ for layer in section['plan']['layers']:
+  image=Image.open(ROOT/'public'/layer['image'].lstrip('/')).convert('RGBA')
+  mask=np.array(image)[:,:,3]>0
+  labels,count=ndimage.label(mask)
+  sizes=np.bincount(labels.ravel())
+  accepted=[]
+  for label,slices in enumerate(ndimage.find_objects(labels),1):
+   if slices is None or sizes[label]<16:continue
+   sy,sx=slices
+   cy=(sy.start+sy.stop)/2;cx=(sx.start+sx.stop)/2
+   # Exclude isolated logos and aerial color noise above/below the corridor.
+   # Whole connected components are kept, preserving intersection boundaries.
+   low,high=(.18,.82) if section['number']==1 else (.25,.78)
+   if not low*height<=cy<=high*height:continue
+   accepted.append(label)
+   if layer['id']=='green':
+    w,h=sx.stop-sx.start,sy.stop-sy.start
+    extent=sizes[label]/(w*h)
+    # Compact, round green symbols represent trees in these source drawings.
+    # Long green paths and rectangular parking markings remain surface geometry.
+    if .75<w/h<1.33 and .52<extent<.91 and 7<=w<=width*.025 and 7<=h<=height*.06:
+     trees.append([round(cx,2),round(cy,2)])
+  mask=np.isin(labels,accepted)
+  rings=outlines(mask)
+  features.append({'id':layer['id'],'label':layer['label'],'color':layer['color'],'polygons':rings})
+ model={
+  'section':section['number'],'sourcePage':section['page'],
+  'sourceImage':section['plan']['original'],'sourceSurface':section['plan']['clear'],
+  'coordinateSystem':'Original embedded drawing pixels; x right, y down',
+  'width':width,'height':height,
+  'provenance':'Plan relief: original drawing is retained as the ground surface. Colored boundaries are traced within 1.5 source pixels. Compact round green symbols supply illustrative trees. Relief heights and tree shapes are display assumptions. No surveyed elevations or building heights are supplied.',
+  'features':features,'road':[],'sidewalks':[],'carriageway':[],
+  'buildings':[],'trees':trees,'buses':[],'cars':[],
+ }
+ (OUT/f"street-{section['number']}.json").write_text(json.dumps(model,separators=(',',':'))+'\n')
+ print('Section',section['number'],sum(len(f['polygons']) for f in features),'source polygons;',len(trees),'tree symbols')
+
+# Complete every block with the same GIS-based neighborhood treatment.
+subprocess.run([sys.executable,str(ROOT/"scripts/build-neighborhood-context.py")],check=True)
